@@ -69,31 +69,6 @@ function checkUserName(str){
     return true;
 }
 
-/*
-function checkCaptcha(){
-    if($('#captcha_register').val()!=TEXT_NULL){
-        $.ajax({
-            async:false,
-            url: 'api/captcha/'+$('#captcha_register').val(),
-            type: "POST",
-            success: function(){
-                $('#randomTextResultMsg').text(INFO_MSG_OK);
-                $('#randomTextResultIcon').attr("src",ICON_URL_OK);
-                $('#randomTextResultIcon').show();
-            },
-            error:function (){
-                $('#randomTextResultMsg').text(ERR_MSG_CAPTCHA_INVALID);
-                $('#randomTextResultIcon').attr("src",ICON_URL_ERR);
-                $('#randomTextResultIcon').show();
-            }
-        });
-    }else{
-        $('#randomTextResultMsg').text(TEXT_NULL);
-        $('#randomTextResultIcon').hide();
-    }
-    return false;
-}*/
-
 
 
 function fillCombosWithNormalBrowser(){
@@ -312,15 +287,19 @@ $(document).ready(function() {
                       'username':$('#username_register').val()
                     },
                     type: "GET",
-                    success: function(){
-                        $('#userNameResultMsg').text(INFO_MSG_OK);
-                        $('#userNameResultIcon').show();
-                        $('#userNameResultIcon').attr("src",ICON_URL_OK);
+                    success: function(resp){
+                        if(resp.success){
+                            $('#userNameResultMsg').text(INFO_MSG_OK);
+                            $('#userNameResultIcon').show();
+                            $('#userNameResultIcon').attr("src",ICON_URL_OK);
+                        }else{
+                            $('#userNameResultMsg').text(ERR_MSG_USERNAME_EXIST);
+                            $('#userNameResultIcon').show();
+                            $('#userNameResultIcon').attr("src",ICON_URL_ERR);
+                        }
                     },
                     error:function (){
-                        $('#userNameResultMsg').text(ERR_MSG_USERNAME_EXIST);
-                        $('#userNameResultIcon').show();
-                        $('#userNameResultIcon').attr("src",ICON_URL_ERR);
+                         //TODO Error about servicedown or exception
                     }
                 });
             }
@@ -357,15 +336,19 @@ $(document).ready(function() {
                       'email':$('#email_register').val()
                     },
                     type: "GET",
-                    success: function(){
-                        $('#eMailResultMsg').text(INFO_MSG_OK);
-                        $('#eMailResultIcon').attr("src",ICON_URL_OK);
-                        $('#eMailResultIcon').show();
+                    success: function(resp){
+                        if(resp.success){
+                            $('#eMailResultMsg').text(INFO_MSG_OK);
+                            $('#eMailResultIcon').attr("src",ICON_URL_OK);
+                            $('#eMailResultIcon').show();
+                        }else{
+                            $('#eMailResultMsg').text(ERR_MSG_EMAIL_EXIST);
+                            $('#eMailResultIcon').attr("src",ICON_URL_ERR);
+                            $('#eMailResultIcon').show();
+                        }
                     },
                     error:function (){
-                        $('#eMailResultMsg').text(ERR_MSG_EMAIL_EXIST);
-                        $('#eMailResultIcon').attr("src",ICON_URL_ERR);
-                        $('#eMailResultIcon').show();
+                            //TODO Error about servicedown or exception
                     }
                 });
             }
@@ -504,9 +487,16 @@ $(document).ready(function() {
             birthDate=Date.parse(month+"/"+day+"/"+strYear)
         }
 
+
+
         //Check Country And City
-        var cityID=$('#city_register').val();
-        if(cityID==TEXT_SELECT){
+        var cityCode=$('#city_register').val();
+        var cityName=$("#city_register option:selected").text();
+        var countryCode=$('#country_register').val();
+        var countryName=$("#country_register option:selected").text();
+
+
+        if(cityCode==TEXT_SELECT){
             $('#countryCityResultMsg').text(ERR_MSG_COUNTRYANDCITY_EMPTY);
             $('#countryCityResultIcon').show();
             $('#countryCityResultIcon').attr("src",ICON_URL_ERR);
@@ -536,21 +526,6 @@ $(document).ready(function() {
             $('#iAgreeWithResultIcon').hide();
         }
 
-        //Check Captcha
-        /*
-        var captcha=$('#captcha_register').val();
-        if(captcha==TEXT_NULL){
-            $('#randomTextResultMsg').text(ERR_MSG_CAPTCHA_EMPTY);
-            $('#randomTextResultIcon').show();
-            $('#randomTextResultIcon').attr("src",ICON_URL_ERR);
-            result=false;
-        }else{
-            checkCaptcha();
-            if($('#randomTextResultMsg').text()!=INFO_MSG_OK){
-                result=false;
-            }
-        } */
-
         if(result){
             $('#waitingIcon').show();
             var user = new Object();
@@ -560,14 +535,17 @@ $(document).ready(function() {
                 url: 'api/registration/addUser',
                 type: "POST",
                 data: {
-                    'username': $('#username_register').val(),
-                    'fullName': $('#fullname_register').val(),
-                    'password': $('#password_register').val(),
-                    'gender': $('#gender_register').val(),
-                    'email': $('#email_register').val(),
-                    'education': $('#education_register').val(),
+                    'username': userName,
+                    'fullName': fullName,
+                    'password': password,
+                    'gender': gender,
+                    'email': email,
+                    'education': education,
                     'birthday':birthDate,
-                    'cityID':cityID
+                    'cityCode':cityCode,
+                    'cityName':cityName,
+                    'countryCode': countryCode,
+                    'countryName': countryName,
                 },
                 success: function(data){
                     //cookie_saveLoginUser(data);

@@ -23,6 +23,10 @@ public class Profile extends AbstractEntity implements Serializable {
     private String email;
     private String fullName;
     private String about;
+    private String countryCode;
+    private String countryName;
+    private String cityCode;
+    private String cityName;
 
 
     @Enumerated(EnumType.STRING)
@@ -73,6 +77,38 @@ public class Profile extends AbstractEntity implements Serializable {
 
     public void setAbout(String about) {
         this.about = about;
+    }
+
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    public void setCountryCode(String countryCode) {
+        this.countryCode = countryCode;
+    }
+
+    public String getCountryName() {
+        return countryName;
+    }
+
+    public void setCountryName(String countryName) {
+        this.countryName = countryName;
+    }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
     }
 
     public GenderEnum getGender() {

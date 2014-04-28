@@ -67,7 +67,7 @@ public class UserDBService implements IUserDBService {
     @Override
     @Transactional
     public List<Profile> getUserWithEmail(String email) throws Exception {
-        return userDAO.getUserWithUsername(email);
+        return userDAO.getUserWithEmail(email);
     }
 
 
