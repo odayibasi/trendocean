@@ -16,9 +16,12 @@
     http://www.springframework.org/schema/aop 
     http://www.springframework.org/schema/aop/spring-aop-3.1.xsd
     http://www.springframework.org/schema/mvc 
-    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+    http://www.springframework.org/schema/security
+    http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 
+    <!-- JPA Configuration -->
     <context:component-scan base-package="com.trendocean"/>
     <tx:annotation-driven transaction-manager="transactionManager" />
 
@@ -61,5 +64,40 @@
         <property name="password" value="123456" />
     </bean>
 
+    <!-- Security Configuration
+
+
+    <authentication-manager alias="trendoceanAuthenticationFilter">
+        <authentication-provider user-service-ref="tseUserDetailsService"/>
+    </authentication-manager>
+
+    <bean id="trendoceanAuthenticationFilter" class="tr.com.trendocean.AuthenticationFilter">
+        <property name="sessionAuthenticationStrategy" ref="sas"/>
+        <property name="authenticationManager" ref="tseAuthenticationManager"/>
+        <property name="authenticationFailureHandler" ref="failureHandler"/>
+        <property name="authenticationSuccessHandler" ref="successHandler"/>
+    </bean>
+
+    <bean id="successHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <property name="defaultTargetUrl" value="/main.jsp"/>
+    </bean>
+
+    <bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+        <property name="defaultFailureUrl" value="/index.jsp?login_error=true"/>
+    </bean>
+
+    <bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
+        <property name="sessionRegistry" ref="sessionRegistry"/>
+        <property name="expiredUrl" value="/index.jsp?concurrent_session=true"/>
+    </bean>
+
+    <bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+        <constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+        <property name="maximumSessions" value="1"/>
+        <property name="exceptionIfMaximumExceeded" value="false"/>
+    </bean>
+
+    <bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+     -->
 
 </beans>

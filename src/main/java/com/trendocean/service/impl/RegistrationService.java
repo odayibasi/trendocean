@@ -19,14 +19,14 @@ public class RegistrationService implements IRegistrationService{
 
     @Override
     public TrendoceanResponse checkUsername(String username) throws Exception {
-       List<Profile> users=userDBService.getUserWithUsername(username);
-       return new TrendoceanResponse.Builder().setSuccess(users==null || users.size()==0).build();
+       Profile user=userDBService.getUserWithUsername(username);
+       return new TrendoceanResponse.Builder().setSuccess(user==null).build();
     }
 
     @Override
     public TrendoceanResponse checkEmail(String email) throws Exception {
-        List<Profile> users=userDBService.getUserWithEmail(email);
-        return new TrendoceanResponse.Builder().setSuccess(users==null || users.size()==0).build();
+        Profile user=userDBService.getUserWithEmail(email);
+        return new TrendoceanResponse.Builder().setSuccess(user==null).build();
     }
 
     @Override

@@ -60,13 +60,13 @@ public class UserDBService implements IUserDBService {
 
     @Override
     @Transactional
-    public List<Profile> getUserWithUsername(String username) throws Exception {
+    public Profile getUserWithUsername(String username) throws Exception {
         return userDAO.getUserWithUsername(username);
     }
 
     @Override
     @Transactional
-    public List<Profile> getUserWithEmail(String email) throws Exception {
+    public Profile getUserWithEmail(String email) throws Exception {
         return userDAO.getUserWithEmail(email);
     }
 
