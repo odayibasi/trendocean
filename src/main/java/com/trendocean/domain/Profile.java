@@ -20,6 +20,7 @@ public class Profile extends AbstractEntity implements Serializable {
     private String countryName;
     private String cityCode;
     private String cityName;
+    private String birthday;
 
     @OneToOne(cascade=CascadeType.ALL)
     private ProfileOceanDesigns profileOceanDesigns;
@@ -112,6 +113,14 @@ public class Profile extends AbstractEntity implements Serializable {
 
     public void setCityName(String cityName) {
         this.cityName = cityName;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public GenderEnum getGender() {
