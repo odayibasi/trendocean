@@ -1,11 +1,12 @@
 package com.trendocean.service.db.impl;
 
 import com.trendocean.ViolationResult;
-import com.trendocean.dao.IUserDAO;
-import com.trendocean.domain.TrendoceanUser;
+import com.trendocean.dao.IProfileDAO;
+import com.trendocean.domain.Profile;
 import com.trendocean.service.db.IUserDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,50 +14,59 @@ import java.util.List;
 public class UserDBService implements IUserDBService {
 
     @Autowired
-    IUserDAO userDAO;
+    IProfileDAO userDAO;
 
     @Override
-    public List<ViolationResult> save(TrendoceanUser user) {
+    @Transactional
+    public List<ViolationResult> save(Profile user) {
         return userDAO.save(user);
     }
 
     @Override
-    public List<ViolationResult> saveAll(List<TrendoceanUser> users) {
+    @Transactional
+    public List<ViolationResult> saveAll(List<Profile> users) {
         return userDAO.saveAll(users);
     }
 
     @Override
-    public List<ViolationResult> saveAllBatch(List<TrendoceanUser> users) {
+    @Transactional
+    public List<ViolationResult> saveAllBatch(List<Profile> users) {
         return userDAO.saveAllBatch(users);
     }
 
     @Override
-    public void remove(TrendoceanUser user) {
+    @Transactional
+    public void remove(Profile user) {
          userDAO.remove(user);
     }
 
     @Override
-    public void removeAll(List<TrendoceanUser> users) {
+    @Transactional
+    public void removeAll(List<Profile> users) {
           userDAO.removeAll(users);
     }
 
     @Override
-    public TrendoceanUser find(String id) {
+    @Transactional
+    public Profile find(String id) {
         return userDAO.find(id);
     }
 
     @Override
-    public List<TrendoceanUser> getAll() {
+    @Transactional
+    public List<Profile> getAll() {
         return userDAO.getAll();
     }
 
     @Override
-    public List<TrendoceanUser> getUserWithUsername(String username) throws Exception {
+    @Transactional
+    public List<Profile> getUserWithUsername(String username) throws Exception {
         return userDAO.getUserWithUsername(username);
     }
 
     @Override
-    public List<TrendoceanUser> getUserWithEmail(String email) throws Exception {
+    @Transactional
+    public List<Profile> getUserWithEmail(String email) throws Exception {
         return userDAO.getUserWithUsername(email);
     }
 

@@ -1,7 +1,7 @@
 package com.trendocean.service;
 
 import com.trendocean.TrendoceanResponse;
-import com.trendocean.domain.TrendoceanUser;
+import com.trendocean.domain.Profile;
 
 public interface IRegistrationService {
 
@@ -9,5 +9,5 @@ public interface IRegistrationService {
 
     TrendoceanResponse checkEmail(String email) throws Exception;
 
-    TrendoceanResponse addUser(TrendoceanUser user) throws Exception;
+    TrendoceanResponse addUser(Profile user) throws Exception;
 }

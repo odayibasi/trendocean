@@ -4,7 +4,7 @@
              version="2.0">
     <persistence-unit name="trendoceanJTA" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <class>com.trendocean.domain.TrendoceanUser</class>
+        <class>com.trendocean.domain.Profile</class>
        	<class>com.trendocean.domain.Country</class>
         <class>com.trendocean.domain.City</class>
     </persistence-unit>

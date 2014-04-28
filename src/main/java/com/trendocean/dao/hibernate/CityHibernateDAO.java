@@ -16,9 +16,7 @@ public class CityHibernateDAO  extends BaseDAOImpl<City> implements ICityDAO{
     @Override
     public List<City> getCities(String countryCode) {
         try{
-            Session session = getSession().getSessionFactory().openSession();
-            session.beginTransaction();
-            Criteria c = session.createCriteria(City.class);
+            Criteria c = getSession().createCriteria(City.class);
             c.add(Restrictions.eq("countryCode", countryCode));
             return c.list();
         }catch (Exception e){

@@ -570,8 +570,8 @@ $(document).ready(function() {
                     'cityID':cityID
                 },
                 success: function(data){
-                    cookie_saveLoginUser(data);
-                    window.location.href="home.html";
+                    //cookie_saveLoginUser(data);
+                    //window.location.href="home.html";
                 },
                 error:function (xhr){
                     //window.location.href=PAGE_OVERLOAD;
