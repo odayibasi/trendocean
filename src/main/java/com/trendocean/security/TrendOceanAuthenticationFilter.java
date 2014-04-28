@@ -1,5 +1,6 @@
 package com.trendocean.security;
 
+
 public class TrendOceanAuthenticationFilter {
         //extends AbstractAuthenticationProcessingFilter implements AuthenticationEntryPoint {
 
