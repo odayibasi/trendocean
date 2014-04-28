@@ -20,7 +20,7 @@ public class ProfilePopulator extends BaseLocalIntegrationTestCase {
 
     @Test
     @Transactional
-    //@Rollback(true)
+    @Rollback(true)
     public void populateUser(){
         List<Profile> users=userDBService.getAll();
         userDBService.removeAll(users);
