@@ -2,21 +2,14 @@ package com.trendocean.domain;
 
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.trendocean.domain.GenderEnum;
 import com.trendocean.domain.base.AbstractEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.io.Serializable;
 
 @JsonAutoDetect
 @Entity
 public class Profile extends AbstractEntity implements Serializable {
-
-
-    public Profile() {
-    }
 
     private String username;
     private String password;
@@ -27,6 +20,16 @@ public class Profile extends AbstractEntity implements Serializable {
     private String countryName;
     private String cityCode;
     private String cityName;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    private ProfileOceanDesigns profileOceanDesigns;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    private ProfileOceanSettings profileOceanSettings;
+
+    @OneToOne(cascade=CascadeType.ALL)
+    private ProfileOceanStats profileOceanStats;
+
 
 
     @Enumerated(EnumType.STRING)
@@ -135,6 +138,27 @@ public class Profile extends AbstractEntity implements Serializable {
         this.education = education;
     }
 
+    public ProfileOceanDesigns getProfileOceanDesigns() {
+        return profileOceanDesigns;
+    }
 
+    public void setProfileOceanDesigns(ProfileOceanDesigns profileOceanDesigns) {
+        this.profileOceanDesigns = profileOceanDesigns;
+    }
 
+    public ProfileOceanSettings getProfileOceanSettings() {
+        return profileOceanSettings;
+    }
+
+    public void setProfileOceanSettings(ProfileOceanSettings profileOceanSettings) {
+        this.profileOceanSettings = profileOceanSettings;
+    }
+
+    public ProfileOceanStats getProfileOceanStats() {
+        return profileOceanStats;
+    }
+
+    public void setProfileOceanStats(ProfileOceanStats profileOceanStats) {
+        this.profileOceanStats = profileOceanStats;
+    }
 }

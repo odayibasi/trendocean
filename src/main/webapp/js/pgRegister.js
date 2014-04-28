@@ -547,9 +547,9 @@ $(document).ready(function() {
                     'countryCode': countryCode,
                     'countryName': countryName,
                 },
-                success: function(data){
-                    //cookie_saveLoginUser(data);
-                    //window.location.href="home.html";
+                success: function(resp){
+                    cookie_saveLoginUser(resp.data);
+                    window.location.href="home.html";
                 },
                 error:function (xhr){
                     //window.location.href=PAGE_OVERLOAD;
