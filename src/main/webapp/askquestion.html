@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>trendocean</title>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+        <script type="text/javascript" src="js/jquery.counter.js?250911"></script>
+
+        <!-- TrendOcean Common Libraries -->
+        <script type="text/javascript" src="js/askquick.js?250911"></script>
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/mainBar.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/notifyBar.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+
+        <!-- Page JS -->
+        <script type="text/javascript" src="js/pgAskQuestion.js?250911"></script>
+
+        <!--  ENABLE ONLY WHEN DESIGN  
+        <link rel="shortcut icon" href="css/default/images/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/ask_question.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/default.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/docka.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/main.css" type="text/css"></link>   -->
+
+
+        <!--  ENABLED FOR DYNAMIC THEME  -->
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('ask_question.css');
+            theme_addCSSLink('default.css');
+            theme_addCSSLink('dock.css');
+            theme_addCSSLink('docka.css');
+            theme_addCSSLink('main.css');
+        </script>   
+
+    </head>
+
+    <body>
+
+        <!-- dock NEW -->
+        <div id="divBody"  style="display:none;">
+
+            <div id="docka">
+                <div id="insider">
+
+                    <ul id="menu">
+
+                        <div class="left-main-part">
+                            <a id="logoToHome" class="logo-to" href="#"></a>
+                        </div>
+
+                        <form method="get" id="searchform" action="">
+                            <fieldset class="docka-search">
+                                <input id="searchField_MainBar" type="text" class="searchbox-docka" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" />
+                                <button id="searchButton_MainBar" class="searchbutton-docka" title="Submit Search">Search</button>
+                            </fieldset>
+                        </form>
+
+
+                        <li class="menu_right_docka"><a id="username_MainBar" href="#" class="drop">Trend Ocean</a>
+
+                            <div class="dropdown_1column align_right">
+
+                                <div class="col_1">
+
+                                    <ul class="simple">
+                                        <li><a id="settings_MainBar" href="#">Settings</a></li>
+                                        <li><a id="following_MainBar" href="#">Following</a></li>
+                                        <li><a id="followers_MainBar" href="#">Followers</a></li>
+                                        <li><a id="logout_MainBar" href="#">Sign Out</a></li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                        <li class="menu_right_docka"><a id="myOcean_MainBar"  href="#" class="nondrop">My Ocean</a></li>
+                        <li class="menu_right_docka"><a id="profile_MainBar" href="#" class="nondrop">Profile</a></li>
+                        <li class="menu_right_docka"><a id="nondropDrops_MainBar" href="#" class="nondrop"><i id="drops_mainBar" class="icon-drops"></i><i id="drops_MainBar_Count" class="red"></i></a></li>
+                        <li class="menu_right_docka"><a id="nondropCoffee_MainBar" href="#" class="nondrop"><i id="coffees_MainBar" class="icon-coffee"></i><i id="coffees_MainBar_Count" class="red"></i></a></li>
+                        <li class="menu_right_docka"><a id="nondropMsgs_MainBar" href="#" class="nondrop"><i id="msgs_MainBar" class="icon-message"></i><i id="msgs_MainBar_Count" class="red"></i></a></li>
+                        <li class="menu_right_docka"><a id="nondropFriends_MainBar" href="#" class="nondrop"><i id="friends_MainBar" class="icon-request"></i><i id="friends_MainBar_Count" class="red"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div id="docka2">
+                <div class="creator">
+
+                    <div class="left-trendocean-que"><a id="randomText_MainBar" href="">what is trendocean? seriously...</a></div>
+
+                    <div class="right-person-navi">
+                        <a id="labelMe_MainBar" class="trendshow" href="">you are %77 trendy</a>
+                        <i class="dock-pointer"></i>
+                        <a id="trendradar_MainBar" class="trendradar" href="">trendradar</a>
+                        <i class="dock-pointer"></i>
+                        <a id="addQuestion_MainBar" class="addque-ondock" href="">add question</a>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- dock NEW -->
+
+
+
+
+
+            <!-- notify -->
+            <div class="fixer" id="fixerID">
+                <div class="notify">
+                    <div class="notifyimage"><div id="notifyImgID" class="notifyimage-wrong"></div></div>
+                    <div class="notifyinfo" id="notifyInfoID">this is a realy cool notify.</div>
+                    <a class="closenotify" id="closenotifyID" href=""></a>
+                </div>
+            </div>
+            <!-- notify -->
+
+
+
+            <div id="stage">
+
+
+
+
+
+
+
+                <div id="ask_left">
+
+                    <div class="ask-triangle-isosceles right">
+                        <div class="ask-name">
+                            <b class="ask-oceanname"><a id="userNameAndLink" class="oceanname-link" href="">fahretcur</a></b>
+                            <span id="userFullName" class="ask-realname">Fahrettin Cürdfdsfdfgfgfd</span>
+                        </div>
+                        <div class="ask-avatar">
+                            <a id="userAvatarLink" class="avatarImgLink" href=""><img id="userAvatar" class="avatarImg" src="" width="50" height="50" /></a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+
+
+
+                <div id="ask_body">
+
+
+                    <div class="upcover">
+
+                        <div id="part1_body">
+
+                            <div id="quepart_left">
+                                <textarea id="qBody"  style="width:447px; height:110px; font-family:Tahoma, Geneva, sans-serif; font-size:19px; resize:none; -webkit-border-radius: 10px;
+                                          -moz-border-radius: 10px; border:1px solid #fff; " rows="4" name="question"></textarea>
+                            </div>
+                            <div id="quepart_counter" class="quepart_counter">
+                                180
+                            </div>
+                        </div>
+
+
+                        <div id="qPreview_upcover">
+                            <div id="qPreview"></div>
+                        </div>
+
+
+                        <div id="part2_body">
+
+                            <div id="questions_lefty">
+
+                                <div id="qAnswDiv1" class="box_question">
+                                    <input type="text" id="qAnsw1" name="c1" class="cho1 roundedcho"  style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv2" class="box_question">
+                                    <input type="text" id="qAnsw2" name="c2" class="cho2 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv3" class="box_question">
+                                    <input type="text" id="qAnsw3" name="c3" class="cho3 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv4" class="box_question">
+                                    <input type="text" id="qAnsw4" name="c4" class="cho4 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv5" class="box_question">
+                                    <input type="text" id="qAnsw5" name="c5" class="cho5 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv6" class="box_question">
+                                    <input type="text" id="qAnsw6" name="c6" class="cho6 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv7" class="box_question">
+                                    <input type="text" id="qAnsw7" name="c6" class="cho7 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv8" class="box_question">
+                                    <input type="text" id="qAnsw8" name="c6" class="cho8 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv9" class="box_question">
+                                    <input type="text" id="qAnsw9" name="c6" class="cho9 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div id="qAnswDiv10" class="box_question">
+                                    <input type="text" id="qAnsw10" name="c6" class="cho10 roundedcho" size="40" style="width:425px; font-size:19px;">
+                                </div>
+                                <div class="box_add_choice">
+                                    <a class="addchoicebutton" id="btnAddChoice" href="">add more choice</a>
+                                </div>
+                                <div class="box_question">
+                                    <a class="bigbutton" id="btnAddQuestion" href="">ask</a>
+                                </div>
+
+
+                            </div>
+
+                            <div id="questions_righty">
+
+                                <div id="qAnsw1Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw2Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw3Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw4Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw5Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw6Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw7Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw8Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw9Info" class="box_question_info">
+                                    50
+                                </div>
+                                <div id="qAnsw10Info" class="box_question_info">
+                                    50
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+            <div id="footer_nav">
+                <ul>
+                    <li><i>© 2011 TrendOcean</i></li>
+                    <li><a id="aboutLink" href="#">About Us</a></li>
+                    <li><a id="blogLink" href="#" target="_blank">Blog</a></li>
+                    <li><a id="teamLink" href="#">Team</a></li>
+                    <li><a id="businessLink" href="#">Business</a></li>
+                    <li><a id="helpLink" href="#">Help</a></li>
+                    <li><a id="termsLink" href="#">Terms</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+    </body>
+</html>

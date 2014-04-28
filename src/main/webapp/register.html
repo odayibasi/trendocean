@@ -1,0 +1,252 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TrendOcean / Register</title>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+
+        <!-- TrendOcean Common Libraries -->
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+
+        <script type="text/javascript" src="js/pgRegister.js?250911"></script>
+
+        <!-- ENABLE ONLY DESIGN
+        <link rel="shortcut icon" href="css/default/images/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/register.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/default.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/main.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link> 
+        <link rel="stylesheet" href="css/default/docka.css" type="text/css"></link> -->
+
+        <!--  ENABLED FOR DYNAMIC THEME -->
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('register.css');
+            theme_addCSSLink('default.css');
+            theme_addCSSLink('main.css');
+            theme_addCSSLink('dock.css');
+            theme_addCSSLink('docka.css');
+        </script>
+
+
+    </head>
+
+    <body>
+
+        <div id="divBody"  style="display:none;">
+
+            <!-- dock -->
+            <div id="headerdock">
+                <div class="dock">
+                    <div class="dock_logo"><a id="logoToHome" class="dock_logotohome" href="index.html"></a></div>
+
+                </div>
+            </div>
+
+            <div id="docka2">
+                <div class="creator">
+                    <div class="left-trendocean-que"><a id="randomText_MainBar" href="">what is trendocean? seriously...</a></div>
+                </div>
+            </div>
+            <!-- dock -->
+
+            <div id="stage">
+
+                <div id="lefty_info" class="lefty_info"> Jump into ocean after a few steps!<br/><span>Already in ocean? <a href="login.html">Sign in</a></span>
+                </div>
+
+                <div id="ask_left">
+                    <div class="label_register"></div>
+                    <div class="label_register">username:</div>
+                    <div class="label_register">full name:</div>
+                    <div class="label_register">e-mail adress:</div>
+                    <div class="label_register">password:</div>
+                    <div class="label_register">gender:</div>
+                    <div class="label_register">birthday:</div>
+                    <div class="label_register">country &amp; city:</div>
+                    <div class="label_register">education:</div>
+                    <div class="label_register">Terms of Service</div>
+                    <!--
+                    <div class="label_register">random text</div>
+                    <div class="label_register">above text</div> -->
+                </div>
+                <div id="ask_body">
+                    <div id="part1_info">
+                        please write down your information</div>
+                    <div id="part2_main">
+                        <div id="part2_body">
+                            <div class="box_register"><input type="text" id="username_register" class="box_register_main" size="40" maxlength="24" style="width:250px; font-size:19px;"></div>
+                            <div class="box_register"><input type="text" id="fullname_register" class="box_register_main" size="40" maxlength="24" style="width:250px; font-size:19px;"></div>
+                            <div class="box_register"><input type="text" id="email_register" class="box_register_main" size="40" maxlength="320" style="width:250px; font-size:19px;"></div>
+                            <div class="box_register"><input type="password" id="password_register" class="box_register_main" size="40" style="width:250px; font-size:19px;"></div>
+                            <div class="box_register">
+                                <select id="gender_register" style="font-size:20px; width:100px;">
+                                </select></div>
+                            <div class="box_register2"><select id="day_register" style="font-size:19px; width:50px;">
+                                </select>
+                                <select id="month_register" style="font-size:20px; width:70px;">
+                                </select>
+                                year: <input type="text" id="year_register" class="box_register_mid" maxlength="4" size="26" style="width:60px; font-size:19px;">
+                            </div>
+
+                            <div class="box_register"><select id="country_register" style="font-size:19px; width:125px;">
+                                </select>
+                                <select id="city_register" style="font-size:19px; width:120px;">
+                                </select>
+                            </div>
+                            <div class="box_register"><select id="education_register" style="font-size:19px; width:125px;"></select>
+                            </div>
+                            <div class="box_register"><span class="checkbox" style="background-position: 0px 0px; "></span><input type="checkbox" id="iAggre_terms">
+                                    i agree with the <a href="terms.html" target="_blank">terms of service </a></div>
+                            <!--
+                            <div class="box_register"><img src="api/captcha" width="200" height="40" /></div>
+                            <div class="box_register"><input type="text" id="captcha_register" class="box_register_main" size="40" style="width:250px; font-size:19px;"></div>
+                            -->
+                            <div class="box_register"><a id="submit_register" class="bigbutton" href=""><span>register</span></a> <div id="waitingIcon" class="loader-reg"></div></div>
+
+                        </div>
+                        <div id="ask_error">
+
+                            <!-- username error -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img id="userNameResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="userNameResultMsg" class="box_register3_text">
+                                    etc etc.
+                                </div>
+                            </div>
+                            <!-- end of username error -->
+
+                            <!-- full name true -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="fullNameResultIcon" src="css/default/images/ok_grey.png" width="20" height="20" />
+                                </div>
+                                <div id="fullNameResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of full name true -->
+
+                            <!-- e-mail -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="eMailResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="eMailResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of e-mail -->
+
+                            <!-- password -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="passwordResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="passwordResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of password -->
+
+                            <!-- gender -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="genderResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="genderResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of gender -->
+
+                            <!-- birthday -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="birthdayResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="birthdayResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of birthday -->
+
+                            <!-- country & city -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="countryCityResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="countryCityResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of country & city -->
+
+                            <!-- education -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="educationResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="educationResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- education -->
+
+                            <!-- i aggree -->
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="iAgreeWithResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="iAgreeWithResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of i aggre -->
+
+
+                            <!-- random text-
+                            <div class="box_register3">
+                            </div>
+                            <!-- end of random text -->
+
+                            <!-- i aggree -
+                            <div class="box_register3">
+                                <div class="box_register3_icon"><img  id="randomTextResultIcon" src="css/default/images/error.png" width="20" height="20" />
+                                </div>
+                                <div id="randomTextResultMsg" class="box_register3_text">
+                                    no text maybe.
+                                </div>
+                            </div>
+                            <!-- end of i aggre -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="deep_ocean">
+                <div id="footer_nav">
+                    <ul>
+                        <li><i>© 2011 TrendOcean</i></li>
+                        <li><a id="aboutLink" href="#">About Us</a></li>
+                        <li><a id="blogLink" href="#" target="_blank">Blog</a></li>
+                        <li><a id="teamLink" href="#">Team</a></li>
+                        <li><a id="businessLink" href="#">Business</a></li>
+                        <li><a id="helpLink" href="#">Help</a></li>
+                        <li><a id="termsLink" href="#">Terms</a></li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+
+    </body>
+</html>

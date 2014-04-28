@@ -1,0 +1,457 @@
+
+/*------------------------------------------------------------*/ 
+/*-------------------------- stage --------------------------*/ 
+
+#middle_ocean {
+	width:auto;
+	min-height:600px;
+					}
+#navi {
+	margin:0 auto;
+	height: 57px;
+	width: 890px;
+	background-image:url(images/navi.png)
+					}
+#badget {
+	float: left;
+	margin-top: 20px;
+	padding-left: 20px;
+	height: 18px;
+	width: 140px;
+	
+					}
+#popularity {
+	float: left;
+	margin-top: 20px;
+	margin-left: 140px;
+	padding-left: 20px;
+	height: 30px;
+	width: 140px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	font-size:14px;
+	color: #20a8e0;
+	
+					}
+#link_section {
+	float: right;
+	margin-top: 22px;
+	padding-right: 20px;
+	height: 30px;
+	width: 300px;
+	text-align:right;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color: #20a8e0;
+	word-spacing: 10px;
+					}
+	.link_section a {
+	color: #20a8e0; 
+	outline:none; 	
+	text-decoration:none;
+					}
+	.link_section a:hover, .link_section a:active {
+	color: #ccc;
+					}
+#body_left {
+	float: left;
+	padding-top: 40px;
+	padding-left: 140px;
+	width: 525px;
+					}
+#up_left {
+	float: right;
+	width: 525px;
+					}
+#down_left {
+	float: left;
+	width: 525px;
+					}
+#profile_right {
+	float: right;
+	margin-top: 10px;
+	padding-right: 20px;
+	width: 200px;
+					}
+#profile_badget {
+	float: right;
+	width: 150px;
+	height: 245px;
+					}
+#profile_info {
+	float: left;
+	width: 340px;
+	height: 245px;
+					}
+#que_selection {
+	float: right;
+	width: 525px;
+	height: 15px;
+					}
+#liner {
+	background-image:url(images/liner.png);
+	float: left;
+	width: 525px;
+	height: 1px;
+					}
+#clear {
+	float: left;
+	width: 525px;
+	height: 5px;
+					}
+#clear2 {
+	float: left;
+	width: 525px;
+	height: 15px;
+					}
+#que_section {
+	float: left;
+	width: 525px;
+					}				
+#photo {
+	height: 275px;
+	float: right;
+	width: 185px;
+					}
+
+
+
+					
+/*------------------------------------------------------------*/ 
+/*-------------------------- askpage -------------------------*/ 
+
+#ask_left {
+	float:left;
+	width: 225px;
+	height: auto;
+					}
+#part1_label {
+	float:left;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-weight:bold;
+	color:#676767;
+	font-size:19px;
+	width: 100px;
+	height:150px;
+	margin-top: 50px;
+					}
+#part2_label {
+	float:left;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-weight:bold;
+	color:#676767;
+	font-size:19px;
+	width: 100px;
+	height:200px;
+					}
+#ask_body {
+	float:right;
+	width: 530px;
+	height: auto;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#b2b2b2;
+	text-align:left;
+					}
+.part1_info {
+	float:left;
+	width: 525px;
+	height:50px;
+					}
+.part1_info span {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#900;
+	font-weight:bold;
+					}
+	.font_for_out {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+					}
+	.cho1 { background:#fff url(images/cho1.png) no-repeat 5px 8px;}
+	.cho2 { background:#fff url(images/cho2.png) no-repeat 5px 8px;}
+	.cho3 { background:#fff url(images/cho3.png) no-repeat 5px 8px;}
+	.cho4 { background:#fff url(images/cho4.png) no-repeat 5px 8px;}
+	.cho5 { background:#fff url(images/cho5.png) no-repeat 5px 8px;}
+	.cho6 { background:#fff url(images/cho6.png) no-repeat 5px 8px;}
+	.cho7 { background:#fff url(images/cho7.png) no-repeat 5px 8px;}
+	.cho8 { background:#fff url(images/cho8.png) no-repeat 5px 8px;}
+	.cho9 { background:#fff url(images/cho9.png) no-repeat 5px 8px;}
+	.cho10 { background:#fff url(images/cho10.png) no-repeat 5px 8px;}
+	
+	.roundedcho { 
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding:4px 4px 4px 22px;
+	border:1px solid #fff;
+	width:230px;height:25px;
+	}
+.upcover {
+	background-color: #c2d4e4;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	padding:14px;
+	float:left;
+	overflow: hidden;
+	height:100%;
+	}
+.input {
+	width:425px;
+	}
+#quepart_left {
+	float:left;
+	width:425px;
+}
+#quepart_counter {
+	float:right;
+	width:30px;
+	padding-left:10px;
+	text-decoration:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:13px;
+	font-weight:bold;
+	color:#fff;
+}
+.quepart_counter span {
+	color:#900;
+}
+
+#part1_body {
+	float:left;
+	width: 500px;
+	height:100px;
+	padding-bottom:30px;
+					}
+#qPreview_upcover {
+	float:left;
+	width:425px;
+	margin-right:75px;
+	margin-bottom:30px;
+	}
+#qPreview {
+	float:left;
+	padding:10px;
+	width: 240px;
+	
+	background-color: #fff;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	}
+	
+#part2_body {
+	float:left;
+	width: 500px;
+	height:auto;
+					}	
+									
+#ask_right {
+	float:left;
+	width: 185px;
+	padding-right: 20px;
+	font-weight:bold;
+	padding-top:50px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:17px;
+	color:#b2b2b2;
+					}
+
+#questions_lefty {
+	float:left;
+	width:460px;
+	height:auto;
+}
+
+
+#questions_righty {
+	float:right;
+	width:40px;
+	height:auto;
+}
+
+.box_question {
+	float:left;
+	width:425px;
+	height:39px;
+}
+
+.box_add_choice {
+	float:left;
+	width:425px;
+	height:44px;
+}
+
+.box_question_info {
+	float:right;
+	width:30px;
+	height:32px;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:13px;
+	font-weight:bold;
+	padding-left:7px;
+	padding-top:7px;
+	color:#fff;
+	
+}
+
+.box_question_info span {
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#900;
+	font-size:17px;
+	font-weight:bold;
+	
+	
+}
+
+#counter {
+	float:left;
+	width: 150px;
+	padding-left: 20px;
+	height: 150px;
+					}
+   .bigbutton {
+   float:left;
+   background: #fff;
+   padding: 4px 13px 6px 13px;
+   color: #4c5156;
+   font-size: 14px;
+   font-family:Tahoma, Geneva, sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   }
+   .bigbutton:hover {
+   background: #333;
+   color: #fff;
+   }
+   .bigbutton:active {
+   border: 1px solid #7fbbdb;
+   background: #e1e6ea;
+   color: #51484b;
+   }
+   
+   
+   .addchoicebutton {
+	float:left;
+	background: #264257;
+	width:425px;
+	padding: 3px 13px 4px 13px;
+	color: #fff;
+	font-size: 15px;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-decoration: none;
+	vertical-align: middle;
+	text-align:center;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	}
+.addchoicebutton:hover {
+   background: #264257;
+   color: #fff;
+   }
+.addchoicebutton:active {
+   background: #000;
+   }
+   
+/*------------------------------------------------------------*/ 
+/*---------------------- speech bubble -----------------------*/
+.ask-triangle-isosceles {
+	position:relative;
+	margin:0px 0px 0px;
+	color:#000;
+	height:70px;
+	width:210px;
+	background:#c2d4e4;
+	
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	border-radius:4px;
+	
+	background:-webkit-gradient(linear, left top, left bottom, from(#f9d835), to(#f3961c));
+	background:-moz-linear-gradient(top, #f9d835, #f3961c);
+	background:-o-linear-gradient(top, #f9d835, #f3961c);
+}
+.ask-triangle-isosceles.right {
+	margin-right:20px;
+	background:#c2d4e4;
+}
+/* creates triangle */
+.ask-triangle-isosceles:after {
+	content:"";
+	display:block;
+	position:absolute;
+	bottom:-10px;
+	left:50px; 
+	width:0;
+	height:0;
+	border-width:30px 30px 0; 
+	border-style:solid;
+	border-color:#c2d4e4 transparent;
+}
+.ask-triangle-isosceles.right:after {
+	top:25px; 
+	right:-10px;
+	bottom:auto;
+    left:auto;
+	border-width:10px 0 10px 10px;
+	border-color:transparent #c2d4e4;
+}
+
+.ask-avatar {
+	float:left;
+	padding-left:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	width:50px;
+	height:50px;
+	}
+.ask-name{
+	float:right;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:10px;
+	font-family:Tahoma, Geneva, sans-serif;
+	text-align:left;
+	font-size:10px;
+	width:135px;
+	font-weight:bold;
+	color:#666;
+	}
+.ask-realname {
+	float:left;
+	text-decoration:none;
+	font-style:normal;
+	}
+.ask-oceanname {
+	float:left;
+	word-wrap: break-word;
+	color:#264257;
+	width:100%;
+	cursor:pointer;
+	}
+.ask-oceanname:hover {
+	float:left;
+	word-wrap: break-word;
+	color:#acacba;
+	width:100%;
+	}
+.oceanname-link {
+	cursor:pointer;
+	text-decoration:none;
+	word-wrap: break-word;
+	color:#222f51;
+	font-style:normal;
+	font-size:12px;
+	}
+.oceanname-link:hover {
+	cursor:pointer;
+	text-decoration:none;
+	word-wrap: break-word;
+	color:#bcc1cf;
+	font-style:normal;
+	font-size:12px;
+	}

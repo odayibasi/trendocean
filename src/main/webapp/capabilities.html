@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TrendoOcean / Capabilities Panel</title>
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/pgCapabilities.js?250911"></script>
+
+    </head>
+    <body>
+        <form style="background-color:#8ac3dd;">
+            <h1>Live Player</h1>
+            LivePlayer Source: <input type="text" val="0" size="128" id="txtLivePlayerSource"/></br>
+            LivePlayer Slogan: <input type="text" val="0" id="txtLivePlayerSlogan"/></br>
+            <input id="btnLivePlayerSource" type="submit" value="Update LivePlayer Source" />
+        </form>
+        </br>
+        <form style="background-color:#8ac3dd;">
+            <h1>Podcast</h1>
+            Podcast0 Title, URL<input type="text" val="0" id="txtPodcast0_Title"/><input type="text" val="0" size="128" id="txtPodcast0_URL"/></br>
+            Podcast1 Title, URL<input type="text" val="0" id="txtPodcast1_Title"/><input type="text" val="0" size="128" id="txtPodcast1_URL"/></br>
+            Podcast2 Title, URL<input type="text" val="0" id="txtPodcast2_Title"/><input type="text" val="0" size="128" id="txtPodcast2_URL"/></br>
+            Podcast3 Title, URL<input type="text" val="0" id="txtPodcast3_Title"/><input type="text" val="0" size="128" id="txtPodcast3_URL"/></br>
+            Podcast4 Title, URL<input type="text" val="0" id="txtPodcast4_Title"/><input type="text" val="0" size="128" id="txtPodcast4_URL"/></br>
+            Podcast5 Title, URL<input type="text" val="0" id="txtPodcast5_Title"/><input type="text" val="0" size="128" id="txtPodcast5_URL"/></br>
+            Podcast6 Title, URL<input type="text" val="0" id="txtPodcast6_Title"/><input type="text" val="0" size="128" id="txtPodcast6_URL"/></br>
+            Podcast7 Title, URL<input type="text" val="0" id="txtPodcast7_Title"/><input type="text" val="0" size="128" id="txtPodcast7_URL"/></br>
+            <input id="btnPodcast" type="submit" value="Update Podcast" />
+        </form>
+        </br>
+        <form style="background-color:#8ac3dd;">
+            <h1>Tab Visibility</h1>
+            <input type="checkbox" id="vsbAsked"/> Asked Question<br />
+            <input type="checkbox" id="vsbAnswered"/> Answered Question<br />
+            <input type="checkbox" id="vsbLoved"/> Loved Question<br />
+            <input type="checkbox" readonly="readonly" id="vsbCoffee"/>Coffee (Only Me)<br />
+            <input type="checkbox" readonly="readonly" id="vsbDrops"/>Drops (Only Me) <br />
+            <input type="checkbox" id="vsbPodcast"/> Podcast<br />
+            <input id="btnTabVisibility" type="submit" value="Update Tab Visibility" />
+        </form>
+    </body>
+</html>

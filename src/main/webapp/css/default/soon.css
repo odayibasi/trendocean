@@ -1,0 +1,139 @@
+body {
+	background-color: #dfdeec; text-align: center;
+}
+
+a {border:0px;}
+img {border:0px;}
+
+#main {
+	width:579px;
+	margin:auto;
+	}
+#main01 {
+	height:560px;
+	width:579px;
+	margin-top:-60px;
+	background-image:url(images/back01.png);
+	}
+#main02 {
+	height:111px;
+	width:579px;
+	padding-top:420px;
+	text-align:center; 
+	}
+#main03 {
+	height:99px;
+	width:579px; 
+	}
+#main04 {
+	width:411px;
+	height:70px;
+	float:left;
+	background-image:url(images/emailpartback.png); 
+	}
+#main05 {
+	width:168px;
+	padding-top:20px;
+	height:70px;
+	float:right; 
+	}
+.main_text {
+	height:50px;
+	width:579px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	font-weight:300;
+	color:#fff; 
+	}
+.main_text span {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	color:#333;
+	font-weight:600; 
+	}
+.button {
+   border: 1px solid #c4c3cf;
+   background: #b2e7ed;
+   background: -webkit-gradient(linear, left top, left bottom, from(#d2eaeb), to(#b2e7ed));
+   background: -moz-linear-gradient(top, #d2eaeb, #b2e7ed);
+   padding: 20px 25px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   border-radius: 6px;
+   text-shadow: rgba(0,0,0,.4) 1px 1px 1px;
+   color: #ffffff;
+   font-size: 24px;
+   font-family:Tahoma, Geneva, sans-serif;
+   font-weight:bold;
+   text-decoration: none;
+   vertical-align: middle;
+   }
+.button:hover {
+	border: 1px solid #c4c3cf;
+   background: #90d1d8;
+   color: #ffffff;
+   }
+.button:active {
+	border: 1px solid #c4c3cf;
+   background: #b2e7ed;
+   }
+.box1 {
+	padding-top:10px;
+	padding-left:2px;
+	height:50px;
+	font-size:30px;
+	}
+.username_login { background:#fff padding:4px 4px 4px 22px;border:1px solid #fff;width:200px;height:47px;
+	}
+	
+/*--------------------*/
+
+#social_nav_horizontal {
+	margin-left: 110px;
+	font-family: Futura, Verdana, Sans-Serif;
+	font-size: 12px;
+	color: #8E9090;
+	height: 100px;
+}
+#social_nav_horizontal h3 {
+	display: inline;
+	padding: 0 10px;
+}
+#social_nav_horizontal ul {
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+}
+#social_nav_horizontal ul li {
+	float:left;
+	padding: 5px 0 0 5px;
+	margin-left: 5px;
+	list-style-type: none;
+}
+#social_nav_horizontal ul li a {
+	padding: 4px 0 0 28px;
+	height: 32px;
+	color: #999;
+	text-decoration: none;
+	line-height: 1.45em;
+}
+#social_nav_horizontal ul li a:hover {
+	color: #6DCAFF;
+	text-decoration: underline;
+}
+.delicious {
+	background: url(images/delicious.png)no-repeat;
+	background-position: 0 -1px;
+}
+.facebook {
+	background: url(images/facebook.png)no-repeat;
+	background-position: 0 -1px;
+}
+.stumbleupon {
+	background: url(images/stumbleupon.png)no-repeat;
+	background-position: 0 -1px;
+}
+.twitter {
+	background: url(images/twitter.png)no-repeat;
+	background-position: 0 -1px;
+}

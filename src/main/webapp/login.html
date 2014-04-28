@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TrendOcean / Login</title>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+
+        <!-- TrendOcean Common Libraries -->
+        <script type="text/javascript" src="js/authentication.js?250911"></script>
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/notifyBar.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+
+        <!-- Page JS -->
+        <script type="text/javascript" src="js/pgLogin.js?250911"></script>
+
+        <!--  ENABLE ONLY DESIGN
+        <link rel="shortcut icon" href="css/default/images/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/login.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/default.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/docka.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/main.css" type="text/css"></link>  -->
+
+        <!--  ENABLED FOR DYNAMIC THEME  -->
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('login.css');
+            theme_addCSSLink('default.css');
+            theme_addCSSLink('dock.css');
+            theme_addCSSLink('docka.css');
+            theme_addCSSLink('main.css');
+        </script> 
+
+    </head>
+
+    <body>
+
+        <!-- dock -->
+        <div id="headerdock">
+            <div class="dock">
+                <div class="dock_logo"><a id="logoToHome" class="dock_logotohome" href="#"></a></div>
+
+            </div>
+        </div>
+
+        <div id="docka2">
+            <div class="creator">
+                <div class="left-trendocean-que"><a id="randomText_MainBar" href="">what is trendocean? seriously...</a></div>
+            </div>
+        </div>
+
+        <!-- dock -->
+
+
+        <!-- notify -->
+        <div class="fixer" id="fixerID">
+            <div class="notify">
+                <div class="notifyimage"><div id="notifyImgID" class="notifyimage-wrong"></div></div>
+                <div class="notifyinfo" id="notifyInfoID" >this is a realy cool notify.</div>
+                <a class="closenotify" id="closenotifyID" href=""></a>
+            </div>
+        </div>
+        <!-- notify -->
+
+
+
+
+
+        <div id="stage">
+
+
+            <div id="lefty_info" class="lefty_info"> Join!<br/><span>Don't have an account yet? It's so easy! <a href="register.html">Join us</a></span>
+            </div>
+
+            <div id="ask_left">
+                <div class="login_label"></div>
+                <div class="login_label">username or e-mail :</div>
+                <div class="login_label">password :</div>
+            </div>
+            <div id="ask_body">
+
+
+
+
+                <div id="login_lefty">
+                    <div id="infoLabel_login" class="part1_info">
+                        enter your user name and password below</div>
+                    <div id="part2_body">
+
+                        <div class="box_login">
+
+                            <!--  the class of the input type is important to use css  -->
+                            <input type="text"  class="userpass_login" id="username_login" size="40" style="width:250px; font-size:19px;">
+                        </div>
+                        <!--  the class of the input type is important to use css  -->
+                        <div class="box_login">
+                            <input type="password"  class="userpass_login" id="password_login" size="40" style="width:250px; font-size:19px;">
+                        </div>
+
+                        <div class="box_login_check">
+                            <input type="checkbox" id="remindMe_login">Remember me.
+                        </div>
+
+                        <div class="box_login_button">
+                            <a class="bigbutton" id="btnLogin" href=""><span>log in</span></a>
+                            <div class="waiting-login" id="icoWaiting"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="login_righty">
+                    <div class="box_login_right">
+                    </div>
+                    <div class="box_login_right">
+                    </div>
+                    <div class="box_login_right">
+                        <span><a href="resend_password.html">forgot my login info</a></span>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+        </div>
+        <div id="deep_ocean">
+            <div id="footer_nav">
+                <ul>
+                    <li><i>© 2011 TrendOcean</i></li>
+                    <li><a id="aboutLink" href="#">About Us</a></li>
+                    <li><a id="blogLink" href="#" target="_blank">Blog</a></li>
+                    <li><a id="teamLink" href="#">Team</a></li>
+                    <li><a id="businessLink" href="#">Business</a></li>
+                    <li><a id="helpLink" href="#">Help</a></li>
+                    <li><a id="termsLink" href="#">Terms</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

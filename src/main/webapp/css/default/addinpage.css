@@ -1,0 +1,64 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* add question */
+
+
+/*---------------- add question ----------------*/
+/*----------------------------------------------*/	
+.add_label {
+	float:left;
+	text-align:left;
+	font-family:Calibri,Tahoma, Geneva, sans-serif;
+	font-size:24px;
+	color:#74c0e0;
+	width:540px;
+	height:24px;
+	margin-bottom:5px;
+	}
+.addbutton_label {
+	margin-left:10px;
+	float:right;
+	height:24px;
+	padding-top:4px;
+	padding-left:5px;
+	padding-right:26px;
+	background-image: url(images/navi/askquestion.png);
+	background-repeat: no-repeat;
+	background-position:right top;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:13px;
+	color:#2ea1d1;
+	text-align:left;
+	text-decoration:none;
+   }
+.addbutton_label:hover {
+	background-image: url(images/navi/askquestion.png);
+	background-repeat: no-repeat;
+	color:#666;
+	text-align:left;
+	text-decoration:none;
+   }
+.addquestion_text {
+	min-height:40px;
+	float:left;
+	text-align:left;
+	width:540px;
+	margin-bottom:5px;
+	}
+.textarea_st {
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+	resize: none;
+	width:520px; 
+	height:45px;
+	font-family:Tahoma, Geneva, sans-serif; 
+	font-size:14px; 
+	color:#292929;
+	-webkit-border-radius: 4px; 
+	-moz-border-radius: 4px; 
+	background:#fff; 
+	border:1px solid #e3e3e3;
+	}
+  

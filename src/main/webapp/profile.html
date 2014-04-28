@@ -1,0 +1,749 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="trend,trend network,social network,sosyal medya,anket,survey,real time statistics,gerçek zamanlı istatistik,soru,cevap,ask question,answer question"/>
+        <meta name="description" content="trendocean is a social network where you can see who are popular/eccentric, 
+              ask and answer questions, follow people and keep in touch with your friends.
+              Everybody talks about statistics, like 45% of the people want to live in 70’s. %85 of the world population have never
+              seen Indian Ocean. But what are the sources of these statistics, do they represent the same value once they did before.
+              Who made them? More importantly, who answered them? We don’t know and actually we want a proof. Yes this is what trendocean does for you!
+
+              trendocean lets you ask and answer questions, so you can make your own statistics with the help of users all around the world.
+              And while you are asking and answering, meanwhile trendocean calculates how popular/eccentric you are among other trendoceaners.
+              Connect with users all around the world and make them part of your ocean. Your questions, answers, followers, followeds and your trend
+              will create your ocean! So you can easily follow great statistics and broadcast your questions. Whose ocean is deeper?" />
+        <title>TrendOcean</title>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.counter.js?250911"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+        <script type="text/javascript" src="js/jquery.bitly.js"></script>
+        <script type="text/javascript" src="js/jquery.jfeed.js"></script>
+        <script type="text/javascript" src="js/jquery.urlEncode.js"></script>
+
+        <script type="text/javascript" src="js/pure.js"></script>
+
+        <!-- TrendOcean Common Libraries --> 
+        <script type="text/javascript" src="js/anchorTab.js?250911"></script>
+        <script type="text/javascript" src="js/askquick.js?250911"></script>
+        <script type="text/javascript" src="js/coffeeDlg.js?250911"></script>
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/tblCoffees.js?250911"></script>
+        <script type="text/javascript" src="js/fallowTab.js?250911"></script>
+        <script type="text/javascript" src="js/mainBar.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/notifyBar.js?250911"></script>
+        <script type="text/javascript" src="js/tblPodcasts.js?250911"></script>
+        <script type="text/javascript" src="js/profileMatch.js?250911"></script>
+        <script type="text/javascript" src="js/tblQuestions.js?250911"></script>
+        <script type="text/javascript" src="js/tblQuestionRelatedUsers.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/shareDlg.js?250911"></script>
+        <script type="text/javascript" src="js/statistics.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+        <script type="text/javascript" src="js/tblNotifications.js?250911"></script>
+
+        <!-- Page JS  -->
+        <script type="text/javascript" src="js/pgProfile.js?250911"></script>
+
+        <!-- ENABLE ONLY DESIGN  
+        <link rel="shortcut icon" href="trendocean/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/profilebeta.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/question.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/default.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/docka.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/smallscreen.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/structure.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/main.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/addinpage.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/specialities.css" type="text/css"></link>   -->
+
+
+
+        <!--  ENABLED FOR DYNAMIC THEME  --> 
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('profilebeta.css');
+            theme_addCSSLink('question.css');
+            theme_addCSSLink('default.css');
+            theme_addCSSLink('dock.css');
+            theme_addCSSLink('docka.css');
+            theme_addCSSLink('smallscreen.css');
+            theme_addCSSLink('structure.css');
+            theme_addCSSLink('main.css');
+            theme_addCSSLink('addinpage.css');
+            theme_addCSSLink('specialities.css');
+        </script>  
+
+    </head>
+
+    <body>
+
+        <div id="divBody" style="display:none" >
+
+            <!-- coffee to one friend  -->
+            <div id="dlgCoffee" class="outer-tiny-coffee">
+                <div class="header-tiny-coffee">
+                    <div class="navi-tiny-coffee">
+                        <div id="dlgCoffee_Title" class="lefty_tiny"><!-- SEO Coffee-->
+                        </div>
+                        <a id="dlgCoffee_closeBtn" class="close_tiny" href=""></a>
+                    </div>
+
+                </div>
+                <div class="body-tiny-coffee">
+
+
+
+                    <div class="left-coffee-part">
+                        <div class="cover_message">
+
+                            <div class="coffee-label">
+                                <div class="image-coffee"></div>
+                            </div>
+
+                            <div class="coffee-message-text">
+                                <textarea  id="dlgCoffee_msg" cols="50" style="width:328px; height:50px; font-family:Tahoma, Geneva, sans-serif; font-size:13px;" rows="4" ></textarea>
+                            </div>
+                        </div>
+                        <div class="cover_message">
+                            <div id="coffeeMsgTextCounter" class="smallscreen-counter-coffee"></div>
+                            <div id="dlgCoffee_lblSucceed" class="send_label_succeed-coffee"><!-- SEO your coffee was sent.--></div>
+                            <!-- in order to  give fail message  use class "send_label_failed-coffee" -->
+                            <div id="dlgCoffee_loaderIcon" class="message_loader"></div>
+                            <a id="dlgCoffee_sendBtn" class="send_tiny-coffee" href="#" ><!--SEO send--></a>
+                        </div>
+                    </div>
+
+                    <div class="right-coffee-part">
+                        <img id="avatarOfCoffeeReceiver" class="avatar-coffee-reciever" title="" src="" width="35" height="35" />
+                    </div>
+                </div>
+            </div>
+            <!-- coffee to one friend -->
+
+
+
+            <!-- share -->
+            <div id="dlgShare" class="outer_tiny">
+                <div class="header_tiny">
+                    <div class="navi_tiny">
+                        <div id="dlgShare_Title" class="lefty_tiny"><!--SEO Share-->
+                        </div>
+                        <a id="dlgShare_closeBtn" class="close_tiny" href="#"></a>
+                    </div>
+                    <div id="dlgShare_Info" class="info_smallscreen"><!--SEO Share one question via:-->
+                    </div>
+                </div>
+                <div class="body_tiny">
+                    <a id="dlgShare_twitterBtn" class="sharetwitter" href="#" target="_blank"></a>
+                    <a id="dlgShare_facebookBtn" class="sharefacebook" href="#" target="_blank"></a>
+                    <a id="dlgShare_emailBtn" class="shareemail" href="#" target="_blank"></a>
+                </div>
+
+                <div id="dlgShareEmail">
+                    <div class="header_tiny">
+                        <div id="dlgMsg_info" class="info_tiny"><!--SEO Share this question with your friend:-->
+                        </div>
+                    </div>
+
+                    <div  class="body_tiny">
+                        <div class="cover_message">
+                            <div id="dlgShareEmail_Label" class="message_label"><!--SEO e-mail:--></div>
+                            <div class="message_text">
+                                <textarea  id="dlgShareEmail_txt" cols="50" maxlength="45" style="width:298px; font-family:Tahoma, Geneva, sans-serif; word-wrap: break-word; overflow: hidden; font-size:13px;" rows="1"  ></textarea>
+                            </div>
+                        </div>
+                        <div class="cover_message">
+                            <div id="dlgShareEmail_succeedLabel" class="send_label_succeed"><!--SEO shared via e-mail--></div>
+                            <!-- in order to  give fail message  use class "send_label_failed" -->
+                            <div id="dlgShareEmail_waitingIcon" class="message_loader"></div>
+                            <a id="dlgShareEmail_sendBtn" class="send_tiny" href="#" ><!--SEO share--></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- share -->
+
+            <!-- answered -->
+            <div id="qRelated_part">
+                <div class="body_tiny2">
+                    <div class="qRelated_def">
+                        <div class="qRelated_id"></div>
+                    </div>
+                    <div class="answer-love">
+                        <a class="avatar-tiny" href=""><img class="avatarURL" src="" width="35" height="35" /></a>
+                        <div class="right-catch">
+                            <div class="who-ans-love">
+                                <!--                                <a href="" class="owner-tiny">namename</a>-->
+                                <a href="" class="owner-tiny"></a>
+                            </div>
+                            <div class="choice-locked"></div>
+                            <!--                            <div class="choice-true">"yeyy i said this is my answer..."</div>-->
+                            <div class="choice-true"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="questionRelatedUsers" class="outer_tiny">
+                <div class="asked_tiny">
+                    <div class="navi_tiny">
+                        <div id="questionRelatedUsersTitle" class="lefty_tiny">
+                        </div>
+                        <a id="questionRelatedUsersClose" class="close_tiny" href="#"></a>
+                    </div>
+                </div>
+
+                <div class="body_tiny4">
+                    <div id="locked_text" class="locked-text"><!-- SEO When oceaner hide her/his answers from settings, the answer is not visible to everyone and you see locked image. for more information: <a href="http://trendocean.com/privacy.html">answer visibility</a>--></div>
+                </div>
+
+                <div class="roll-tiny">
+                    <div id="static_que_related">
+                        <div id="que_related">
+                        </div>
+                    </div>
+
+                    <div id="qRelated_MoreDIV" class="body_tiny3">
+                        <a id="qRelated_More" href="#" class="more-more"></a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- answered -->
+
+
+
+
+            <!-- dock NEW -->
+
+            <div id="docka">
+                <div id="insider">
+
+                    <ul id="menu">
+
+                        <div class="left-main-part">
+                            <a id="logoToHome" class="logo-to" href="#"></a>
+                        </div>
+
+                        <form method="get" id="searchform" action="">
+                            <fieldset class="docka-search">
+                                <input id="searchField_MainBar" type="text" class="searchbox-docka" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" />
+                                <button id="searchButton_MainBar" class="searchbutton-docka" title="Submit Search"><!--SEO Search--></button>
+                            </fieldset>
+                        </form>
+
+
+                        <li class="menu_right_docka"><a id="username_MainBar" href="#" class="drop"></a>
+
+                            <div class="dropdown_1column align_right">
+
+                                <div class="col_1">
+
+                                    <ul class="simple">
+                                        <li><a id="settings_MainBar" href="#"><!--SEO Settings--></a></li>
+                                        <li><a id="following_MainBar" href="#"><!--SEO Following--></a></li>
+                                        <li><a id="followers_MainBar" href="#"><!--SEO Followers--></a></li>
+                                        <li><a id="logout_MainBar" href="#"><!--SEO Sign Out--></a></li>
+
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </li>
+
+                        <li class="menu_right_docka"><a id="myOcean_MainBar"  href="#" class="nondrop"><!--SEO My Ocean--></a></li>
+                        <li class="menu_right_docka"><a id="profile_MainBar" href="#" class="nondrop"><!--SEO Profile--></a></li>
+                        <li class="menu_right_docka"><a id="nondropDrops_MainBar" href="#" class="nondrop"><i id="drops_mainBar" class="icon-drops"></i><i id="drops_MainBar_Count" class="red"></i></a></li>
+                        <li class="menu_right_docka"><a id="nondropCoffee_MainBar" href="#" class="nondrop"><i id="coffees_MainBar" class="icon-coffee"></i><i id="coffees_MainBar_Count" class="red"></i></a></li>
+                        <li class="menu_right_docka"><a id="nondropMsgs_MainBar" href="#" class="nondrop"><i id="msgs_MainBar" class="icon-message"></i><i id="msgs_MainBar_Count" class="red"></i></a></li>
+                        <li class="menu_right_docka"><a id="nondropFriends_MainBar" href="#" class="nondrop"><i id="friends_MainBar" class="icon-request"></i><i id="friends_MainBar_Count" class="red"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- dock -->
+            <div id="headerdock">
+                <div class="dock">
+                    <div class="dock_logo"><a id="logoToHome2" class="dock_logotohome" href="#"></a></div>
+
+                </div>
+            </div>
+
+            <div id="docka2">
+                <div class="creator">
+
+                    <div class="left-trendocean-que"><a id="randomText_MainBar" href=""></a></div>
+
+                    <div class="right-person-navi">
+                        <a id="labelMe_MainBar" class="trendshow" href=""></a>
+                        <i class="dock-pointer"></i>
+                        <a id="trendradar_MainBar" class="trendradar" href=""><!--SEO trendradar--></a>
+                        <i class="dock-pointer"></i>
+                        <a id="addQuestion_MainBar" class="addque-ondock" href=""><!--SEO add question--></a>
+                    </div>
+
+
+
+                </div>
+            </div>
+            <!-- dock NEW -->
+
+
+            <!-- notify -->
+            <div class="fixer" id="fixerID">
+                <div class="notify">
+                    <div class="notifyimage"><div id="notifyImgID" class="notifyimage-wrong"></div></div>
+                    <!--                    <div class="notifyinfo" id="notifyInfoID">this is a realy cool notify.</div>-->
+                    <div class="notifyinfo" id="notifyInfoID"></div>
+                    <a class="closenotify" id="closenotifyID" href=""></a>
+                </div>
+            </div>
+            <!-- notify -->
+
+
+
+            <!-- ANSWER -->
+            <div id="question_answer_process_container"></div>
+            <div id="question_answer_process">
+
+
+                <!--  answers here -->
+                <div id="interaction_left_answers">
+                    <div class="cover-choice"><a id="embed_cho0" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho0" href=""></a><div class="answerscounter" id="answerscounter_cho0"></div></div>
+                    <div class="cover-choice"><a id="embed_cho1" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho1" href=""></a><div class="answerscounter" id="answerscounter_cho1"></div></div>
+                    <div class="cover-choice"><a id="embed_cho2" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho2" href=""></a><div class="answerscounter" id="answerscounter_cho2"></div></div>
+                    <div class="cover-choice"><a id="embed_cho3" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho3" href=""></a><div class="answerscounter" id="answerscounter_cho3"></div></div>
+                    <div class="cover-choice"><a id="embed_cho4" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho4" href=""></a><div class="answerscounter" id="answerscounter_cho4"></div></div>
+                    <div class="cover-choice"><a id="embed_cho5" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho5" href=""></a><div class="answerscounter" id="answerscounter_cho5"></div></div>
+                    <div class="cover-choice"><a id="embed_cho6" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho6" href=""></a><div class="answerscounter" id="answerscounter_cho6"></div></div>
+                    <div class="cover-choice"><a id="embed_cho7" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho7" href=""></a><div class="answerscounter" id="answerscounter_cho7"></div></div>
+                    <div class="cover-choice"><a id="embed_cho8" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho8" href=""></a><div class="answerscounter" id="answerscounter_cho8"></div></div>
+                    <div class="cover-choice"><a id="embed_cho9" class="navi-question-action-box"></a><a class="cho_x" id="answers_cho9" href=""></a><div class="answerscounter" id="answerscounter_cho9"></div></div>
+                </div>
+                <!-- end of answers here -->
+
+                <!--  button and waitin' statistic  -->
+                <div id="ichoosethis_onequestion" class="made_selection">
+                    <a id="ichooseact_onequestion" class="ichoose" href="#">i choose this</a>
+                    <div id="ichoosethis_onequestion_info" class="ichoose_info">i choose this, show me the trend!</div>
+                    <div id="waitingIcon" class="blueloader"></div> <!-- in default css, it's /*visibility:hidden;*/ -->
+                </div>
+                <!--  button and waitin' statistic  -->
+
+                <!--  statistic here -->
+                <div id="statistic_onequestion">
+                    <div class="stattop"><p class="triangle-isosceles top"></p></div>
+                    <div class="statbottom">
+                        <!--                        <div id="deltaTrend" class="bigstat">+MARG.%99</div>
+                                                <div id="answerOrder" class="mediumstat">2ND MOST TRENDY ANSWER</div>-->
+                        <div id="deltaTrend" class="bigstat"></div>
+                        <div id="answerOrder" class="mediumstat"></div>
+                    </div>
+                </div>
+                <!--  statistic here -->
+            </div>
+
+
+            <!-- QUESTION _TEMLATE -->
+            <div id="que_part">
+                <div class="question_part">
+                    <div class="question_def">
+                        <div class="question_id"></div>
+                    </div>
+                    <div class="quendy">
+
+                        <!-- only for  avatar -->
+                        <div class="avatar"><a class="avatarImgLink" href=""><img class="avatarImg" src="" width="50" height="50" /></a></div>
+                        <!-- only for avatar -->
+
+                        <div class="quendy_body">
+
+                            <!-- status -->
+                            <div id="status" class="status">
+                                <div class="namespace">
+                                    <span class="nameinstatus"><a class="owner" href="">a Person</a></span>
+                                    <span class="trendsetting"></span>
+                                    <span class="coffeeinstatus"><a class="coffeecup_sendbutton" href=""></a></span>
+                                    <span class="videostatus"><a class="video-navi" href="" ></a></span>
+                                    <span class="infostat"><a class="infostat-navi" title="Show me statistics" href="" ></a></span>
+                                </div>
+
+                                <!--                            <div class="post_body">What is the basic difference between t-shirt and shirt? Really i wanna learn why "T" used that s a ridiculus question anyway.</div>
+                                                                <div class="info_bar_style"><span class="info_status_ans"><a href="#" class="qTotalAnswerCount">15 answered</a></span><span class="info_status_love"><a href="#" class="qTotalLovedCount">125 love </a></span><span class="qCreationDate">20.06.2010</span></div>-->
+                                <div class="post_body"></div>
+                                <div class="info_bar_style">
+                                    <span class="info_status_ans"><a href="#" class="qTotalAnswerCount"></a></span>
+                                    <span class="info_status_love"><a href="#" class="qTotalLovedCount"></a></span>
+                                    <span class="qCreationDate"></span>
+                                    <span class="reask-info"><b>reasked</b> by darklight</span>
+                                    <span class="reask-info-do"><a href="">reask</a></span>
+                                    <span class="reask-info-remove"><a href="">remove</a></span>
+                                </div>
+                            </div>
+                            <!-- status -->
+
+                            <!-- interaction -->
+                            <div class="interaction">
+
+                                <div class="interaction_left">
+                                    <!--                                    <span class="commentlink"><a class="commentCount" href="" >54 comments </a></span><a class="btnAnswer" href="#">answer</a>-->
+                                    <span class="commentlink"><a class="commentCount" href="" ></a></span><a class="btnAnswer" href="#">answer</a>
+                                </div>
+
+                                <div class="interaction_right">
+                                    <a class="love" title="add love" href=""></a>
+                                    <a class="loveselected" title="remove love" href=""></a>
+                                    <a class="share" title="share" href=""></a>
+                                    <a class="flag" title="mark as inappropriate" href=""></a>
+                                    <a class="flagselected" title="unmark" href=""></a>
+                                </div>
+                            </div>
+                            <!-- interaction -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END OF QUESTION TEMLATE -->
+
+
+
+            <!-- COFFEE _TEMLATE -->
+            <div id="coff_part">
+                <div class="coffee_part">
+                    <div class="coffee_def">
+                        <div class="coffee_id"></div>
+                    </div>
+                    <div class="coffeecup">
+                        <div class="coffeecup_avatar">
+                            <a class="cAvatarImgLink" href=""><img class="cAvatarImg" src="" width="50" height="50" /></a>
+                        </div>
+                        <div class="coffeecup_body">
+                            <div class="coffeecup_status">
+                                <!--                                <div class="namespace"><a class="cOwner" href="">trendocean</a><span class="realname_full"></span></div>
+                                                                <div class="statuscoffe_read">I sent you a coffee!.</div>-->
+                                <div class="namespace"><a class="cOwner" href=""></a><span class="realname_full"></span></div>
+                                <div class="statuscoffe_read"></div>
+
+                                <div class="coffeecup_info_bar_style"><span class="coffeecup_qCreationDate"></span><span class="coffeecup_replyspan"><a class="coffeecup_replybutton" href="">reply</a></span><span class="coffeecup_deletespan"><a class="coffeecup_deletebutton" href=""></a></span></div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END OF COFFEE _TEMLATE -->
+
+
+            <!-- PODCAST _TEMLATE -->
+            <div id="podc_part" class="podc-part-main">
+                <div class="podcast-part">
+
+                    <div class="podcast-def">
+                        <div class="podcast-id"></div>
+                    </div>
+
+                    <div class="podcast_main_body">
+                        <div class="podcast-EmbedPlayer"><a class="listentag-pod" href=""></a></div>
+                        <div class="podcast-Date"></div>
+                        <div class="coverpod"><div class="podcast-Name"></div></div>
+                        <div class="podcast-Duration"></div>
+
+
+                        <!--
+                        <div class="podcastcup">
+                            <div class="coverpod-tiny"><a class="addloveonpod" href="">+99</a></div>
+                            <div class="coverpod-tiny"><a class="addcommentonpod" href="">+99</a></div>
+                            <div class="coverpod-tiny"><a class="addqueonpod" href="">+99</a></div>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+
+            <!-- PODCAST _TEMLATE -->
+
+
+
+
+
+            <!-- NOTIFY ME -->
+            <div id="not_part">
+                <div class="notify_part">
+                    <div class="notify_def">
+                        <div class="notify_id"></div>
+                    </div>
+                    <div class="notify-body-main ">
+                        <div class="notify-status">
+                            <div class="notify-friend-status"></div>
+                            <div class="notify-queans-status"></div>
+                            <div class="notify-friend-request-status"></div>
+                            <div class="notify-mention-status"></div>
+                            <div class="notify-comment-status"></div>
+                            <div class="notify-love-status"></div>
+
+                            <div class="main-notify">
+                                <!--                                <span class="notify-content">content ll be here</span>
+                                                                <span class="notify-date">20.06.2010</span>-->
+                                <span class="notify-content"></span>
+                                <span class="notify-date"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- NOTIFY ME -->
+
+
+
+            <div id="middle_ocean">
+                <div id="stage">
+                    <div id="body_left">
+
+
+                        <!-- about profile -->
+                        <div id="up-left">
+
+
+                            <div class="headoftheprofile">
+                                <span id="fullname_profile" class="full-name-profile"></span><span id="verified_profile" class="whaleified"></span>
+                            </div>
+
+                            <div class="userinfo-box">
+                                <span id="username_profile" class="trendocean-name-profile"></span>
+                                <i id="seperator_networks" class="seperator">.</i>
+                                <span class="profile-networks">
+                                    <span id="networks_profile" href=""></span>
+                                </span>
+                                <i id="seperator_email" class="seperator">.</i>
+                                <span id="email_profile" class="trendocean-email-profile"></span>
+                            </div>
+
+                            <div id="radyoodtu_player" class="radyoodtu-player-box">
+                                <!-- play in about -->
+                                <div id="livePlayerName" class="play-radyoodtu"></div>
+                                <a id="playRO" href="" class="song-play-radyoodtu"></a>
+                                <a id="stopRO" href="" class="song-stop-radyoodtu"></a>
+                                <div id="livePlayerSlogan" class="now-playing"></div>
+                                <div id="embedRO"></div>
+                            </div>
+
+                            <div id="about_profile" class="about-profile">
+                            </div>
+
+                            <div id="youme_trendocean" class="youme-trendocean">
+                                <span class="info-trend-box"><a id="trend_profile" class="info-trend" href=""></a></span>
+                            </div>
+
+                            <!-- badge lab -->
+                            <div class="ocean-badge-lab">
+                                <div id="info_visit" class="info-visit"></div>
+                            </div>
+                            <!-- badge lab -->
+
+                            <div id="profile_actions" class="profile-actions">
+                                <span class="profile-counter-box"><a id="budgetanswered_profile"  class="answered-question-counter" href="#answered"></a></span><span class="profile-counter-label"></span>
+                                <i class="seperator2">.</i>
+                                <span class="profile-counter-box"><a id="budgetlove_profile" class="loved-question-counter" href="#loved"></a></span><span class="profile-counter-label"></span>
+                                <i class="seperator2">.</i>
+                                <span class="profile-counter-box"><span id="budgetquestionLabel_profile" class="profile-counter-label">you asked</span><a id="budgetquestion_profile" class="asked-question-counter" href="#myquestions"></a></span><span id="budgetLoveLabel_profile" class="profile-counter-label"></span>
+                            </div>
+
+
+                            <div id="private_profile" class="private-profile">
+                                <span id="header_private" class="header-private">TrendOcean's profile is private</span><br/>
+                                You can send a request to follow this user, so you can see  this user's activity in the ocean.
+                            </div>
+
+                        </div>
+
+                        <!-- about profile -->
+
+
+
+
+                        <!-- tabs -->
+                        <div id="navi_act">
+                            <a id="tab_myquestions" class="tabactback" href="#myquestions">asked</a>
+                            <a id="tab_loved" class="tabactback" href="#loved">loved</a>
+                            <a id="tab_answered" class="tabactback" href="#answered">answered</a>
+                            <a id="tab_mycoffee" class="tabactback" href="#mycoffee">coffee</a>
+                            <a id="tab_podcast" class="tabactback" href="#podcast">podcast</a>
+                            <a id="tab_drops" class="tabact-notify-back" href="#drops"></a>
+                        </div>
+                        <!-- tabs -->
+
+
+
+
+                        <div id="down_left">
+
+                            <!-- podcast tags -->
+                            <div id="podc_headline_main" class="podc-headline-main">
+                                <a class="radyoodtu-tag" id="podc_0"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_1"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_2"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_3"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_4"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_5"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_6"  href="" ></a>
+                                <a class="radyoodtu-tag" id="podc_7"  href="" ></a>
+                            </div>
+                            <!-- podcast tags -->
+
+
+                            <div id="static_que_section">
+                                <div id="que_section">
+                                </div>
+                            </div>
+
+                            <!-- more button -->
+                            <a class="more_home" href="" id="btnMore" >more>></a>
+                            <!-- more button -->
+
+                            <!-- loader here -->
+                            <div class="loaderframe" id="tableLoadingIcon"></div>
+                            <!-- loader here -->
+
+
+                        </div>
+                    </div>
+
+                    <div id="profile_right">
+
+                        <div class="up1-photo">
+                            <div class="photobox-profile">
+                                <img id="photoID_profile" src="" class="photo-rounded-big" width="185" height="185" />
+                            </div>
+                            <!--<div class="photobox-trend">
+                            <a class="trendmaker-show" href="">79</a>
+                            </div>-->
+                        </div>
+
+
+                        <!-- navi profile -->
+                        <a id="btnCoffee" class="send_coffee" href="#">send a cup of coffee</a>
+                        <a id="btnMsg" class="send_message" href="">send message</a>
+                        <a id="btnFollow" class="follow_request" href="#">follow</a>
+
+
+                        <!-- followeds -->
+
+                        <div id="followTab">
+                            <div class="friend_label"><a id="following_btnAll" href="#"></a></div>
+                            <div class="friend_box">
+                                <a id="following_0" class="picture_box_left"></a>
+                                <a id="following_1" class="picture_box"></a>
+                                <a id="following_2" class="picture_box"></a>
+                                <a id="following_3" class="picture_box"></a>
+                                <a id="following_4" class="picture_box"></a>
+                                <a id="following_5" class="picture_box"></a>
+                                <a id="following_6" class="picture_box_left"></a>
+                                <a id="following_7" class="picture_box"></a>
+                                <a id="following_8" class="picture_box"></a>
+                                <a id="following_9" class="picture_box"></a>
+                                <a id="following_10" class="picture_box"></a>
+                                <a id="following_11" class="picture_box"></a>
+                            </div>
+                            <!-- follows -->
+
+
+                            <!-- followers -->
+                            <div class="friend_label"><a id="follower_btnAll" href="#"></a></div>
+                            <div class="friend_box">
+                                <a id="follower_0" class="picture_box_left"></a>
+                                <a id="follower_1" class="picture_box"></a>
+                                <a id="follower_2" class="picture_box"></a>
+                                <a id="follower_3" class="picture_box"></a>
+                                <a id="follower_4" class="picture_box"></a>
+                                <a id="follower_5" class="picture_box"></a>
+                                <a id="follower_6" class="picture_box_left"></a>
+                                <a id="follower_7" class="picture_box"></a>
+                                <a id="follower_8" class="picture_box"></a>
+                                <a id="follower_9" class="picture_box"></a>
+                                <a id="follower_10" class="picture_box"></a>
+                                <a id="follower_11" class="picture_box"></a>
+                            </div>
+                        </div>
+                        <!-- followers -->
+
+
+                        <!-- trend match -->
+                        <div id="tmLayoutGap" class="empty-box"></div>
+                        <div id="tmLayout" class="match-box">
+                            <div class="match-label">trendmatch</div>
+
+                            <!-- trend match badge -->
+                            <div class="user-match-box2">
+
+                                <div class="u-m-box4">
+                                    <div class="avatar-match2"><a id="tm_MyAvatarLink" href="" class=""><img id="tm_MyAvatar" class="avatar-rounded-small2" src=""  /></a></div>
+                                    <div class="avatar-match2"><a id="tm_OtherAvatarLink" href="" class=""><img id="tm_OtherAvatar" class="avatar-rounded-small2" src=""  /></a></div>
+                                    <a href="" id="tm_BtnMatch" class="blue-tiny">match us!</a><div id="tm_Loader" class="loaderframe-small2"  ></div>
+                                </div>
+
+
+                                <div class="u-m-box5">
+                                    <div class="match-out2">
+                                        <div class="match-bar-cover"><div class="match-bar-in"></div></div>
+                                        <div id="tm_Ratio" class="trend-match-user">98</div>
+                                    </div>
+
+                                    <!--
+                                    <div class="match-out2">
+                                        <span>same 16 topic, 3que, 7 ans</span>
+                                    </div>-->
+                                </div>
+
+                            </div>
+                            <!-- trend match badge -->
+
+
+                        </div>
+                        <!-- trend match -->
+
+
+
+
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div id="deep_ocean">
+                <div id="footer_nav">
+                    <ul>
+                        <li><i id="toMark"><!--SEO © 2011 TrendOcean--></i></li>
+                        <li><a id="aboutLink" href="#"><!--SEO About Us--></a></li>
+                        <li><a id="blogLink" href="#" target="_blank"><!--SEO Blog--></a></li>
+                        <li><a id="teamLink" href="#"><!-- SEO Team--></a></li>
+                        <li><a id="businessLink" href="#"><!--SEO Business--></a></li>
+                        <li><a id="helpLink" href="#"><!--SEO Help--></a></li>
+                        <li><a id="termsLink" href="#"><!--SEO Terms--></a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </body>
+</html>

@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TrendOcean</title>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+
+        <!-- TrendOcean Common Libraries -->
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/mainBar.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/notifyBar.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+
+        <!-- Page JS -->
+        <script type="text/javascript" src="js/pgAccount.js?250911"></script>
+
+
+        <!--  DISABLED FOR DYNAMIC THEME
+        <link rel="shortcut icon" href="css/default/images/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/settings.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/default.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/docka.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/main.css" type="text/css"></link>  -->
+
+
+
+        <!--  ENABLED FOR DYNAMIC THEME   -->
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('settings.css');
+            theme_addCSSLink('default.css');
+            theme_addCSSLink('dock.css');
+            theme_addCSSLink('docka.css');
+            theme_addCSSLink('main.css');
+        </script>
+
+
+    </head>
+
+    <body>
+
+        <!-- dock NEW -->
+
+        <div id="docka">
+            <div id="insider">
+
+                <ul id="menu">
+
+                    <div class="left-main-part">
+                        <a id="logoToHome" class="logo-to" href="#"></a>
+                    </div>
+
+                    <form method="get" id="searchform" action="">
+                        <fieldset class="docka-search">
+                            <input id="searchField_MainBar" type="text" class="searchbox-docka" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" />
+                            <button id="searchButton_MainBar" class="searchbutton-docka" title="Submit Search">Search</button>
+                        </fieldset>
+                    </form>
+
+
+                    <li class="menu_right_docka"><a id="username_MainBar" href="#" class="drop">Trend Ocean</a>
+
+                        <div class="dropdown_1column align_right">
+
+                            <div class="col_1">
+
+                                <ul class="simple">
+                                    <li><a id="settings_MainBar" href="#">Settings</a></li>
+                                    <li><a id="following_MainBar" href="#">Following</a></li>
+                                    <li><a id="followers_MainBar" href="#">Followers</a></li>
+                                    <li><a id="logout_MainBar" href="#">Sign Out</a></li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li class="menu_right_docka"><a id="myOcean_MainBar"  href="#" class="nondrop">My Ocean</a></li>
+                    <li class="menu_right_docka"><a id="profile_MainBar" href="#" class="nondrop">Profile</a></li>
+                    <li class="menu_right_docka"><a id="nondropDrops_MainBar" href="#" class="nondrop"><i id="drops_mainBar" class="icon-drops"></i><i id="drops_MainBar_Count" class="red"></i></a></li>
+                    <li class="menu_right_docka"><a id="nondropCoffee_MainBar" href="#" class="nondrop"><i id="coffees_MainBar" class="icon-coffee"></i><i id="coffees_MainBar_Count" class="red"></i></a></li>
+                    <li class="menu_right_docka"><a id="nosndropMsgs_MainBar" href="#" class="nondrop"><i id="msgs_MainBar" class="icon-message"></i><i id="msgs_MainBar_Count" class="red"></i></a></li>
+                    <li class="menu_right_docka"><a id="nondropFriends_MainBar" href="#" class="nondrop"><i id="friends_MainBar" class="icon-request"></i><i id="friends_MainBar_Count" class="red"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="docka2">
+            <div class="creator">
+
+                <div class="left-trendocean-que"><a id="randomText_MainBar" href="">what is trendocean? seriously...</a></div>
+
+                <div class="right-person-navi">
+                    <a id="labelMe_MainBar" class="trendshow" href="">you are %77 trendy</a>
+                    <i class="dock-pointer"></i>
+                    <a id="trendradar_MainBar" class="trendradar" href="">trendradar</a>
+                    <i class="dock-pointer"></i>
+                    <a id="addQuestion_MainBar" class="addque-ondock" href="">add question</a>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- dock NEW -->
+
+
+
+
+
+        <!-- notify -->
+        <div class="fixer" id="fixerID">
+            <div class="notify">
+                <div class="notifyimage"><div id="notifyImgID" class="notifyimage-true"></div></div>
+                <div class="notifyinfo" id="notifyInfoID">this is a realy cool notify.</div>
+                <a class="closenotify" id="closenotifyID" href=""></a>
+            </div>
+        </div>
+        <!-- notify -->
+
+
+
+        <!--  stage is mine -->
+        <div id="stage_account">
+
+            <div id="lefty_info" class="lefty_info">Settings<br/>
+                <span>You can make adjustments for your profile and account here</span></div>
+
+            <div class="settings_account">
+                <div class="settings_main">
+                    <div class="s_main_navi">
+                        <a class="settingtabs" href="account.html">account</a>
+                        <a class="settingtabs_back" href="design.html">design</a>
+                        <a class="settingtabs_back" href="password.html">password</a>
+                        <a class="settingtabs_back" href="notifications.html">notifications</a>
+                    </div>
+
+                    <!-- here is a account content -->
+                    <div class="s_main_content_account">
+
+                        <!-- avatar -->
+                        <div class="bigpicture">
+                            <div class="avatar_b"><img id="avatarID" width="70" height="70" src=""/></div>
+                            Set profile picture<br/>
+                            <span>Make sure the file size does not exceed 2 MB. You may upload files with .png or .jpg extension.</span><br/>
+                            <form id="avatarFormID" action="api/users/avatar/" method="POST" enctype="multipart/form-data">
+                                <div class="avatar_info">
+                                    <input type="file" name="datafile" accept="image/png, image/jpeg" size="30"/>
+                                    <div><input id="btnSaveAvatar" type="submit" value="Save Avatar">
+                                            <input id="btnDeleteAvatar" type="button" value="Remove Avatar">
+                                                </div>
+
+                                                </div>
+                                                </form>
+
+                                                </div>
+                                                <!-- avatar ends -->
+
+                                                <!-- written section -->
+
+                                                <div class="written_box">
+                                                    <div class="label_box">You think you are</div>
+                                                    <div class="type_box_mark">
+
+                                                        trendy:<input type="radio" id="trend" name="trendy" checked="checked" />
+												eccentric:<input type="radio" id="marginal" name="trendy" />
+
+                                                    </div>
+
+
+                                                </div>
+
+                                                <div class="written_box3">
+                                                    <div class="label_box">about me</div>
+                                                    <div class="type_box"><textarea id="about_account" class="about_textbox" size="20" maxlength="140"  style="width:380px; font-size:19px; font-family:Tahoma, Geneva, sans-serif; font-size:19px;"  rows="1" ></textarea></div>
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">change your full name</div>
+                                                    <div class="type_box">
+                                                        <input type="text" id="fullname_account" class="fullname_textbox" size="30" maxlength="24" style="width:200px; font-size:19px; "></div>
+
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">change your e-mail address</div>
+                                                    <div class="type_box">
+                                                        <input type="text" id="email_account" class="account_textbox" size="30" style="width:200px; font-size:19px; "></div>
+
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">country</div>
+                                                    <div class="type_box"><select id="country_account" style="font-size:19px; width:125px;"></select></div>
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">city</div>
+                                                    <div class="type_box"><select id="city_account" style="font-size:19px; width:125px;"></select></div>
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">education</div>
+                                                    <div class="type_box"><select id="education_account" style="font-size:19px; width:125px;"></select></div>
+                                                </div>
+
+
+
+                                                <div class="written_box">
+                                                    <div class="label_box">main page privacy (general)</div>
+                                                    <div class="type_box"><input type="checkbox" id="privacy_account">keep it private<br/>
+                                                            <span>( so people are not allowed until you accept their friend requests )</span></div>
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">e-mail privacy</div>
+                                                    <div class="type_box"><input type="checkbox" id="emailprivacy_account">keep it private<br/><span>( your e-mail address is hidden )</span></div>
+                                                </div>
+
+                                                <div class="written_box">
+                                                    <div class="label_box">make my answers visible to</div>
+                                                    <div class="type_box"><select id="answerprivacy_account" style="font-size:19px; width:125px;"></select></div>
+                                                </div>
+
+                                                <a class="bigbutton" id="saveAccount" href="">Save Account Details</a>
+                                                <div class="waiting-settings" id="icoWaiting"></div>
+                                                <!-- wtitten section ends -->
+
+                                                </div>
+                                                <!-- here is a account content -->
+
+                                                </div>
+
+                                                <div class="settings_label"><span>Account</span><br/>Account page allows you to set profile picture, trend and margin status ,and about text at your profile. Your information about e-mail, country, city and education status can be easily changed by you!
+                                                </div>
+
+                                                </div>
+
+                                                </div>
+                                                <!--  gracias! -->
+
+
+
+                                                <div id="deep_ocean">
+                                                    <div id="footer_nav">
+                                                        <ul>
+                                                            <li><i>© 2011 TrendOcean</i></li>
+                                                            <li><a id="aboutLink" href="#">About Us</a></li>
+                                                            <li><a id="blogLink" href="#" target="_blank">Blog</a></li>
+                                                            <li><a id="teamLink" href="#">Team</a></li>
+                                                            <li><a id="businessLink" href="#">Business</a></li>
+                                                            <li><a id="helpLink" href="#">Help</a></li>
+                                                            <li><a id="termsLink" href="#">Terms</a></li>
+                                                        </ul>
+
+                                                    </div>
+                                                </div>
+
+
+
+                                                </body>
+                                                </html>

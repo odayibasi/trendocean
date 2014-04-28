@@ -1,0 +1,1 @@
+function askquick_initialize(){$("#askquick_Btn").click(function(a){a.preventDefault();a=$("#askquick_textArea").val();cookie_wrap(COOKIE_ASKQUICK_QBODY,a,false);window.location.href=PAGE_ASKQUESTION})}function askquick_checkAndPaste(){var a=cookie_get(COOKIE_ASKQUICK_QBODY);cookie_wrap(COOKIE_ASKQUICK_QBODY,null,false);$("#qBody").val(a)};

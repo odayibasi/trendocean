@@ -1,0 +1,147 @@
+@charset "utf-8";
+
+body {
+	background-image: url(images/oceanvecsample1.png);
+	background-repeat: repeat-x;
+	background-color: #2a2121;
+	/*background-image:url(images/bg/cloud.jpg);
+	background-attachment:fixed;
+	background-color: #ccc;*/
+	text-align:center;
+	margin:0px;
+	background-position: 0px -140px;
+	background-attachment: fixed;
+}
+a {border:0px;}
+img {border:0px;}
+
+
+
+.unsup-stage{
+	background-color:#2a2121;
+	height:500px;
+	width:auto;
+	margin-top: 200px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	}
+.main-part {
+	width:920px;
+	height:500px;
+	margin:auto;
+		}
+.main1{
+	width:920px;
+	height:auto;
+	}
+.main2{
+	width:920px;
+	height:auto;
+	}
+.icon{
+	width:920px;
+	height:81px;
+	margin-bottom:10px;
+	background-image:url(images/img/unsported-icon.jpg);
+	background-repeat:no-repeat;
+	}
+.text {
+	width:920px;
+	height:auto;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	color:#616465;
+	text-align:left;
+	}
+.big{
+	font-size:28px;
+	}
+.text a{
+	color:#7b8386;
+	text-decoration:none;
+	cursor:pointer;
+	}
+.text a:hover{
+	color:#fff;
+	}
+.browser{
+	width:920px;
+	height:32px;
+	text-align:left;
+	margin-top:10px;
+	margin-bottom:70px;
+	}
+.chrome{
+	float:left;
+	width:32px;
+	height:32px;
+	background-image:url(images/img/chrome.png);
+	background-repeat:no-repeat;
+	background-position:0 0px;
+	}
+.firefox{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-left:10px;
+	background-image:url(images/img/firefox.png);
+	background-repeat:no-repeat;
+	background-position:0 0px;
+	}
+.opera{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-left:10px;
+	background-image:url(images/img/opera.png);
+	background-repeat:no-repeat;
+	background-position:0 0px;
+	}
+.ie{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-left:10px;
+	background-image:url(images/img/ie.png);
+	background-repeat:no-repeat;
+	background-position:0 0px;
+	}
+.safari{
+	float:left;
+	width:32px;
+	height:32px;
+	margin-left:10px;
+	background-image:url(images/img/safari.png);
+	background-repeat:no-repeat;
+	background-position:0 0px;
+	}
+.trendocean{
+	width:150px;
+	height:27px;
+	margin-bottom:10px;
+	background-image:url(images/img/logo.jpg);
+	background-repeat:no-repeat;
+	}
+.footer{
+	width:920px;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#616465;
+	font-size:9px;
+	}
+.footer span{
+	margin-right:20px;
+	}
+.footer span a{
+	color:#616465;
+	text-decoration:none;
+	cursor:pointer;
+	}
+.footer span a:hover{
+	color:#7b8386;
+	}
+.clean{
+	width:920px;
+	height:10px;
+	}

@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+
+.ask-on-page {
+	float:left;
+	width:540px;
+	padding-left:60px;
+	padding-bottom:10px;
+	border-bottom:1px solid #000;
+	margin-bottom:10px;
+	text-align:left;
+	}
+.label-counter-info {
+	float:left;
+	width:540px;
+	font-family:Tahoma, Geneva, sans-serif;
+	}
+.label-info-ask {
+	float:left;
+	width:400px;
+	font-size:9px;
+	color:#ccc;
+	padding-top:5px;
+	}
+.label-counter-ask {
+	float:right;
+	width:140px;
+	font-size:15px;
+	font-weight:bold;
+	color:#666;
+	}
+.choices-body {
+	float:left;
+	width:540px;
+	padding-bottom:2px;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#333;
+	}
+.choices-body-label {
+	float:left;
+	width:30px;
+	padding-top:6px;
+	font-size:12px;
+	color:#ccc;
+	}
+.choices-input-box {
+	float:left;
+	width:350px;
+	}
+.cho-ask {
+	width:350px;
+	height:20px;
+	}
+.choices-body-counter {
+	float:left;
+	width:50px;
+	margin-left:10px;
+	font-size:12px;
+	padding-top:6px;
+	font-weight:bold;
+	color:#666;
+	}
+.ask-on-page-navi {
+	float:left;
+	width:540px;
+	}
+.leftnavi-ask-on {
+	float:left;
+	width:80px;
+	}
+.rightnavi-ask-on {
+	float:right;
+	width:100px;
+	}
+.bttn {
+	background:#09c;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	padding:5px;
+	color:#fff;
+	text-decoration:none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	}
+.bttn:hover {
+	background:#000;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	padding:5px;
+	color:#fff;
+	text-decoration:none;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	}
+.addcho-ask-on {
+	float:left;
+	}
+.addque-ask-on {
+	float:right;
+	}
+.bttn span {
+	/*background:url(images/lovebudget.png);*/
+	width:20px;
+	height:5px;
+	}
+

@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>TrendOcean</title>
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+
+        <!-- TrendOcean Common Libraries -->
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/mainBar.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/notifyBar.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+
+        <!-- Page JS -->
+        <script type="text/javascript" src="js/pgNotificationSettings.js?250911"></script>
+
+
+        <!--  DISABLED FOR DYNAMIC THEME  
+        <link rel="shortcut icon" href="css/default/images/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/settings.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/default.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/docka.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/main.css" type="text/css"></link>  -->  
+
+
+
+        <!--  ENABLED FOR DYNAMIC THEME  -->
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('settings.css');
+            theme_addCSSLink('default.css');
+            theme_addCSSLink('dock.css');
+            theme_addCSSLink('docka.css');
+            theme_addCSSLink('main.css');
+        </script>  
+
+
+    </head>
+
+    <body>
+
+        <!-- dock NEW -->
+
+        <div id="docka">
+            <div id="insider">
+
+                <ul id="menu">
+
+                    <div class="left-main-part">
+                        <a id="logoToHome" class="logo-to" href="#"></a>
+                    </div>
+
+                    <form method="get" id="searchform" action="">
+                        <fieldset class="docka-search">
+                            <input id="searchField_MainBar" type="text" class="searchbox-docka" onblur="if (this.value == '') {this.value = 'Search';}" onfocus="if (this.value == 'Search') {this.value = '';}" />
+                            <button id="searchButton_MainBar" class="searchbutton-docka" title="Submit Search">Search</button>
+                        </fieldset>
+                    </form>
+
+
+                    <li class="menu_right_docka"><a id="username_MainBar" href="#" class="drop">Trend Ocean</a>
+
+                        <div class="dropdown_1column align_right">
+
+                            <div class="col_1">
+
+                                <ul class="simple">
+                                    <li><a id="settings_MainBar" href="#">Settings</a></li>
+                                    <li><a id="following_MainBar" href="#">Following</a></li>
+                                    <li><a id="followers_MainBar" href="#">Followers</a></li>
+                                    <li><a id="logout_MainBar" href="#">Sign Out</a></li>
+
+                                </ul>
+
+                            </div>
+
+                        </div>
+
+                    </li>
+
+                    <li class="menu_right_docka"><a id="myOcean_MainBar"  href="#" class="nondrop">My Ocean</a></li>
+                    <li class="menu_right_docka"><a id="profile_MainBar" href="#" class="nondrop">Profile</a></li>
+                    <li class="menu_right_docka"><a id="nondropDrops_MainBar" href="#" class="nondrop"><i id="drops_mainBar" class="icon-drops"></i><i id="drops_MainBar_Count" class="red"></i></a></li>
+                    <li class="menu_right_docka"><a id="nondropCoffee_MainBar" href="#" class="nondrop"><i id="coffees_MainBar" class="icon-coffee"></i><i id="coffees_MainBar_Count" class="red"></i></a></li>
+                    <li class="menu_right_docka"><a id="nondropMsgs_MainBar" href="#" class="nondrop"><i id="msgs_MainBar" class="icon-message"></i><i id="msgs_MainBar_Count" class="red"></i></a></li>
+                    <li class="menu_right_docka"><a id="nondropFriends_MainBar" href="#" class="nondrop"><i id="friends_MainBar" class="icon-request"></i><i id="friends_MainBar_Count" class="red"></i></a></li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="docka2">
+            <div class="creator">
+
+                <div class="left-trendocean-que"><a id="randomText_MainBar" href="">what is trendocean? seriously...</a></div>
+
+                <div class="right-person-navi">
+                    <a id="labelMe_MainBar" class="trendshow" href="">you are %77 trendy</a>
+                    <i class="dock-pointer"></i>
+                    <a id="trendradar_MainBar" class="trendradar" href="">trendradar</a>
+                    <i class="dock-pointer"></i>
+                    <a id="addQuestion_MainBar" class="addque-ondock" href="">add question</a>
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- dock NEW -->
+
+
+
+
+
+        <!-- notify -->
+        <div class="fixer" id="fixerID">
+            <div class="notify">
+                <div class="notifyimage"><div id="notifyImgID" class="notifyimage-true"></div></div>
+                <div class="notifyinfo" id="notifyInfoID">this is a realy cool notify.</div>
+                <a class="closenotify" id="closenotifyID" href=""></a>
+            </div>
+        </div>
+        <!-- notify -->
+
+
+
+        <!--  stage is mine -->
+        <div id="stage_account">
+            <div id="stage_account2">
+                <div id="lefty_info" class="lefty_info">Settings<br/>
+                    <span>You can make adjustments for your profile and account here</span></div>
+                <div class="settings_account">
+                    <div class="settings_main">
+                        <div class="s_main_navi">
+                            <a class="settingtabs_back" href="account.html">account</a>
+                            <a class="settingtabs_back" href="design.html">design</a>
+                            <a class="settingtabs_back" href="password.html">password</a>
+                            <a class="settingtabs" href="notifications.html">notifications</a>
+                        </div>
+                        
+                        <!-- here is a notifications content -->
+                        <div class="s_main_content_account">
+                            <!-- written section -->
+
+                            <!--
+                            <div class="label_fromocean"><div class="headof-notification">Profile page adjustments</div></div>
+
+
+                            <div class="written_box">
+                                <div class="label_box2">Visibility of ... tab</div>
+                                <div class="type_box_mark2"> show
+                                    <input type="radio" id="" name="tab01" checked="checked" />
+                                    hide:
+                                    <input type="radio" id="" name="tab01" />
+                                </div>
+                            </div>
+
+
+
+
+
+
+                            <div class="label_fromocean"><div class="headof-notification">Notification adjustments</div></div>
+                            -->
+
+
+
+
+                            <div class="written_box">
+                                <div class="label_box2">notify when somebody start to follow me</div>
+                                <div class="type_box_mark2"> yes:
+                                    <input type="radio" id="ntfy_follow" name="nselectfollow" checked="checked" />
+                                    no:
+                                    <input type="radio" id="ntfyno_follow" name="nselectfollow" />
+                                </div>
+                            </div>
+
+                            <div class="written_box">
+                                <div class="label_box2">notify when friends asked a question</div>
+                                <div class="type_box_mark2"> yes:
+                                    <input type="radio" id="ntfy_asked" name="nselectasked" checked="checked"  />
+                                    no:
+                                    <input type="radio" id="ntfyno_asked" name="nselectasked" />
+                                </div>
+                            </div>
+
+                            <div class="written_box">
+                                <div class="label_box2">notify when my questions are commented</div>
+                                <div class="type_box_mark2"> yes:
+                                    <input type="radio" id="ntfy_commented" name="nselectcommented" checked="checked" />
+                                    no:
+                                    <input type="radio" id="ntfyno_commented" name="nselectcommented" />
+                                </div>
+                            </div>
+
+                            <div class="written_box">
+                                <div class="label_box2">notify when someone loves my question</div>
+                                <div class="type_box_mark2"> yes:
+                                    <input type="radio" id="ntfy_loved" name="nselectloves" checked="checked" />
+                                    no:
+                                    <input type="radio" id="ntfyno_loved" name="nselectloves" />
+                                </div>
+                            </div>
+
+                            <div class="written_box">
+                                <div class="label_box2">notify when someone send me coffee</div>
+                                <div class="type_box_mark2"> yes:
+                                    <input type="radio" id="ntfy_coffee" name="nselectcoffee" checked="checked" />
+                                    no:
+                                    <input type="radio" id="ntfyno_coffee" name="nselectcoffee" />
+                                </div>
+                            </div>
+
+                            <div class="written_box">
+                                <div class="label_box2">notify when my question is marked as abuse</div>
+                                <div class="type_box_mark2"> yes:
+                                    <input type="radio" id="ntfy_flag" name="nselectflag" checked="checked" />
+                                    no:
+                                    <input type="radio" id="ntfyno_flag" name="nselectflag" />
+                                </div>
+                            </div>
+
+
+                            <a class="bigbutton" id="btnSaveNotifications" href="">Save Notifications</a>
+                            <div class="waiting-settings" id="icoWaiting"></div>
+                        </div>
+                        <!-- here is a notifications content -->
+                    </div>
+                    <div class="settings_label"><span>Notifications</span><br/>
+                        You can adjust your  notification settings  here. </div>
+                </div>
+            </div>
+        </div>
+        <!--  gracias! -->
+
+
+
+        <div id="deep_ocean">
+            <div id="footer_nav">
+                <ul>
+                    <li><i>© 2011 TrendOcean</i></li>
+                    <li><a id="aboutLink" href="#">About Us</a></li>
+                    <li><a id="blogLink" href="#" target="_blank">Blog</a></li>
+                    <li><a id="teamLink" href="#">Team</a></li>
+                    <li><a id="businessLink" href="#">Business</a></li>
+                    <li><a id="helpLink" href="#">Help</a></li>
+                    <li><a id="termsLink" href="#">Terms</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

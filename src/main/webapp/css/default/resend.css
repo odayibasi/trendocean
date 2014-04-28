@@ -1,0 +1,382 @@
+/*------------------------------------------------------------*/ 
+/*-------------------------- stage --------------------------*/ 
+
+#middle_ocean {
+	width:auto;
+	min-height:600px;
+					}
+#navi {
+	margin:0 auto;
+	height: 57px;
+	width: 890px;
+	background-image:url(images/navi.png)
+					}
+#badget {
+	float: left;
+	margin-top: 20px;
+	padding-left: 20px;
+	height: 18px;
+	width: 140px;
+	
+					}
+.waiting-forgot {
+	float:left;
+	width:16px;
+	height:16px;
+	margin-left:20px;
+	margin-top:6px;
+	background-image:url(images/navi/loaderlogin.gif);
+	background-repeat:no-repeat;
+	}
+#popularity {
+	float: left;
+	margin-top: 20px;
+	margin-left: 140px;
+	padding-left: 20px;
+	height: 30px;
+	width: 140px;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-weight: bold;
+	font-size:14px;
+	color: #20a8e0;
+	
+					}
+#link_section {
+	float: right;
+	margin-top: 22px;
+	padding-right: 20px;
+	height: 30px;
+	width: 300px;
+	text-align:right;
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size:11px;
+	color: #20a8e0;
+	word-spacing: 10px;
+					}
+	.link_section a {
+	color: #20a8e0; 
+	outline:none; 	
+	text-decoration:none;
+					}
+	.link_section a:hover, .link_section a:active {
+	color: #ccc;
+					}
+#body_left {
+	float: left;
+	padding-top: 40px;
+	padding-left: 140px;
+	width: 525px;
+					}
+#up_left {
+	float: right;
+	width: 525px;
+					}
+#down_left {
+	float: left;
+	width: 525px;
+					}
+#profile_right {
+	float: right;
+	margin-top: 10px;
+	padding-right: 20px;
+	width: 200px;
+					}
+#profile_badget {
+	float: right;
+	width: 150px;
+	height: 245px;
+					}
+#profile_info {
+	float: left;
+	width: 340px;
+	height: 245px;
+					}
+#que_selection {
+	float: right;
+	width: 525px;
+	height: 15px;
+					}
+#liner {
+	background-image:url(images/liner.png);
+	float: left;
+	width: 525px;
+	height: 1px;
+					}
+#clear {
+	float: left;
+	width: 525px;
+	height: 5px;
+					}
+#clear2 {
+	float: left;
+	width: 525px;
+	height: 15px;
+					}
+#que_section {
+	float: left;
+	width: 525px;
+					}				
+#photo {
+	height: 275px;
+	float: right;
+	width: 185px;
+					}
+
+
+
+/*------------------------------------------------------------*/ 
+/*-------------------------- login --------------------------*/ 
+
+.resend_password { background:#fff padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;
+-moz-border-radius-topleft: 6px; -webkit-border-top-left-radius: 6px;
+	-moz-border-radius-topright: 6px; -webkit-border-top-right-radius: 6px;
+	-moz-border-radius-bottomleft: 6px; -webkit-border-bottom-left-radius: 6px;
+	-moz-border-radius-bottomright: 6px; -webkit-border-bottom-right-radius: 6px;}
+	
+.box_login {
+	float:left;
+	width:250px;
+	height:50px;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:10px;
+	color:#b2b2b2;
+}
+
+.box_login_check {
+	float:left;
+	width:250px;
+	height:20px;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	color:#b2b2b2;
+}
+
+.box_login_button {
+	float:left;
+	width:220px;
+	height:50px;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:14px;
+	color:#b2b2b2;
+}
+
+.login_label {
+	float:left;
+	padding-top:8px;
+	padding-right:5px;
+	width:100px;
+	height:42px;
+	text-align:right;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#b2b2b2;
+}
+
+#login_lefty {
+	width:250px;
+	float:left;
+}
+
+#login_righty {
+	width:200px;
+	float:right;
+	text-align:left;
+	padding-left:10px;
+}
+
+.box_login_right {
+	float:left;
+	width:290px;
+	height:38px;
+	text-align:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:10px;
+	color:#b2b2b2;
+	padding-top: 12px;
+}
+
+.box_login_right span a {
+	text-decoration:none;
+	color:#0CC;
+}
+	
+	
+
+	
+	
+	
+/*------------------------------------------------------------*/ 
+/*-------------------------- askpage --------------------------*/ 
+
+#ask_left {
+	float:left;
+	width: 25px;
+	height: 170px;
+	padding-left:20px;
+					}
+#part1_label {
+	float:left;
+	width: 140px;
+	height:150px;
+	padding-top:50px;
+					}
+#part2_label {
+	float:left;
+	width: 140px;
+	height:200px;
+					}
+#ask_body {
+	float:left;
+	width: 430px;
+	height: 170px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#b2b2b2;
+	text-align:left;
+	background-image: url(images/passwordmail.png);
+	background-repeat: no-repeat;
+	padding-left: 140px;
+	background-position: 20px 0px;
+					}
+.part1_info {
+	float:left;
+	width: 250px;
+	height:40px;
+					}
+
+        .part1_info span {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+	color:#900;
+	font-weight:bold;
+					}
+	.font_for_out {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+					}
+	.cho1 { background:#fff url(trendocean/cho1.png) no-repeat 4px 11px;padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;}
+	.cho2 { background:#fff url(trendocean/cho2.png) no-repeat 4px 11px;padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;}
+	.cho3 { background:#fff url(trendocean/cho3.png) no-repeat 4px 11px;padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;}
+	.cho4 { background:#fff url(trendocean/cho4.png) no-repeat 4px 11px;padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;}
+	.cho5 { background:#fff url(trendocean/cho5.png) no-repeat 4px 11px;padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;}
+	.cho6 { background:#fff url(trendocean/cho6.png) no-repeat 4px 11px;padding:4px 4px 4px 22px;border:1px solid #CCCCCC;width:230px;height:30px;}
+
+#part1_body {
+	float:left;
+	width: 525px;
+	height:100px;
+	padding-bottom:50px;
+					}
+#part2_body {
+	float:left;
+	width: 250px;
+	height:120px;
+					}					
+#ask_right {
+	float:left;
+	width: 185px;
+	padding-right: 20px;
+	font-weight:bold;
+	padding-top:50px;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:17px;
+	color:#b2b2b2;
+					}
+#counter {
+	float:left;
+	width: 150px;
+	padding-left: 20px;
+	height: 150px;
+					}
+.bigbutton {
+   float:left;
+   border: 1px solid #7fbbdb;
+   background: #e9eff8;
+   padding: 4px 13px 6px 13px;
+   color: #51484b;
+   font-size: 14px;
+   font-family:Tahoma, Geneva, sans-serif;
+   text-decoration: none;
+   vertical-align: middle;
+   margin-bottom:14px;
+   -webkit-border-radius: 18px;
+   -moz-border-radius: 18px;
+   }
+.bigbutton:hover {
+   border: 1px solid #7fbbdb;
+   background: #20a8e0;
+   color: #ffffff;
+   }
+.bigbutton:active {
+   border: 1px solid #7fbbdb;
+   background: #e1e6ea;
+   color: #51484b;
+   }
+
+
+
+/*------------------------------------------------------------*/ 
+/*-------------------------- footer --------------------------*/ 
+	
+#down {
+	margin:0 auto;
+	height: 65px;
+	width: 890px;
+					}
+#deep_ocean {
+	height: 160px;
+					}
+
+
+#footer {
+	margin:0 auto;
+	height: 50px;
+	width: 890px;
+	background-color: #FFF;
+	-moz-border-radius-bottomleft: 22px;
+	-webkit-border-bottom-left-radius: 22px;
+	-moz-border-radius-bottomright: 22px;
+	-webkit-border-bottom-right-radius: 22px;
+					}
+
+#footer_nav {
+	margin:0 auto;
+	width: 450px;
+	height: 150px;
+					}
+					
+#footer_nav ul {
+	float: left;
+	list-style: none;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:10px;
+					}
+
+#footer_nav li {
+	float: left;
+	margin:5px;
+					}
+
+#footer_nav li a {
+	float: left;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:10px;
+					}
+
+#footer_nav li a:hover {
+	float: left;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#20a8e0;
+	font-size:10px;
+					}

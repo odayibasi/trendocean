@@ -1,0 +1,132 @@
+/*------------------------------------------------------------*/ 
+/*-------------------------- stage --------------------------*/ 
+
+.rounder {
+	-moz-border-radius-topleft: 3px; -webkit-border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px; -webkit-border-top-right-radius: 3px;
+	-moz-border-radius-bottomleft: 3px; -webkit-border-bottom-left-radius: 3px;
+	-moz-border-radius-bottomright: 3px; -webkit-border-bottom-right-radius: 3px;}
+.dotted {
+	float:left;
+	height:5px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #E3E8E7;
+	margin-bottom:10px;
+	}
+.dotted2 {
+	float:left;
+	height:5px;
+	border-bottom-width: thin;
+	border-bottom-style: solid;
+	border-bottom-color: #E3E8E7;
+	margin-top:15px;
+	margin-bottom:10px;
+	}
+.maintopic {
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:30px;
+	font-weight:100;
+	color:#676767;
+	}
+.maintopic span {
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:15px;
+	font-weight:normal;
+	color:#676767;
+	}
+
+
+
+#navi {
+	float:left;
+	height:40px;
+	margin-top: 5px;
+	width: 690px;
+	background-color: #EEF8F9;
+	margin-right: 0px;
+	margin-left: 100px;
+	}
+
+#content {
+	float:left;
+	font-family:Tahoma, Geneva, sans-serif;
+	color:#676767;
+	text-align:left;
+	padding-left:55px;
+	padding-right:55px;
+	width:760px;
+	height:auto;
+	}
+.subject {
+	float:left;
+	height:auto;
+	width:670px;
+	border-bottom-style: solid;
+	border-bottom-color: #E3E8E7;
+	border-bottom-width: thin;
+	margin-top: 40px;
+	}
+.text{
+	float:left;
+	height:auto;
+	width:670px;
+	font-size:22px;
+	font-weight:300;
+	height:auto;
+	text-align: justify;
+	}
+.text span {
+	font-size:13px;
+	font-weight:normal;
+	}
+.image{
+	float:left;
+	padding-top:10px;
+	padding-bottom:20px;
+	}
+	
+
+#nav {
+	width: 450px;
+	height: 20px;
+	float:left;
+					}
+					
+#nav ul {
+	float:left;
+	list-style: none;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:10px;
+					}
+
+#nav li {
+	float: left;
+	margin-right:30px;
+					}
+
+#nav li a {
+	float: left;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#20a8e0;
+	font-size:15px;
+	font-weight:bold;
+					}
+
+#nav li a:hover {
+	float: left;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#333;
+	font-size:15px;
+	font-weight:bold;
+					}
+

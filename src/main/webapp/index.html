@@ -1,0 +1,217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="google-site-verification" content="CvdijWcS92Xn5_UktONy0QEklkfpEB2EcH6gmWdLyzM" />
+        <title>TrendOcean</title>
+        <meta name="title" content="TrendOcean - Real time trend sharing social network!" />
+        <meta name="keywords" content="trend,trend network,social network,sosyal medya,anket,survey,real time statistics,gerçek zamanlı istatistik,soru,cevap,ask question,answer question"/>
+        <meta name="description" content="trendocean is a social network where you can see who are popular/eccentric, 
+              ask and answer questions, follow people and keep in touch with your friends.
+                Everybody talks about statistics, like 45% of the people want to live in 70’s. %85 of the world population have never 
+                seen Indian Ocean. But what are the sources of these statistics, do they represent the same value once they did before. 
+                Who made them? More importantly, who answered them? We don’t know and actually we want a proof. Yes this is what trendocean does for you!
+
+                trendocean lets you ask and answer questions, so you can make your own statistics with the help of users all around the world. 
+                And while you are asking and answering, meanwhile trendocean calculates how popular/eccentric you are among other trendoceaners. 
+                Connect with users all around the world and make them part of your ocean. Your questions, answers, followers, followeds and your trend 
+                will create your ocean! So you can easily follow great statistics and broadcast your questions. Whose ocean is deeper?" />
+        <meta name="alexaVerifyID" content="pXM5GnCcgZoJT_1ZatskNHC6fZM" />
+        <meta property="og:image" content="http://d1v4nyckg13y85.cloudfront.net/avatar/trendocean.png" />
+
+        <!-- Google Analytics -->
+        <script type="text/javascript" src="js/ganalytics.js"></script>
+
+        <!-- Free Libraries -->
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+        <script type="text/javascript" src="js/jquery.json-2.2.js"></script>
+        <script type="text/javascript" src="js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="js/jquery.base64.js"></script>
+        <script type="text/javascript" src="js/jquery.url.js"></script>
+
+        <!-- TrendOcean Common Libraries -->
+        <script type="text/javascript" src="js/common.js?250911"></script>
+        <script type="text/javascript" src="js/constants.js?250911"></script>
+        <script type="text/javascript" src="js/authentication.js?250911"></script>
+        <script type="text/javascript" src="js/cookie.js?250911"></script>
+        <script type="text/javascript" src="js/mainLinks.js?250911"></script>
+        <script type="text/javascript" src="js/notifyBar.js?250911"></script>
+        <script type="text/javascript" src="js/redirection.js?250911"></script>
+        <script type="text/javascript" src="js/theme.js?250911"></script>
+
+        <!-- Page JS -->
+        <script type="text/javascript" src="js/pgIndex.js?250911"></script>
+
+        <!-- ENABLE ONLY DESIGN   
+        <link rel="shortcut icon" href="css/default/images/trendocean.ico"></link>
+        <link rel="stylesheet" href="css/default/index.css" type="text/css"></link>
+        <link rel="stylesheet" href="css/default/dock.css" type="text/css"></link>  --> 
+
+        <!--  ENABLED FOR DYNAMIC THEME  --> 
+        <script type="text/javascript">
+            theme_addLink('shortcut icon', 'images/trendocean.ico')
+            theme_addCSSLink('index.css');
+            theme_addCSSLink('dock.css');
+        </script>  
+
+
+    </head>
+
+    <body>
+
+        <!-- notify -->
+        <div class="fixer2" id="fixerID">
+            <div class="notify2">
+                <div class="notifyimage"><div id="notifyImgID" class="notifyimage-wrong"></div></div>
+                <div class="notifyinfo" id="notifyInfoID">this is a realy cool notify.</div>
+                <a class="closenotify" id="closenotifyID" href=""></a>
+            </div>
+        </div>
+        <!-- notify -->
+
+
+
+        <div id="navi">
+            <div id="nav">
+                <!--  Close To V2 or upper
+                <ul>
+                    <li><a href="underconstruction.html">applications</a></li>
+                    <li><a href="underconstruction.html">language </a><a class="languagebtn" id="btnLanguage" href="language.html"></a></li>
+                </ul> -->
+            </div>
+        </div>
+
+
+        <div id="main">
+            <div id="stage">
+
+
+                <div id="stage_left">
+                    <div class="left1">
+                        <div class="left1_left"></div>
+                        <div class="left1_right"></div>
+                    </div>
+                    <div class="left2">
+                        Welcome to Trendocean!
+                        <br/><span>Trendocean is the place where real-time statistics and worldwide trends guide you.</span>
+
+                    </div>
+                    <div class="left3">
+                        <a href="register.html" class="magicregister-index"></a>
+                    </div>
+                </div>
+
+
+                <div id="stage_right">
+                    <div id="sign_in" class="rounder">
+
+                        <div class="text1">
+                            username or e-mail
+                        </div>
+                        <div class="box1">
+                            <input type="text"  class="username_login" id="username_login" size="40" style="width:200px; font-size:19px;">
+                        </div>
+                        <div class="text1">
+                            password
+                        </div>
+                        <div class="box1">
+                            <input type="password"  class="username_login" id="password_login" size="40" style="width:200px; font-size:19px;">
+                        </div>
+                        <div class="box2">
+
+                            <div class="box2_right">
+                                <input type="checkbox" id="remindMe_login">remember me
+                            </div>
+
+                            <div class="box2_left">
+                                <a class="signin" id="btnLogin" href=""></a>
+                            </div>
+                            <div class="waiting-index" id="icoWaiting"></div>
+
+                        </div>
+                        <div class="text2">
+                            <a href="resend_password.html">forgot my password</a>
+                        </div>
+                    </div>
+                    <div id="sign_up" class="rounder">
+                        <div class="box3">
+                            Join us today!<br/><span>it's easy and fast, sign up and start asking questions today and see how trendy you are!</span> </div>
+                        <div class="box4">
+                            <a class="signup" id="btnSignUp" href="register.html"></a>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="flow" >
+            <div id="stage2">
+                <div class="label">
+                    <div class="liveatocean"></div>
+                </div>
+                <div class="quendies">
+                    <div class="firstpart">
+
+                        <a id="liveq0" href="" class="livequendy">
+                            <img id="liveq0_avatar" src="" width='35'  height='35'/>
+                            <div class="content">
+                                <div id="liveq0_question"  class="question"><span id="liveq0_fullName" class="que-realname"></span></div>
+                                <div id="liveq0_prop" class="que-prop"></div>
+                            </div>
+                        </a>
+
+                        <a id="liveq1" href="" class="livequendy">
+                            <img id="liveq1_avatar" src="" width='35'  height='35'/>
+                            <div class="content">
+                                <div id="liveq1_question"  class="question"><span id="liveq1_fullName" class="que-realname"></span></div>
+                                <div id="liveq1_prop" class="que-prop"></div>
+                            </div>
+                        </a>
+
+                    </div>
+                    <div class="secondpart">
+
+                        <a id="liveq2" href="" class="livequendy">
+                            <img id="liveq2_avatar" src="" width='35'  height='35'/>
+                            <div class="content">
+                                <div id="liveq2_question"  class="question"><span id="liveq2_fullName" class="que-realname"></span></div>
+                                <div id="liveq2_prop" class="que-prop"></div>
+                            </div>
+                        </a>
+
+                        <a id="liveq3" href="" class="livequendy">
+                            <img id="liveq3_avatar" src="" width='35'  height='35'/>
+                            <div class="content">
+                                <div id="liveq3_question" class="question"><span id="liveq3_fullName" class="que-realname"></span></div>
+                                <div id="liveq3_prop"  class="que-prop"></div>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="deep_ocean">
+            <div id="footer_nav">
+                <ul>
+                    <li><i>© 2011 TrendOcean</i></li>
+                    <li><a id="aboutLink" href="#">About Us</a></li>
+                    <li><a id="blogLink" href="#" target="_blank">Blog</a></li>
+                    <li><a id="teamLink" href="#">Team</a></li>
+                    <li><a id="businessLink" href="#">Business</a></li>
+                    <li><a id="helpLink" href="#">Help</a></li>
+                    <li><a id="termsLink" href="#">Terms</a></li>
+                </ul>
+
+            </div>
+        </div>
+
+
+
+    </body>
+</html>

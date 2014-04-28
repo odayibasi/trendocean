@@ -1,0 +1,98 @@
+
+/*------------------------------------------------------------*/ 
+/*-------------------------- stage --------------------------*/ 
+#stage {
+	text-align:center;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	font-weight:200;
+	color:#fff;
+	height:50px;
+	background-color: #4a677d;
+	width: 810px;
+	margin-top: 100px;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	padding-top:319px;
+	background-image: url(images/oceanstormy.png);
+	background-repeat: no-repeat;
+	background-position: top left;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+					}
+.stage span {
+	font-size:10px;
+	color:#fff;
+	}
+.stage a {
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:16px;
+	font-weight:200;
+	color:#00cccc;
+	}
+					
+/*------------------- footer -------------------*/
+/*----------------------------------------------*/
+#down {
+	margin:0 auto;
+	height: 65px;
+	width: 890px;
+	}
+#deep_ocean {
+	height: 60px;
+	}
+#footer {
+	margin:0 auto;
+	height: 50px;
+	width: 890px;
+	background-color: #fff;
+	-moz-border-radius-bottomleft: 22px;
+	-webkit-border-bottom-left-radius: 22px;
+	-moz-border-radius-bottomright: 22px;
+	-webkit-border-bottom-right-radius: 22px;
+	}
+#footer_nav {
+	margin:0 auto;
+	width: 400px;
+	text-align:center;
+	padding-bottom:20px;
+	}
+#footer_nav ul {
+	list-style: none;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:12px;
+	}
+#footer_nav li {
+	float:left;
+	margin:5px;
+	}
+#footer_nav li i {
+	float: left;
+	display: block;
+	font-style:normal;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:12px;
+	}
+#footer_nav li a {
+	float: left;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#b2b2b2;
+	font-size:12px;
+	}
+#footer_nav li a:hover {
+	float: left;
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-family: Tahoma, Geneva, sans-serif;
+	color:#20a8e0;
+	font-size:12px;
+	}

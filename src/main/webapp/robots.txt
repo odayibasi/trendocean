@@ -1,0 +1,21 @@
+User-agent: *
+Disallow: /commingsoon.html
+Disallow: /design.html
+Disallow: /error.html
+Disallow: /home.html
+Disallow: /login.html
+Disallow: /messages.html
+Disallow: /newfollowers.html
+Disallow: /notifications.html
+Disallow: /onequestion.xhtml
+Disallow: /opss.html
+Disallow: /overload.html
+Disallow: /password.html
+Disallow: /people.html
+Disallow: /profile.html
+Disallow: /register.html
+Disallow: /resend_password.html
+Disallow: /search.html
+
+#Sitemap files
+Sitemap: http://trendocean.com/sitemap-questions.xml
