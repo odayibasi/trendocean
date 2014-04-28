@@ -5,11 +5,12 @@ import com.trendocean.domain.base.AbstractEntity;
 import com.trendocean.domain.base.IEntity;
 
 import javax.persistence.Entity;
+import java.io.Serializable;
 
 
 @JsonAutoDetect
 @Entity
-public class City extends AbstractEntity {
+public class City extends AbstractEntity implements Serializable {
 
     public City() {
     }

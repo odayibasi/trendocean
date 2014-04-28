@@ -5,17 +5,35 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.trendocean.domain.GenderEnum;
 import com.trendocean.domain.base.AbstractEntity;
 
-@JsonAutoDetect
-public class User extends AbstractEntity {
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import java.io.Serializable;
 
-      private String username;
-      private String password;
-      private String email;
-      private String fullName;
-      private String about;
-      private GenderEnum gender;
-      private AccountStateEnum accountState;
-      private EducationEnum education;
+@JsonAutoDetect
+@Entity
+public class TrendoceanUser extends AbstractEntity implements Serializable {
+
+
+    public TrendoceanUser() {
+    }
+
+    private String username;
+    private String password;
+    private String email;
+    private String fullName;
+    private String about;
+
+
+    @Enumerated(EnumType.STRING)
+    private GenderEnum gender;
+
+    @Enumerated(EnumType.STRING)
+    private AccountStateEnum accountState;
+
+    @Enumerated(EnumType.STRING)
+    private EducationEnum education;
+
 
     public String getUsername() {
         return username;
@@ -56,6 +74,7 @@ public class User extends AbstractEntity {
     public void setAbout(String about) {
         this.about = about;
     }
+
 
     public GenderEnum getGender() {
         return gender;

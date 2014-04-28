@@ -1,14 +1,17 @@
 package com.trendocean.service.db;
 
-import com.trendocean.domain.User;
+import com.trendocean.domain.TrendoceanUser;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 
-public interface IUserDBService extends IDBService<User>{
+public interface IUserDBService extends IDBService<TrendoceanUser>{
 
-    List<User> getUserWithUsername(String username) throws Exception;
+    @Transactional
+    List<TrendoceanUser> getUserWithUsername(String username) throws Exception;
 
-    List<User> getUserWithEmail(String email) throws Exception;
+    @Transactional
+    List<TrendoceanUser> getUserWithEmail(String email) throws Exception;
 
 }

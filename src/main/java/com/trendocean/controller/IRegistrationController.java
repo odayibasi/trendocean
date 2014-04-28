@@ -1,7 +1,7 @@
 package com.trendocean.controller;
 
 import com.trendocean.TrendoceanResponse;
-import com.trendocean.domain.User;
+import com.trendocean.domain.TrendoceanUser;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,7 +19,7 @@ public interface IRegistrationController {
 
     @RequestMapping(value = "registration/addUser")
     public @ResponseBody
-    TrendoceanResponse addUser(@RequestBody User user) throws Exception;
+    TrendoceanResponse addUser(@RequestBody TrendoceanUser user) throws Exception;
 
 
 }

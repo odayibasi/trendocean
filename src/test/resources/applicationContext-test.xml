@@ -22,31 +22,23 @@
     <context:component-scan base-package="com.trendocean"/>
     <tx:annotation-driven transaction-manager="transactionManager" />
 
-    <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-        <property name="locations">
-            <list>
-                <value>local.properties</value>
-            </list>
-        </property>
-    </bean>
-
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
         <property name="dataSource" ref="ds" />
         <property name="persistenceUnitName" value="trendoceanJTA" />
         <property name="jpaProperties">
             <props>
-                <prop key="hibernate.hbm2ddl.auto">${db.hbm2ddl}</prop>
-                <prop key="hibernate.jdbc.batch_size">${db.batch.size}</prop>
-                <prop key="hibernate.order_inserts">${db.order.inserts}</prop>
-                <prop key="hibernate.order_updates">${db.order.updates}</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+                <prop key="hibernate.jdbc.batch_size">200</prop>
+                <prop key="hibernate.order_inserts">true</prop>
+                <prop key="hibernate.order_updates">true</prop>
                 <prop key="connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</prop>
-                <prop key="hibernate.c3p0.min_size">${local.c3p0.min_size}</prop>
-                <prop key="hibernate.c3p0.max_size">${local.c3p0.max_size}</prop>
-                <prop key="hibernate.c3p0.timeout">${local.c3p0.timeout}</prop>
-                <prop key="hibernate.c3p0.max_statements">${local.c3p0.max_statements}</prop>
-                <prop key="hibernate.c3p0.idle_test_period">${local.c3p0.idle_test_period}</prop>
-                <prop key="hibernate.c3p0.numHelperThreads">${local.c3p0.numHelperThreads}</prop>
+                <prop key="hibernate.c3p0.min_size">50</prop>
+                <prop key="hibernate.c3p0.max_size">200</prop>
+                <prop key="hibernate.c3p0.timeout">300</prop>
+                <prop key="hibernate.c3p0.max_statements">200</prop>
+                <prop key="hibernate.c3p0.idle_test_period">300</prop>
+                <prop key="hibernate.c3p0.numHelperThreads">6</prop>
             </props>
         </property>
     </bean>
