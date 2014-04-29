@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                    http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+                    http://www.springframework.org/schema/security 
+                    http://www.springframework.org/schema/security/spring-security-3.2.xsd">
+
+
+    <global-method-security pre-post-annotations="enabled"/>
+
+
+    <http use-expressions="true" auto-config="false" realm="Trendocean" entry-point-ref="toAuthenticationFilter">
+
+        <custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter"/>
+        <custom-filter position="FORM_LOGIN_FILTER" ref="toAuthenticationFilter"/>
+        <intercept-url pattern="/api/country/**" access="permitAll"/>
+        <intercept-url pattern="/api/registration/**" access="permitAll"/>
+
+        <intercept-url pattern="/home.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/register.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/api/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
+        <logout logout-url="/logout.jsp" invalidate-session="true"/>
+        <access-denied-handler error-page="/index.html?access_denied=true"/>
+        <session-management session-authentication-strategy-ref="sas" invalid-session-url="/index.html?session_expired=true"/>
+    </http>
+
+
+    <authentication-manager alias="toAuthenticationManager">
+        <authentication-provider user-service-ref="toUserDetailsService"/>
+    </authentication-manager>
+
+    <beans:bean id="toAuthenticationFilter" class="com.trendocean.security.TrendOceanAuthenticationFilter">
+        <beans:property name="sessionAuthenticationStrategy" ref="sas"/>
+        <beans:property name="authenticationManager" ref="toAuthenticationManager"/>
+        <beans:property name="authenticationFailureHandler" ref="failureHandler"/>
+        <beans:property name="authenticationSuccessHandler" ref="successHandler"/>
+    </beans:bean>
+
+
+    <beans:bean id="successHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
+        <beans:property name="defaultTargetUrl" value="/home.html"/>
+    </beans:bean>
+
+    <beans:bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
+        <beans:property name="defaultFailureUrl" value="/index.html?login_error=true"/>
+    </beans:bean>
+
+    <beans:bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
+        <beans:property name="sessionRegistry" ref="sessionRegistry"/>
+        <beans:property name="expiredUrl" value="/index.jsp?concurrent_session=true"/>
+    </beans:bean>
+
+    <beans:bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
+        <beans:constructor-arg name="sessionRegistry" ref="sessionRegistry"/>
+        <beans:property name="maximumSessions" value="1"/>
+        <beans:property name="exceptionIfMaximumExceeded" value="false"/>
+    </beans:bean>
+
+    <beans:bean id="sessionRegistry" class="org.springframework.security.core.session.SessionRegistryImpl"/>
+
+</beans:beans>

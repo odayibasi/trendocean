@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("tseUserDetailsService")
+@Service("toUserDetailsService")
 public class TrendOceanDetailsService implements UserDetailsService {
 	
 	@Autowired
