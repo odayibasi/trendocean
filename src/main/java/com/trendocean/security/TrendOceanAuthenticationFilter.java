@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class TrendoceanAuthenticationFilter extends AbstractAuthenticationProcessingFilter implements AuthenticationEntryPoint {
+public class TrendOceanAuthenticationFilter extends AbstractAuthenticationProcessingFilter implements AuthenticationEntryPoint {
 
     private static final String DEFAULT_FILTER_PROCESSES_URL = "/login.html";
 
-    public TrendoceanAuthenticationFilter() {
+    public TrendOceanAuthenticationFilter() {
         super(DEFAULT_FILTER_PROCESSES_URL);
     }
 
