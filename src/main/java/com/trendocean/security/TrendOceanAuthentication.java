@@ -42,7 +42,7 @@ public class TrendOceanAuthentication implements Serializable, UserDetails {
 		if (this.user == null)
 			return super.equals(obj);
 		else
-			return this.user.getUsername().equals(((TrendOceanAuthentication) obj).getUser().getUsername());
+			return this.user.getUsername().equals(((Profile) obj).getUsername());
 	}
 
 	@Override

@@ -166,13 +166,13 @@
             <version>1.6.11</version>
         </dependency>
 
-        <!--
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-         -->
+
 
         <!-- Jackson JSON Mapper -->
         <dependency>

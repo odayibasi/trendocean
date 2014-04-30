@@ -16,13 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service("toUserDetailsService")
-public class TrendOceanDetailsService implements UserDetailsService {
-	
+public class TrendoceanUserDetailsService implements UserDetailsService {
+
 	@Autowired
 	private IUserDBService userDBService;
 
 
-	public TrendOceanDetailsService() {
+	public TrendoceanUserDetailsService() {
 		super();
 	}
 	
@@ -33,9 +33,9 @@ public class TrendOceanDetailsService implements UserDetailsService {
 		Profile user = userDBService.getUserWithUsername(username);
 		
 		if (user == null)
-			throw new UsernameNotFoundException(
-					"Kullanıcı bulanamadı.");
-		if (!encrypted.equals(user.getPassword()))
+			throw new UsernameNotFoundException("Kullanıcı bulanamadı.");
+
+        if (!user.getPassword().equals(password))
 			throw new BadCredentialsException("Girmiş olduğunuz bilgiler hatalıdır");
 
 		List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
@@ -57,6 +57,5 @@ public class TrendOceanDetailsService implements UserDetailsService {
 	public Profile getUser(String username) throws Exception {
 		return userDBService.getUserWithUsername(username);
 	}
-
 
 }
