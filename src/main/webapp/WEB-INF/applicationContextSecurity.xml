@@ -30,7 +30,7 @@
         <authentication-provider user-service-ref="toUserDetailsService"/>
     </authentication-manager>
 
-    <beans:bean id="toAuthenticationFilter" class="com.trendocean.security.TrendoceanAuthenticationFilter">
+    <beans:bean id="toAuthenticationFilter" class="com.trendocean.security.TrendOceanAuthenticationFilter">
         <beans:property name="sessionAuthenticationStrategy" ref="sas"/>
         <beans:property name="authenticationManager" ref="toAuthenticationManager"/>
         <beans:property name="authenticationFailureHandler" ref="failureHandler"/>
