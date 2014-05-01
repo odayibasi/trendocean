@@ -1,4 +1,4 @@
 package com.trendocean.controller;
 
-public interface IAdminController {
+public interface IMessageController {
 }
