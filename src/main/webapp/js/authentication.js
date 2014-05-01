@@ -63,7 +63,7 @@ function authentication_initialize(authInitPage) {
                     authentication_sucess(data);
                 },
                 error:function (xhr){
-                    //authentication_error(xhr);
+                    authentication_error(xhr);
                 }
             });
             return false;
