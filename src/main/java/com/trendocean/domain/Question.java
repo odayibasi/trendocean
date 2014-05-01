@@ -15,7 +15,9 @@ import java.util.List;
 public class Question extends AbstractEntity implements Serializable {
 
     private String question;
-    private List<String> choices = new ArrayList<String>(5);
+
+
+    //private List<String> choices = new ArrayList<String>(5);
     private String reaskUser = "";
     private String owner;
     private String ownerFullName;
@@ -46,13 +48,6 @@ public class Question extends AbstractEntity implements Serializable {
         this.question = question;
     }
 
-    public List<String> getChoices() {
-        return choices;
-    }
-
-    public void setChoices(List<String> choices) {
-        this.choices = choices;
-    }
 
     public String getReaskUser() {
         return reaskUser;

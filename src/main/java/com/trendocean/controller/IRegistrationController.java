@@ -9,6 +9,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 public interface IRegistrationController {
 
+    @RequestMapping(value = "registration/listCountry")
+    public @ResponseBody
+    TrendoceanResponse listCountry() throws Exception;
+
+    @RequestMapping(value = "registration/listCity")
+    public @ResponseBody
+    TrendoceanResponse listCity(@RequestParam String countryCode) throws Exception;
+
     @RequestMapping(value = "registration/checkUsername")
     public @ResponseBody
     TrendoceanResponse checkUsername(@RequestParam String username) throws Exception;

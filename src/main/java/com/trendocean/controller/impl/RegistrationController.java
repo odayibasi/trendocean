@@ -27,4 +27,14 @@ public class RegistrationController  implements IRegistrationController{
     public TrendoceanResponse addUser(Profile user) throws Exception {
         return registrationService.addUser(user);
     }
+
+    @Override
+    public TrendoceanResponse listCountry() throws Exception {
+        return registrationService.getCountries();
+    }
+
+    @Override
+    public TrendoceanResponse listCity(String countryCode) throws Exception {
+        return registrationService.getCities(countryCode);
+    }
 }

@@ -4,6 +4,8 @@ import com.trendocean.TrendoceanResponse;
 import com.trendocean.ViolationResult;
 import com.trendocean.domain.*;
 import com.trendocean.service.IRegistrationService;
+import com.trendocean.service.db.ICityDBService;
+import com.trendocean.service.db.ICountryDBService;
 import com.trendocean.service.db.IUserDBService;
 import com.trendocean.util.PasswordUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +18,25 @@ public class RegistrationService implements IRegistrationService{
 
     @Autowired
     IUserDBService userDBService;
+
+    @Autowired
+    ICountryDBService countryDBService;
+
+    @Autowired
+    ICityDBService cityDBService;
+
+
+    @Override
+    public TrendoceanResponse getCountries() throws Exception{
+        List<Country> countries=countryDBService.getAll();
+        return new TrendoceanResponse.Builder().setSuccess(true).setData(countries).build();
+    }
+
+    @Override
+    public TrendoceanResponse getCities(String countryCode) {
+        List<City> cities=cityDBService.getCities(countryCode);
+        return new TrendoceanResponse.Builder().setSuccess(true).setData(cities).build();
+    }
 
     @Override
     public TrendoceanResponse checkUsername(String username) throws Exception {

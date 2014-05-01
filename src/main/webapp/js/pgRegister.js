@@ -99,7 +99,7 @@ function fillCombosWithNormalBrowser(){
     $('#city_register').append( new Option(TEXT_SELECT,TEXT_SELECT));
 
     $.ajax({
-        url: 'api/country/',
+        url: 'api/registration/listCountry',
         type: "GET",
         success: function(resp){
             var countries=resp.data;
@@ -121,7 +121,7 @@ function fillCombosWithNormalBrowser(){
             $('#city_register').append( new Option(TEXT_SELECT,TEXT_SELECT));
         }else{
             $.ajax({
-                url: 'api/country/city/',
+                url: 'api/registration/listCity',
                 data:{
                   "countryCode":$('#country_register').val()
                 },
