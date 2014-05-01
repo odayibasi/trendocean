@@ -53,18 +53,17 @@ function authentication_initialize(authInitPage) {
             authentication_setWaitingIconVisib(false)
         }else{
             $.ajax({
-                url: 'api/authentication/login/',
+                url: 'login',
                 type: "POST",
                 data: {
-                    j_username:usernameVal,
-                    j_password:passwordVal
+                   'username':usernameVal,
+                   'password':passwordVal
                 },
-                dataType: "json",
                 success: function(data){
                     authentication_sucess(data);
                 },
                 error:function (xhr){
-                    authentication_error(xhr);
+                    //authentication_error(xhr);
                 }
             });
             return false;

@@ -17,6 +17,7 @@
         <intercept-url pattern="/api/registration/**" access="permitAll"/>
         <intercept-url pattern="/api/qstream/**" access="permitAll"/>
         <intercept-url pattern="/api/**" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/login" access="permitAll"/>
         <logout logout-url="/logout.jsp" invalidate-session="true"/>
         <access-denied-handler error-page="/index.html?access_denied=true"/>
         <session-management session-authentication-strategy-ref="sas" invalid-session-url="/index.html?session_expired=true"/>

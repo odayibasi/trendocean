@@ -35,7 +35,7 @@ public class TrendoceanUserDetailsService implements UserDetailsService {
 		if (user == null)
 			throw new UsernameNotFoundException("Kullanıcı bulanamadı.");
 
-        if (!user.getPassword().equals(password))
+        if (!user.getPassword().equals(encrypted))
 			throw new BadCredentialsException("Girmiş olduğunuz bilgiler hatalıdır");
 
 		List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
