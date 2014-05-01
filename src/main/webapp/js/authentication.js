@@ -59,8 +59,8 @@ function authentication_initialize(authInitPage) {
                    'username':usernameVal,
                    'password':passwordVal
                 },
-                success: function(data){
-                    authentication_sucess(data);
+                success: function(resp){
+                    authentication_sucess(resp.data);
                 },
                 error:function (xhr){
                     authentication_error(xhr);

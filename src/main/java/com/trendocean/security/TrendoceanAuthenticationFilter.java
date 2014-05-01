@@ -47,7 +47,8 @@ public class TrendOceanAuthenticationFilter extends AbstractAuthenticationProces
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
                                             Authentication authResult) throws IOException, ServletException {
 
-        TrendoceanResponse respData=new TrendoceanResponse.Builder().setSuccess(true).setCode("00").setDesc("Login success").build();
+
+        TrendoceanResponse respData=new TrendoceanResponse.Builder().setSuccess(true).setData(SecurityHelper.getLoggedInUser()).setCode("00").setDesc("Login success").build();
         returnJsonResponse(request,response,respData);
     }
 
@@ -58,7 +59,7 @@ public class TrendOceanAuthenticationFilter extends AbstractAuthenticationProces
                                               AuthenticationException authenticationException) throws IOException, ServletException {
 
        TrendoceanResponse respData=new TrendoceanResponse.Builder().setSuccess(false).setCode(BLOCK_ERR).setDesc(authenticationException.getMessage()).build();
-       returnJsonResponse(request,response,respData);
+       returnJsonResponse(request, response, respData);
     }
 
 

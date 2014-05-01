@@ -18,7 +18,7 @@
         <intercept-url pattern="/api/qstream/**" access="permitAll"/>
         <intercept-url pattern="/api/**" access="hasRole('ROLE_USER')"/>
         <intercept-url pattern="/login" access="permitAll"/>
-        <logout logout-url="/logout.jsp" invalidate-session="true"/>
+        <logout logout-url="/logout.jsp" success-handler-ref="toLogoutHandler" invalidate-session="true" delete-cookies="JSESSIONID" />
         <access-denied-handler error-page="/index.html?access_denied=true"/>
         <session-management session-authentication-strategy-ref="sas" invalid-session-url="/index.html?session_expired=true"/>
     </http>
@@ -27,6 +27,10 @@
     <authentication-manager alias="toAuthenticationManager">
         <authentication-provider user-service-ref="toUserDetailsService"/>
     </authentication-manager>
+
+    <beans:bean id="toLogoutHandler" class="com.trendocean.security.TrendoceanLogoutHandler">
+        <beans:property name="defaultTargetUrl" value="/index.html"/>
+    </beans:bean>
 
     <beans:bean id="toAuthenticationFilter" class="com.trendocean.security.TrendOceanAuthenticationFilter">
         <beans:property name="sessionAuthenticationStrategy" ref="sas"/>

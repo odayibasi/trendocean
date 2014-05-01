@@ -39,18 +39,7 @@ function mainBar_initialize(relativePath){
 
     $('#logout_MainBar').click(function(event) {
         event.preventDefault();
-        $.ajax({
-            url: mainBarRP+'api/authentication/logout',
-            async:false,
-            type: "GET",
-            success: function(data){
-                cookie_clearLoginUser();
-                window.location.href=mainBarRP+PAGE_INDEX;
-            },
-            error:function (xhr){
-                notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-            }
-        });
+        window.location.href="logout.jsp";
     });
 
     $('#labelMe_MainBar').click(function(event) {
