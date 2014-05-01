@@ -13,7 +13,7 @@ var latestQuestions=null;
 function fillLiveQuestion(iLiveQ, iLatestQ){
 
     index=iLatestQ%20;
-    var question=latestQuestions.question[index];
+    var question=latestQuestions[index];
     if(question!=null){
         $("#liveq"+iLiveQ).attr("href","question/"+question.id);
         $("#liveq"+iLiveQ+"_avatar").attr("src",question.ownerSmallAvatarURL);
@@ -41,16 +41,18 @@ function fillLiveQuestion(iLiveQ, iLatestQ){
 
 function index_getLatestQuestions(){
     $.ajax({
-        url: 'api/questions?size=20',
+        url: 'api/qstream/listLatestQuestion',
+        data:{
+            'startIndex':0,
+            'endIndex':20
+        },
         type: "GET",
-        success: function(data){
-            latestQuestions=data;
-
+        success: function(resp){
+            latestQuestions=resp.data;
             fillLiveQuestion(0, 0);
             fillLiveQuestion(1, 1);
             fillLiveQuestion(2, 2);
             fillLiveQuestion(3, 3);
-
             liveQuestionUpdater=setInterval("index_updateQuestion()", 5000);
             return false;
         },

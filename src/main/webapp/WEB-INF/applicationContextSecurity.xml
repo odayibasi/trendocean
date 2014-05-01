@@ -15,10 +15,11 @@
         <custom-filter position="CONCURRENT_SESSION_FILTER" ref="concurrencyFilter"/>
         <custom-filter position="FORM_LOGIN_FILTER" ref="toAuthenticationFilter"/>
         <intercept-url pattern="/api/registration/**" access="permitAll"/>
+        <intercept-url pattern="/api/qstream/**" access="permitAll"/>
         <intercept-url pattern="/api/**" access="hasRole('ROLE_USER')"/>
         <logout logout-url="/logout.jsp" invalidate-session="true"/>
-        <access-denied-handler error-page="/index.jsp?access_denied=true"/>
-        <session-management session-authentication-strategy-ref="sas" invalid-session-url="/index.jsp?session_expired=true"/>
+        <access-denied-handler error-page="/index.html?access_denied=true"/>
+        <session-management session-authentication-strategy-ref="sas" invalid-session-url="/index.html?session_expired=true"/>
     </http>
 
 
