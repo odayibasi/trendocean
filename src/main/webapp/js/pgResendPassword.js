@@ -18,8 +18,10 @@ $(document).ready(function() {
         $("#icoWaiting").show();
         var usernameOrEmail=$('#username_resendPassword').val();
         $.ajax({
-            url:'api/authentication/password/resetrequest/'+ usernameOrEmail,
-            data:{},
+            url:'api/registration/resetPassword',
+            data:{
+                'email':usernameOrEmail
+            },
             type: "GET",
             success: function(){
                 $("#icoWaiting").hide();

@@ -40,5 +40,8 @@ public class RegistrationController  implements IRegistrationController{
         return registrationService.addUser(user);
     }
 
-
+    @Override
+    public TrendoceanResponse resetPassword(@RequestParam String email) throws Exception {
+        return new TrendoceanResponse.Builder().setData(email).setSuccess(true).build();
+    }
 }

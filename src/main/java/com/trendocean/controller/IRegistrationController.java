@@ -29,5 +29,9 @@ public interface IRegistrationController {
     public @ResponseBody
     TrendoceanResponse addUser(@RequestBody Profile user) throws Exception;
 
+    @RequestMapping(value = "registration/resetPassword")
+    public @ResponseBody
+    TrendoceanResponse resetPassword(@RequestParam String email) throws Exception;
+
 
 }
