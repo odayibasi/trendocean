@@ -346,7 +346,8 @@ function onequestion_updateQuestion(){
             'qId':qID
         },
         success: function(resp){
-            onequestion_selectedQuestion=resp.data;
+            var data=resp.data;
+            onequestion_selectedQuestion=data;
             coffeeDlg_setContent(data.owner,cookie_get(COOKIE_USERNAME),data.ownerSmallAvatarURL);
             if(data.owner==cookie_get(COOKIE_USERNAME)){
                 $('#btnCoffee').hide();
