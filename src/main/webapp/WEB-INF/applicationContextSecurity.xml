@@ -16,6 +16,7 @@
         <custom-filter position="FORM_LOGIN_FILTER" ref="toAuthenticationFilter"/>
         <intercept-url pattern="/api/registration/**" access="permitAll"/>
         <intercept-url pattern="/api/qstream/**" access="permitAll"/>
+        <intercept-url pattern="/api/question/getQuestion" access="permitAll"/>
         <intercept-url pattern="/login" access="permitAll"/>
 
         <intercept-url pattern="/api/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>

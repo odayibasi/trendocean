@@ -18,7 +18,7 @@ public class QuestionController implements IQuestionController{
     IQuestionService questionService;
 
     @Override
-    public TrendoceanResponse getQuestion(@PathVariable("qId") String qId) throws Exception {
+    public TrendoceanResponse getQuestion(@RequestParam String qId) throws Exception {
         return questionService.getQuestion(qId);
     }
 

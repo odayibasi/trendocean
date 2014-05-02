@@ -8,8 +8,6 @@ function theme_setRelativePath(rPath){
 
 function theme_addCSSLink(cssFile){
 
-    var theme_relativepath="";
-
     var headID = document.getElementsByTagName("head")[0];
     var cssNode = document.createElement('link');
     cssNode.type = 'text/css';
@@ -22,7 +20,6 @@ function theme_addCSSLink(cssFile){
 
 function theme_addLink(rel, href){
 
-    var theme_relativepath="";
     var headID = document.getElementsByTagName("head")[0];
     var cssNode = document.createElement('link');
     cssNode.rel = rel;

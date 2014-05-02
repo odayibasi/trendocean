@@ -340,8 +340,11 @@ function onequestion_themeProcessDesign(){
 function onequestion_updateQuestion(){
     var qID=common_getURLSegment(1);
     $.ajax({
-        url: '../api/question/'+qID,
+        url: '../api/question/getQuestion',
         type: "GET",
+        data:{
+            'qId':qID
+        },
         success: function(resp){
             onequestion_selectedQuestion=resp.data;
             coffeeDlg_setContent(data.owner,cookie_get(COOKIE_USERNAME),data.ownerSmallAvatarURL);

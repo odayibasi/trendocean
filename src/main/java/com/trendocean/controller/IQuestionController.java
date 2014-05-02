@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.*;
 
 public interface IQuestionController {
 
-    @RequestMapping(value = "question/{qId}", method= RequestMethod.GET)
+    @RequestMapping(value = "question/getQuestion", method= RequestMethod.GET)
     public @ResponseBody
-    TrendoceanResponse getQuestion(@PathVariable("qId") String qId) throws Exception;
+    TrendoceanResponse getQuestion(@RequestParam String qId) throws Exception;
 
     @RequestMapping(value = "question/addQuestion")
     public @ResponseBody
