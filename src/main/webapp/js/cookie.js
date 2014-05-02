@@ -36,8 +36,8 @@ function cookie_saveLoginUser(loginUserInfo, remindMe){
     cookie_wrap(COOKIE_SIGNIN,COOKIE_SIGNIN_VAL, remindMe);
 
     //Design
-    cookie_wrap(COOKIE_AVATAR_SMALL_URL,loginUserInfo.profileOceanDesigns.smallAvatarURL, remindMe);
-    cookie_wrap(COOKIE_AVATAR_LARGE_URL,loginUserInfo.profileOceanDesigns.largeAvatarURL,remindMe);
+    cookie_wrap(COOKIE_AVATAR_SMALL_URL,loginUserInfo.profileOceanDesigns.smallAvatar, remindMe);
+    cookie_wrap(COOKIE_AVATAR_LARGE_URL,loginUserInfo.profileOceanDesigns.largeAvatar,remindMe);
     cookie_wrap(COOKIE_BG_TILED,loginUserInfo.profileOceanDesigns.backgroundTiled, remindMe);
     cookie_wrap(COOKIE_BG_URL,loginUserInfo.profileOceanDesigns.backgroundURL, remindMe);
     cookie_wrap(COOKIE_BG_COLOR,loginUserInfo.profileOceanDesigns.backgroundColor, remindMe);

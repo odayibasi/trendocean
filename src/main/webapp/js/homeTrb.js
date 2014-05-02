@@ -160,14 +160,15 @@ function homeTrb_updateTrendTopics(){
     $("#trend_topics").append(homeTrb_trendTitle);
 
     $.ajax({
-        url: 'api/questions/tags',
+        url: 'api/qstream/listTag',
         type: "GET",
-        success: function(data){
-            if(data!=null && $.isArray(data.item)){
-                for(i=0;i<data.item.length;i++){
+        success: function(resp){
+            var data=resp.data;
+            if(data!=null && $.isArray(data)){
+                for(i=0;i<data.length;i++){
                     if(i==6) break;
                     var temp=homeTrb_trendTopic;
-                    var contentTopic=temp.replace(/TOPIC/g,data.item[i]);
+                    var contentTopic=temp.replace(/TOPIC/g,data[i]);
                     $("#trend_topics").append(contentTopic);
                 }
             }

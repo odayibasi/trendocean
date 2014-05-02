@@ -13,4 +13,8 @@ public interface IQuestionStreamController {
     public @ResponseBody
     TrendoceanResponse listLatestQuestion(@RequestParam int startIndex, @RequestParam int endIndex) throws Exception;
 
+    @RequestMapping(value = "qstream/listTag")
+    public @ResponseBody
+    TrendoceanResponse listTag() throws Exception;
+
 }

@@ -61,5 +61,4 @@ public interface IQuestionController {
     public @ResponseBody
     TrendoceanResponse listComment(@RequestParam String questionId,@RequestParam String commentId) throws Exception;
 
-
 }

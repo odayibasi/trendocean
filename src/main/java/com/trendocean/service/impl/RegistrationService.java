@@ -55,7 +55,10 @@ public class RegistrationService implements IRegistrationService{
       user.setPassword(PasswordUtil.getInstance().encrypt(user.getPassword()));
       user.setAccountState(AccountStateEnum.WAITING_ACTIVATION);
       user.setProfileOceanDesigns(new ProfileOceanDesigns());
-      user.setProfileOceanSettings(new ProfileOceanSettings());
+      user.getProfileOceanDesigns().setLargeAvatar("css/default/images/avatar.jpg");
+      user.getProfileOceanDesigns().setSmallAvatar("css/default/images/avatar.jpg");
+
+        user.setProfileOceanSettings(new ProfileOceanSettings());
       user.setProfileOceanStats(new ProfileOceanStats());
       List<ViolationResult> violationResults=userDBService.save(user);
       if(violationResults==null  || violationResults.size()==0){
