@@ -1,5 +1,9 @@
 package com.trendocean.service.impl;
 
 
-public class QuestionService {
+import com.trendocean.service.IQuestionService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class QuestionService implements IQuestionService {
 }

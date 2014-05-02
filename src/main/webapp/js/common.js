@@ -441,7 +441,7 @@ function common_checkPOST(){
         notifyBar_display(ERR_MSG_PLEASE_SIGNIN, ICON_URL_NOTIFY_WRONG);
     }else if(cookie_get(COOKIE_ACTIVATED)!="ACTIVATED"){
         $.ajax({
-            url:'api/users/'+cookie_get(COOKIE_USERNAME),
+            url:'api/user/'+cookie_get(COOKIE_USERNAME),
             type: "GET",
             async:false,
             success: function(data){

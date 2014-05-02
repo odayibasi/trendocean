@@ -1,7 +1,9 @@
 package com.trendocean.service.impl;
 
-/**
- * Created by odayibasi on 02/05/14.
- */
-public class AdminService {
+
+import com.trendocean.service.IAdminService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AdminService implements IAdminService {
 }

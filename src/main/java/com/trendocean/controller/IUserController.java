@@ -10,7 +10,7 @@ public interface IUserController {
     TrendoceanResponse helloTrendocean(@RequestParam(value = "name", required = false, defaultValue = "World") String name) throws Exception;
 
 
-    @RequestMapping(value = "/{username}", method= RequestMethod.GET)
+    @RequestMapping(value = "user/{username}", method= RequestMethod.GET)
     public @ResponseBody
     TrendoceanResponse getUser(@PathVariable("username") String username) throws Exception;
 

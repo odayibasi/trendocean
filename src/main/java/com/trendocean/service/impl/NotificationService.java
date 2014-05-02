@@ -1,5 +1,9 @@
 package com.trendocean.service.impl;
 
 
-public class NotificationService {
+import com.trendocean.service.INotificationService;
+import org.springframework.stereotype.Service;
+
+@Service
+public class NotificationService implements INotificationService {
 }
