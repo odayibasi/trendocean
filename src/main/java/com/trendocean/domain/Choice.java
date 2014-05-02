@@ -1,7 +1,28 @@
 package com.trendocean.domain;
 
-/**
- * Created by odayibasi on 02/05/14.
- */
-public class Choice {
+
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.trendocean.domain.base.AbstractEntity;
+
+import javax.persistence.Entity;
+import java.io.Serializable;
+
+
+@JsonAutoDetect
+@Entity
+public class Choice extends AbstractEntity implements Serializable {
+
+    private String text;
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+
+
+
 }

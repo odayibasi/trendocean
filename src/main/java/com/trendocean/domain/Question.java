@@ -3,9 +3,7 @@ package com.trendocean.domain;
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.trendocean.domain.base.AbstractEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,10 +12,10 @@ import java.util.List;
 @Entity
 public class Question extends AbstractEntity implements Serializable {
 
-    private String question;
+    private String body;
 
-
-    //private List<String> choices = new ArrayList<String>(5);
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Choice> choices = new ArrayList<Choice>(5);
     private String reaskUser = "";
     private String owner;
     private String ownerFullName;
@@ -40,14 +38,21 @@ public class Question extends AbstractEntity implements Serializable {
     private String combinedText;
     private String language;
 
-    public String getQuestion() {
-        return question;
+    public String getBody() {
+        return body;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setBody(String body) {
+        this.body = body;
     }
 
+    public List<Choice> getChoices() {
+        return choices;
+    }
+
+    public void setChoices(List<Choice> choices) {
+        this.choices = choices;
+    }
 
     public String getReaskUser() {
         return reaskUser;

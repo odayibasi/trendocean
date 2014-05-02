@@ -160,7 +160,7 @@ public abstract class BaseDAOImpl<T extends AbstractEntity> extends AbstractDAOI
 
     @Override
     public T find(String id) {
-        return entityManager.find(entityClass, id);
+        return entityManager.find(entityClass, Long.parseLong(id));
     }
 
     @SuppressWarnings("unchecked")

@@ -2,20 +2,17 @@ package com.trendocean.controller;
 
 import com.trendocean.TrendoceanResponse;
 import com.trendocean.domain.Question;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 public interface IQuestionController {
 
+    @RequestMapping(value = "question/{qId}", method= RequestMethod.GET)
+    public @ResponseBody
+    TrendoceanResponse getQuestion(@PathVariable("qId") String qId) throws Exception;
+
     @RequestMapping(value = "question/addQuestion")
     public @ResponseBody
-    TrendoceanResponse addQuestion(@RequestBody Question question) throws Exception;
-
-    @RequestMapping(value = "question/getQuestion")
-    public @ResponseBody
-    TrendoceanResponse getQuestion(@RequestParam String questionId) throws Exception;
+    TrendoceanResponse addQuestion(@RequestParam String questionJSON) throws Exception;
 
     @RequestMapping(value = "question/addAbuse")
     public @ResponseBody

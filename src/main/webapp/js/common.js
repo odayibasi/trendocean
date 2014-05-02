@@ -444,7 +444,8 @@ function common_checkPOST(){
             url:'api/user/'+cookie_get(COOKIE_USERNAME),
             type: "GET",
             async:false,
-            success: function(data){
+            success: function(resp){
+                var data=resp.data;
                 if(data.accountState=="ACTIVATED"){
                     cookie_wrap(COOKIE_ACTIVATED,data.accountState);
                     flag=true;

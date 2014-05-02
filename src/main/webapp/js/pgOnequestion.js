@@ -1,5 +1,5 @@
 redirection_toClearURL("../");
-statistics_initialize();
+//statistics_initialize();
 
 var onequestion_selectedQuestion=null;
 var onequestion_selectedChoice=null;
@@ -340,10 +340,10 @@ function onequestion_themeProcessDesign(){
 function onequestion_updateQuestion(){
     var qID=common_getURLSegment(1);
     $.ajax({
-        url: '../api/questions/'+qID,
+        url: '../api/question/'+qID,
         type: "GET",
-        success: function(data){
-            onequestion_selectedQuestion=data;
+        success: function(resp){
+            onequestion_selectedQuestion=resp.data;
             coffeeDlg_setContent(data.owner,cookie_get(COOKIE_USERNAME),data.ownerSmallAvatarURL);
             if(data.owner==cookie_get(COOKIE_USERNAME)){
                 $('#btnCoffee').hide();
@@ -372,7 +372,7 @@ function onequestion_updateQuestion(){
 
         },
         error:function (xhr){
-            window.location.href="../"+PAGE_OPPS;
+           // window.location.href="../"+PAGE_OPPS;
         }
     });
 }
@@ -562,7 +562,7 @@ function onequestion_answerSucceeded(prevTrend,choiceIndex,choiceDistData){
     $('#statistic_onequestion').show();
 
     onequestion_selectedQuestion.answer=""+choiceIndex;
-    onequestion_prepareStatisticsIcon(onequestion_selectedQuestion,choiceDistData);
+    //onequestion_prepareStatisticsIcon(onequestion_selectedQuestion,choiceDistData);
     onequestion_unbindEvents();
     onequestion_bindEventToAnsweredQuestion();
     onequestion_signSelectedChoice();
@@ -646,7 +646,7 @@ $(document).ready(function() {
             if(!statsDisplayFlag){
                 statsDisplayFlag=true;
                 $("#chart_div").show();
-                statistics_display(onequestion_selectedQuestion);
+                //statistics_display(onequestion_selectedQuestion);
             }else{
                 $("#chart_div").hide();
                 statsDisplayFlag=false;

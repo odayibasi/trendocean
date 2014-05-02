@@ -100,7 +100,8 @@ $(document).ready(function() {
             question.choices = new Array();
 
             for(i=0;i<countOfChoice;i++){
-                question.choices[i] = common_htmlStrip($('#qAnsw'+(i+1)).val());
+                question.choices[i]=new Object();
+                question.choices[i].text= common_htmlStrip($('#qAnsw'+(i+1)).val());
             }
             var questionJSON = $.toJSON(question);
 
@@ -131,15 +132,16 @@ $(document).ready(function() {
                 notifyBar_display(ERR_MSG_QUESTION_CHOICES_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
             }else{
                 $.ajax({
-                    url: 'api/questions',
+                    url: 'api/question/addQuestion',
                     type: "POST",
                     async:false,
-                    data: (questionJSON),
-                    dataType: "json",
-                    contentType: 'application/json; charset=utf-8',
-                    success: function(data){
+                    data: {
+                      'questionJSON':questionJSON
+                    },
+                    success: function(resp){
+                        var data=resp.data;
                         common_incrementAskQuestionCount();
-                        window.location.href="question/"+data.id;
+                        window.location.href="questions/"+data.id;
                     },
                     error:function (xhr){
                         if(xhr.status==HTTP_STATUS_BAD_REQUEST){

@@ -1,7 +1,9 @@
 package com.trendocean.dao;
 
-/**
- * Created by odayibasi on 02/05/14.
- */
-public interface IQuestionDAO {
+
+import com.trendocean.dao.hibernate.base.BaseDAO;
+import com.trendocean.domain.Question;
+
+public interface IQuestionDAO extends BaseDAO<Question> {
+
 }

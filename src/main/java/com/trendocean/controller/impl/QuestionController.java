@@ -4,22 +4,27 @@ package com.trendocean.controller.impl;
 import com.trendocean.TrendoceanResponse;
 import com.trendocean.controller.IQuestionController;
 import com.trendocean.domain.Question;
+import com.trendocean.service.IQuestionService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class QuestionController implements IQuestionController{
 
+    @Autowired
+    IQuestionService questionService;
 
     @Override
-    public TrendoceanResponse addQuestion(@RequestBody Question question) throws Exception {
-        return null;
+    public TrendoceanResponse getQuestion(@PathVariable("qId") String qId) throws Exception {
+        return questionService.getQuestion(qId);
     }
 
     @Override
-    public TrendoceanResponse getQuestion(@RequestParam String questionId) throws Exception {
-        return null;
+    public TrendoceanResponse addQuestion(@RequestParam String questionJSON) throws Exception {
+        return questionService.addQuestion(questionJSON);
     }
 
     @Override

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.session.SessionRegistry;
 
 import javax.servlet.*;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 
@@ -22,16 +23,13 @@ public class TrendoceanForwarder implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 
-
-        List<Object> principals = sessionRegistry.getAllPrincipals();
-        //IMPLEMENTED FOR GETTING ALL USERS.
-        for (Object principal: principals) {
-            if (principal instanceof TrendOceanAuthentication) {
-                System.out.println(((TrendOceanAuthentication) principal).getUser().getUsername());
-            }
+        final HttpServletRequest httpServletRequest = (HttpServletRequest) request;
+        final String requestURI = httpServletRequest.getRequestURI();
+        if(requestURI.contains("/questions/")){
+            request.getRequestDispatcher("/onequestion.xhtml").forward(request, response);
+            return;
         }
         chain.doFilter(request, response);
-
     }
 
     @Override
