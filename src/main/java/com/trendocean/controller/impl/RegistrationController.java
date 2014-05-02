@@ -6,6 +6,8 @@ import com.trendocean.domain.Profile;
 import com.trendocean.service.IRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class RegistrationController  implements IRegistrationController{
@@ -14,27 +16,29 @@ public class RegistrationController  implements IRegistrationController{
     IRegistrationService registrationService;
 
     @Override
-    public TrendoceanResponse checkUsername(String username) throws Exception {
-        return registrationService.checkUsername(username);
-    }
-
-    @Override
-    public TrendoceanResponse checkEmail(String email) throws Exception {
-        return registrationService.checkEmail(email);
-    }
-
-    @Override
-    public TrendoceanResponse addUser(Profile user) throws Exception {
-        return registrationService.addUser(user);
-    }
-
-    @Override
     public TrendoceanResponse listCountry() throws Exception {
         return registrationService.getCountries();
     }
 
     @Override
-    public TrendoceanResponse listCity(String countryCode) throws Exception {
+    public TrendoceanResponse listCity(@RequestParam String countryCode) throws Exception {
         return registrationService.getCities(countryCode);
     }
+
+    @Override
+    public TrendoceanResponse checkUsername(@RequestParam String username) throws Exception {
+        return registrationService.checkUsername(username);
+    }
+
+    @Override
+    public TrendoceanResponse checkEmail(@RequestParam String email) throws Exception {
+        return registrationService.checkEmail(email);
+    }
+
+    @Override
+    public TrendoceanResponse addUser(@RequestBody Profile user) throws Exception {
+        return registrationService.addUser(user);
+    }
+
+
 }

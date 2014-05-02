@@ -17,13 +17,14 @@ public class UserController implements IUserController{
     IUserService userService;
 
    @Override
-    public TrendoceanResponse helloTrendocean(String name) throws Exception {
+    public TrendoceanResponse helloTrendocean(@RequestParam(value = "name", required = false, defaultValue = "World")String name) throws Exception {
         return new TrendoceanResponse.Builder().setSuccess(true).setData("Hello"+name).build();
     }
 
     @Override
-    public TrendoceanResponse getUser(String username) throws Exception {
+    public TrendoceanResponse getUser(@PathVariable("username") String username) throws Exception {
         return userService.getUserWithUsername(username);
     }
+
 
 }

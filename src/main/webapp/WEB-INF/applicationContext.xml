@@ -62,6 +62,8 @@
         <property name="password" value="123456" />
     </bean>
 
+    <bean class="com.trendocean.filter.TrendoceanForwarder"
+          id="trendoceanForwarder"/>
 
 
 </beans>

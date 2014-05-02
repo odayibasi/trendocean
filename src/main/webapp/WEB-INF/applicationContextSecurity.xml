@@ -42,16 +42,16 @@
 
 
     <beans:bean id="successHandler" class="org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler">
-        <beans:property name="defaultTargetUrl" value="/main.jsp"/>
+        <beans:property name="defaultTargetUrl" value="/home.html"/>
     </beans:bean>
 
     <beans:bean id="failureHandler" class="org.springframework.security.web.authentication.SimpleUrlAuthenticationFailureHandler">
-        <beans:property name="defaultFailureUrl" value="/index.jsp?login_error=true"/>
+        <beans:property name="defaultFailureUrl" value="/index.html?login_error=true"/>
     </beans:bean>
 
     <beans:bean id="concurrencyFilter" class="org.springframework.security.web.session.ConcurrentSessionFilter">
         <beans:property name="sessionRegistry" ref="sessionRegistry"/>
-        <beans:property name="expiredUrl" value="/index.jsp?concurrent_session=true"/>
+        <beans:property name="expiredUrl" value="/index.html?concurrent_session=true"/>
     </beans:bean>
 
     <beans:bean id="sas" class="org.springframework.security.web.authentication.session.ConcurrentSessionControlStrategy">
