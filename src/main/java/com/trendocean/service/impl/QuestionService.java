@@ -3,7 +3,9 @@ package com.trendocean.service.impl;
 
 import com.trendocean.TrendoceanResponse;
 import com.trendocean.domain.Choice;
+import com.trendocean.domain.Profile;
 import com.trendocean.domain.Question;
+import com.trendocean.security.SecurityHelper;
 import com.trendocean.service.IQuestionService;
 import com.trendocean.service.db.IQuestionDBService;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -21,8 +23,12 @@ public class QuestionService implements IQuestionService {
 
     @Override
     public TrendoceanResponse addQuestion(String questionJSON) throws Exception {
-        ObjectMapper mapper 			= new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
+        Profile loggedInUser= SecurityHelper.getLoggedInUser();
         Question newQuestion  =  mapper.readValue(questionJSON, Question.class);
+        newQuestion.setOwner(loggedInUser.getUsername());
+        newQuestion.setOwnerFullName(loggedInUser.getFullName());
+        newQuestion.setOwnerSmallAvatarURL(loggedInUser.getProfileOceanDesigns().getSmallAvatar());
         questionDBService.save(newQuestion);
         return new TrendoceanResponse.Builder().setSuccess(true).setData(newQuestion).build();
     }

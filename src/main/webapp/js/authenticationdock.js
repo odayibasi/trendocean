@@ -54,20 +54,19 @@ function authenticationdock_initialize() {
             return false;
         } else {
             $.ajax({
-                url: '../api/authentication/login/',
+                url: '../login',
                 type: "POST",
                 data: {
-                    j_username:usernameVal,
-                    j_password:passwordVal
+                   'username':usernameVal,
+                   'password':passwordVal
                 },
-                dataType: "json",
-                success: function(data){
-                    authenticationdock_sucess(data);
+                success: function(resp){
+                    authentication_sucess(resp.data);
                 },
                 error:function (xhr){
                     authentication_error(xhr);
-                    
                 }
+            });
             });
             return false;
         }

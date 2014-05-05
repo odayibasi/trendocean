@@ -823,21 +823,15 @@ function tblQuestions_prepareQuestionChoices(question){
 }
 
 
-function tblQuestions_renderQuestions(data){
+function tblQuestions_renderQuestions(resp){
+
+    var data=resp.data;
+    display_questions=data;
 
     //Reset
     question_answer_process.appendTo($("#question_answer_process_container")); //For IE8
     var scrollPosition=$(window).scrollTop();
     $('#static_que_section').html("<div id=que_section></div>");
-
-    if(data==null){
-        data=new Object();
-        display_questions=null;
-    }else if($.isArray(data.question)){
-        display_questions=data.question;
-    }else{
-        display_questions=new Array(data.question);
-    }
 
     tblQuestionsData=data;
     tblQuestionsData.question=display_questions;

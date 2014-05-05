@@ -101,7 +101,7 @@ function homeTrb_close(index){
 function homeTrb_setContent(data, prefix){
     $(prefix+"box").show();
     $(prefix+"avatarLink").attr("href",data.username);
-    $(prefix+"avatar").attr("src",data.smallAvatarURL);
+    $(prefix+"avatar").attr("src",data.profileOceanDesigns.smallAvatar);
     $(prefix+"username").attr("href",data.username);
     $(prefix+"username").text(data.username);
     $(prefix+"fullname").text(data.fullName);
@@ -126,13 +126,13 @@ function homeTrb_Random(){
             if(resp.success){
                 var data=resp.data;
                 if(homeTrb_userName0==null){
-                    homeTrb_userName0=data.username;
-                    homeTrb_setContent(data, "#trb0_");
+                    homeTrb_userName0=data[0].username;
+                    homeTrb_setContent(data[0], "#trb0_");
                 }
 
                 if(homeTrb_userName1==null){
-                    homeTrb_userName1=data.username;
-                    homeTrb_setContent(data, "#trb1_");
+                    homeTrb_userName1=data[1].username;
+                    homeTrb_setContent(data[1], "#trb1_");
                 }
             }else{
                 homeTrb_Hide();

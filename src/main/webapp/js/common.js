@@ -478,7 +478,8 @@ function common_checkActivated(){
 }
 
 
-function common_choiceProcess(content){
+function common_choiceProcess(choice){
+    var content=choice.text;
     var sounds=content.match(soundBase);
     var links0=content.match(linkBase0);
     var links1=content.match(linkBase1);
@@ -497,7 +498,8 @@ function common_choiceProcess(content){
     }
 }
 
-function common_choiceBoxProcess(content){
+function common_choiceBoxProcess(choice){
+    var content=choice.text;
     var sounds=content.match(soundBase);
     var links0=content.match(linkBase0);
     var links1=content.match(linkBase1);
@@ -519,7 +521,8 @@ function common_choiceBoxProcess(content){
 }
 
 
-function common_choiceBoxProcessOneQuestion(content, oMp3Player){
+function common_choiceBoxProcessOneQuestion(choice, oMp3Player){
+    var content=choice.text;
     var sounds=content.match(soundBase);
     var links0=content.match(linkBase0);
     var links1=content.match(linkBase1);
@@ -541,7 +544,8 @@ function common_choiceBoxProcessOneQuestion(content, oMp3Player){
 }
 
 
-function common_contentCounterProcess(content){
+function common_contentCounterProcess(choice){
+    var content=choice.text;
     var sounds=content.match(soundBase);
     var links0=content.match(linkBase0);
     var links1=content.match(linkBase1);
