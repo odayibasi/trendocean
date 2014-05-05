@@ -92,7 +92,11 @@ function home_setQuestionQueryMode(mode){
 function home_getPromotedQuestions(){
     home_setQuestionQueryMode(QUESTIONS_IN_PROMOTED);
     $.ajax({
-        url: 'api/questions/promoted?size=50',
+        url: 'api/qstream/listPromotedQuestion',
+        data:{
+            'startIndex':0,
+            'endIndex':20
+        },
         type: "GET",
         success: function(data){
             tblQuestions_renderQuestions(data);
@@ -109,9 +113,12 @@ function home_displayMorePromotedQuestions(){
     $('#tableLoadingIcon').show();
     var length=display_questions.length;
     if(length>0){
-        var qID=display_questions[length-1].id;
         $.ajax({
-            url: 'api/questions/promoted?startQuestion='+qID+'&size=20',
+            url: 'api/qstream/listPromotedQuestion',
+            data:{
+                'startIndex':length,
+                'endIndex':length+20
+            },
             type: "GET",
             success: function(data){
                 if(data!=null){
@@ -134,8 +141,12 @@ function home_displayMorePromotedQuestions(){
 function home_getFollowedQuestions(){
     home_setQuestionQueryMode(QUESTIONS_IN_FOLLOW);
     $.ajax({
-        url: 'api/questions/followed?size=20',
+        url: 'api/qstream/listFollowedQuestion',
         type: "GET",
+        data:{
+            'startIndex':0,
+            'endIndex':20
+        },
         success: function(data){
             tblQuestions_renderQuestions(data);
             return false;
@@ -152,9 +163,12 @@ function home_displayMoreFollowedQuestions(){
     $('#tableLoadingIcon').show();
     var length=display_questions.length;
     if(length>0){
-        var qID=display_questions[length-1].id;
         $.ajax({
-            url: 'api/questions/followed?startQuestion='+qID+'&size=20',
+            url: 'api/qstream/listFollowedQuestion',
+            data:{
+                'startIndex':length,
+                'endIndex':length+20
+            },
             type: "GET",
             success: function(data){
                 if(data!=null){
@@ -198,9 +212,12 @@ function home_displayMoreLatestQuestions(){
     $('#tableLoadingIcon').show();
     var length=display_questions.length;
     if(length>0){
-        var qID=display_questions[length-1].id;
         $.ajax({
-            url: 'api/questions?startIndex='+qID+'&size=20',
+            url: 'api/qstream/listLatestQuestion',
+            data:{
+                'startIndex':length,
+                'endIndex':length+20
+            },
             type: "GET",
             success: function(data){
                 if(data!=null){
@@ -222,7 +239,12 @@ function home_displayMoreLatestQuestions(){
 function home_getPopularQuestions(type){
     home_setQuestionQueryMode(type);
     $.ajax({
-        url: 'api/questions/popular?type='+type,
+        url: 'api/qstream/listPopularQuestion',
+        data:{
+          'type':type,
+          'startIndex':0,
+          'endIndex':20
+        },
         type: "GET",
         success: function(data){
             tblQuestions_renderQuestions(data);
@@ -234,13 +256,18 @@ function home_getPopularQuestions(type){
     });
 }
 
-function home_displayMorePopularQuestions(){
+function home_displayMorePopularQuestions(type){
 
     $('#tableLoadingIcon').show();
     var length=display_questions.length;
     if(length>0){
         $.ajax({
-            url: 'api/questions/popular?type='+homeQuestionQueryMode+'&startIndex='+length,
+            url: 'api/qstream/listPopularQuestion',
+            data:{
+              'type':type,
+              'startIndex':length,
+              'endIndex':length+20
+            },
             type: "GET",
             success: function(data){
                 if(data!=null){
@@ -259,11 +286,17 @@ function home_displayMorePopularQuestions(){
 }
 
 
-function home_displayMoreSearchQuestions(){
+function home_displayMoreSearchQuestions(searchText){
 
     $('#tableLoadingIcon').show();
+    var length=display_questions.length;
     $.ajax({
-        url: 'api/questions/search?searchTerm='+QUESTIONS_IN_TRENDS_TYPE+'&pageIndex='+searchPageIndex,
+        url: 'api/qstream/listSearchingQuestion',
+        data:{
+            'startIndex':length,
+            'endIndex':length+20,
+            'searchTerm':searchText
+        },
         type: "GET",
         success: function(data){
             if(data!=null){
@@ -288,7 +321,12 @@ function home_searchInQuestions(searchText){
     home_setQuestionQueryMode(QUESTIONS_IN_TRENDS);
     QUESTIONS_IN_TRENDS_TYPE=searchText;
     $.ajax({
-        url: 'api/questions/search?searchTerm='+searchText,
+        url: 'api/qstream/listSearchingQuestion',
+        data:{
+            'startIndex':0,
+            'endIndex':20,
+            'searchTerm':searchText
+        },
         type: "GET",
         success: function(data){
             tblQuestions_renderQuestions(data);
@@ -372,11 +410,9 @@ $(document).ready(function() {
             }else if(homeQuestionQueryMode==QUESTIONS_IN_LATEST){
                 home_displayMoreLatestQuestions();
             }else if(homeQuestionQueryMode==QUESTIONS_IN_PROMOTED){
-                //home_displayMorePromotedQuestions();
-                //home_getPromotedQuestions();
+                home_displayMorePromotedQuestions();
             }else if(homeQuestionQueryMode==QUESTIONS_IN_TRENDS){
                 home_displayMoreSearchQuestions();
-
             }else{
                 home_displayMorePopularQuestions(homeQuestionQueryMode);
             }

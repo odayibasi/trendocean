@@ -22,10 +22,10 @@ var CONTENT_PROCESS_FOR_COMMENT=2; // Media & #@ & Links
 
 
 //API
-var API_PROFILE_MYQUESTIONS='api/questions/byuser/';
-var API_PROFILE_ANSWEREDS='api/questions/answered/';
-var API_PROFILE_FAVS='api/favorites/';
-var API_PROFILE_COFFEES='api/messages/public/';
+var API_PROFILE_MYQUESTIONS='api/user/listAsked';
+var API_PROFILE_ANSWEREDS='api/user/listAnswered/';
+var API_PROFILE_FAVS='api/user/listFav/';
+var API_PROFILE_COFFEES='api/user/listPublicMsg/';
 
 
 //COOKIE

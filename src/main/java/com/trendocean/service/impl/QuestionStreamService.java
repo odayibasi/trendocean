@@ -18,8 +18,35 @@ public class QuestionStreamService implements IQuestionStreamService {
     IQuestionDBService questionDBService;
 
     @Override
-    public TrendoceanResponse listLastestQuestions() throws Exception {
+    public TrendoceanResponse listLastestQuestion(int startIndex, int endIndex) throws Exception {
         List<Question> questionS=questionDBService.getAll();
         return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
     }
+
+    @Override
+    public TrendoceanResponse listPopularQuestion(int startIndex, int endIndex, String type) throws Exception {
+        List<Question> questionS=questionDBService.getAll();
+        return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
+    }
+
+    @Override
+    public TrendoceanResponse listPromotedQuestion(int startIndex, int endIndex) throws Exception {
+        List<Question> questionS=questionDBService.getAll();
+        return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
+    }
+
+
+    @Override
+    public TrendoceanResponse listFollowedQuestion(int startIndex, int endIndex) throws Exception {
+        List<Question> questionS=questionDBService.getAll();
+        return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
+    }
+
+    @Override
+    public TrendoceanResponse listSearchingQuestion(int startIndex, int endIndex) throws Exception {
+        List<Question> questionS=questionDBService.getAll();
+        return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
+    }
+
+
 }

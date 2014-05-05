@@ -201,13 +201,13 @@ function tblQuestions_initialize(page){
                 qParent.find('.reask-info-do').show();
             }
 
-            if(hover_question.isQuestionFaved=="false"){
+            if(!hover_question.questionFaved){
                 qParent.find('.love').show();
             }else{
                 qParent.find('.loveselected').show();
             }
 
-            if(hover_question.isQuestionAbused=="false"){
+            if(!hover_question.questionAbused){
                 qParent.find('.flag').show();
             }else{
                 qParent.find('.flagselected').show();
