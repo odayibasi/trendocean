@@ -15,7 +15,14 @@ public interface IUserController {
     TrendoceanResponse getUser(@PathVariable("username") String username) throws Exception;
 
 
+    @RequestMapping(value = "user/getTrend", method= RequestMethod.GET)
+    public @ResponseBody
+    TrendoceanResponse getTrend(@RequestParam String username) throws Exception;
 
+
+    @RequestMapping(value = "user/follow", method= RequestMethod.GET)
+    public @ResponseBody
+    TrendoceanResponse followOtherUser(@RequestParam String otherUsername) throws Exception;
 
 
 }

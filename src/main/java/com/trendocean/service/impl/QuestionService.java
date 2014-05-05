@@ -30,7 +30,6 @@ public class QuestionService implements IQuestionService {
     @Override
     public TrendoceanResponse getQuestion(String qId) throws Exception {
         Question question=questionDBService.find(qId);
-        question.setChoices(new ArrayList<Choice>());
         return new TrendoceanResponse.Builder().setSuccess(true).setData(question).build();
     }
 }

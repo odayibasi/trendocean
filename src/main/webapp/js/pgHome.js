@@ -177,7 +177,11 @@ function home_displayMoreFollowedQuestions(){
 function home_getLatestQuestions(){
     home_setQuestionQueryMode(QUESTIONS_IN_LATEST);
     $.ajax({
-        url: 'api/questions?size=20',
+        url: 'api/qstream/listLatestQuestion',
+        data:{
+          'startIndex':0,
+          'endIndex':20
+        },
         type: "GET",
         success: function(data){
             tblQuestions_renderQuestions(data);

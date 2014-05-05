@@ -9,11 +9,13 @@ var homeTrb_trendTopic='<a class="setter-list" href="trendstopics#TOPIC" target=
 function homeTrb_calculateTrends(username, trendComp){
 
     $.ajax({
-        url: 'api/trends/'+username,
+        url: 'api/user/getTrend',
+        data:{
+            'username':username
+        },
         type: "GET",
-        success: function(data){
-            var scoreObj=$.evalJSON(data);
-            profileTrend=scoreObj.trend;
+        success: function(resp){
+            profileTrend=resp.data;
             trendComp.text(parseInt(parseFloat(profileTrend)*100));
             homeTrb_Show();
         }
@@ -35,7 +37,10 @@ function homeTrb_follow(index){
 
     if(common_checkPOST()){
         $.ajax({
-            url: 'api/users/follow/'+username,
+            url: 'api/user/follow',
+            data:{
+               'otherUsername':username
+            },
             type: "POST",
             success: function(){
                 if(index==0){
@@ -68,8 +73,11 @@ function homeTrb_close(index){
 
     if(common_checkPOST()){
         $.ajax({
-            url: 'api/users/recommendation/'+username,
-            type: "DELETE",
+            url: 'api/urelation/delRecommendedUser',
+            data:{
+                'delUserName':username
+            },
+            type: "POST",
             success: function(){
                 if(index==0){
                     homeTrb_userName0=null;
@@ -112,39 +120,23 @@ function homeTrb_Show(){
 
 function homeTrb_Random(){
     $.ajax({
-        url: 'api/users/recommendation/random',
+        url: 'api/urelation/listRecommendedUser',
         type: "GET",
-        success: function(data){
-            if(data==null){
-                homeTrb_Hide();
+        success: function(resp){
+            if(resp.success){
+                var data=resp.data;
+                if(homeTrb_userName0==null){
+                    homeTrb_userName0=data.username;
+                    homeTrb_setContent(data, "#trb0_");
+                }
+
+                if(homeTrb_userName1==null){
+                    homeTrb_userName1=data.username;
+                    homeTrb_setContent(data, "#trb1_");
+                }
             }else{
-                if($.isArray(data.user)){
-                    if(homeTrb_userName0==null){
-                        homeTrb_userName0=data.user[0].username;
-                        homeTrb_setContent(data.user[0], "#trb0_");
-                    }
-
-                    if(homeTrb_userName1==null){
-                        homeTrb_userName1=data.user[1].username;
-                        homeTrb_setContent(data.user[1], "#trb1_");
-                    }
-
-                }else{ //Not Array
-                    if(homeTrb_userName0==null){
-                        homeTrb_userName0=data.user.username;
-                        homeTrb_setContent(data.user, "#trb0_");
-                        if(homeTrb_userName1==null){
-                            $("#trb1_box").hide();
-                        }
-                    }else if(homeTrb_userName1==null){
-                        homeTrb_userName1=data.user.username;
-                        homeTrb_setContent(data.user, "#trb1_");
-                    }
-
-                }//End of array
-
+                homeTrb_Hide();
             } // data not null
-
         },
         error:function (xhr){
             homeTrb_Hide();

@@ -2,6 +2,8 @@ package com.trendocean.controller.impl;
 
 import com.trendocean.TrendoceanResponse;
 import com.trendocean.controller.IQuestionStreamController;
+import com.trendocean.service.IQuestionStreamService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import java.util.ArrayList;
@@ -9,9 +11,12 @@ import java.util.ArrayList;
 @Controller
 public class QuestionStreamController implements IQuestionStreamController {
 
+    @Autowired
+    IQuestionStreamService questionStreamService;
+
     @Override
     public TrendoceanResponse listLatestQuestion(int startIndex, int endIndex) throws Exception {
-        return new TrendoceanResponse.Builder().setSuccess(true).build();
+        return questionStreamService.listLastestQuestions();
     }
 
     @Override

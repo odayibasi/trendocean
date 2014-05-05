@@ -26,5 +26,15 @@ public class UserController implements IUserController{
         return userService.getUserWithUsername(username);
     }
 
+    @Override
+    public TrendoceanResponse getTrend(@RequestParam String username) throws Exception {
+        return new TrendoceanResponse.Builder().setSuccess(true).setData("70").build();
+    }
+
+    @Override
+    public TrendoceanResponse followOtherUser(@RequestParam String otherUsername) throws Exception {
+        return new TrendoceanResponse.Builder().setSuccess(true).build();
+    }
+
 
 }
