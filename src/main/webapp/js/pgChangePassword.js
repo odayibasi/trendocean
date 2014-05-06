@@ -1,11 +1,4 @@
-redirection_toClearURL();
-
-
 $(document).ready(function() {
-
-    if(redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
 
     $("#icoWaiting").hide();
     notifyBar_initialize();

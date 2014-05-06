@@ -1,9 +1,3 @@
-if(redirection_toClearURL()){
-//Do Nothing
-}else if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_ASKQUESTION, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}
-
 var countOfChoice=2;
 function reset(){
     $('#qBody').val("");

@@ -19,7 +19,38 @@
         <intercept-url pattern="/api/question/getQuestion" access="permitAll"/>
         <intercept-url pattern="/login" access="permitAll"/>
 
-        <intercept-url pattern="/api/**" access="hasRole('ROLE_USER') or hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/about.html" access="permitAll"/>
+        <intercept-url pattern="/account.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/admin.html" access="hasRole('ROLE_ADMIN')"/>
+        <intercept-url pattern="/askquestion.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/business.html" access="permitAll"/>
+        <intercept-url pattern="/changePassword.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/comingsoon.html" access="permitAll"/>
+        <intercept-url pattern="/design.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/error.html" access="permitAll"/>
+        <intercept-url pattern="/help.html" access="permitAll"/>
+        <intercept-url pattern="/home.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/howtouse.html" access="permitAll"/>
+        <intercept-url pattern="/login.html" access="permitAll"/>
+        <intercept-url pattern="/newfollowers.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/notifications.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/onequestion.xhtml" access="permitAll"/>
+        <intercept-url pattern="/opps.html" access="permitAll"/>
+        <intercept-url pattern="/overload.html" access="permitAll"/>
+        <intercept-url pattern="/password.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/people.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/privacy.html" access="permitAll"/>
+        <intercept-url pattern="/profile.html" access="permitAll"/>
+        <intercept-url pattern="/register.html" access="permitAll"/>
+        <intercept-url pattern="/resend_password.html" access="permitAll"/>
+        <intercept-url pattern="/search.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/terms.html" access="permitAll"/>
+        <intercept-url pattern="/trendradar.html" access="hasRole('ROLE_USER')"/>
+        <intercept-url pattern="/unsupported.html" access="permitAll"/>
+        <intercept-url pattern="/willbeback.html" access="permitAll"/>
+
+
+        <intercept-url pattern="/api/**" access="hasRole('ROLE_USER')"/>
         <logout logout-url="/logout.jsp" success-handler-ref="toLogoutHandler" invalidate-session="true"/>
         <access-denied-handler error-page="/index.html?access_denied=true"/>
         <session-management session-authentication-strategy-ref="sas" invalid-session-url="/index.html?session_expired=true"/>

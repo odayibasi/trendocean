@@ -2,19 +2,6 @@ var urlUserName=common_getURLSegment(1);
 var peopleCurrentAnchor=null;
 var peopleApiURL="";
 
-//Redirections For Not Login User
-if(redirection_toClearURL()){
-//Do Nothing
-}else if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_FALLOWS, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}else{
-    var anchor=jQuery.url.attr("anchor");
-    if(anchor==null){
-        window.location.href=window.location.href+ANCHOR_FOLLOWEDS;
-    }
-}
-
-
 function fireAnchorTabChanged(currentAnchor){
     peopleCurrentAnchor=currentAnchor;
     if(currentAnchor==ANCHOR_FOLLOWEDS){

@@ -1,10 +1,3 @@
-if(redirection_toClearURL()){
-//Do Nothing
-}else if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL && cookie_get(COOKIE_USERNAME)=="trendocean"){
-    redirection_execute(PAGE_ACCOUNT, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}
-
-
 $(document).ready(function() {
 
 

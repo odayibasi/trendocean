@@ -1,8 +1,3 @@
-//Redirections For Not Login User
-if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_DESIGN, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}
-
 function design_BgImageTileUpdate(){
 
     var tiledVal;

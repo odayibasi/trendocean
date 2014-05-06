@@ -1,15 +1,3 @@
-if(redirection_toClearURL()){
-
-}else if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_FINDFRIENDS, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}else{
-    var anchor=jQuery.url.attr("anchor");
-    if(anchor==null){
-        var address=window.location.href+ANCHOR_RECOMMEND;
-        window.location.href=address.replace("##", "#");
-    }
-}
-
 var ffCurrentAnchor=null;
 
 function fireAnchorTabChanged(currentAnchor){

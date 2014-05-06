@@ -1,18 +1,11 @@
-if(redirection_toClearURL()){
-
-}else if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_SEARCH, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}else{
-    var anchor=jQuery.url.attr("anchor");
-    if(anchor==null){
-        window.location.href=PAGE_SEARCH+ANCHOR_PEOPLE;
-    }else if(anchor.indexOf("quendies=")!=-1){
-        var qTag=anchor.replace("quendies=","");
-        $.cookie("searchContent", qTag);
-        window.location.href=PAGE_SEARCH+ANCHOR_QUENDIES;
-    }
+var anchor=jQuery.url.attr("anchor");
+if(anchor==null){
+    window.location.href=PAGE_SEARCH+ANCHOR_PEOPLE;
+}else if(anchor.indexOf("quendies=")!=-1){
+    var qTag=anchor.replace("quendies=","");
+    $.cookie("searchContent", qTag);
+    window.location.href=PAGE_SEARCH+ANCHOR_QUENDIES;
 }
-
 var searchPageIndex=1;
 
 

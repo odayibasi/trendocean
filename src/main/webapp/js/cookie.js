@@ -33,7 +33,6 @@ function cookie_saveLoginUser(loginUserInfo, remindMe){
     cookie_wrap(COOKIE_GENDER,loginUserInfo.gender, remindMe);
     cookie_wrap(COOKIE_ACOUNT_STATE,loginUserInfo.acountState, remindMe);
     cookie_wrap(COOKIE_EDUCATION,loginUserInfo.education, remindMe);
-    cookie_wrap(COOKIE_SIGNIN,COOKIE_SIGNIN_VAL, remindMe);
 
     //Design
     cookie_wrap(COOKIE_AVATAR_SMALL_URL,loginUserInfo.profileOceanDesigns.smallAvatar, remindMe);
@@ -79,7 +78,6 @@ function cookie_clearLoginUser(){
     cookie_wrap(COOKIE_GENDER,null, remindMe);
     cookie_wrap(COOKIE_ACOUNT_STATE,null, remindMe);
     cookie_wrap(COOKIE_EDUCATION,null, remindMe);
-    cookie_wrap(COOKIE_SIGNIN,null, remindMe);
 
     //Design
     cookie_wrap(COOKIE_AVATAR_SMALL_URL,null, remindMe);

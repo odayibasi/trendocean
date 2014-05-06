@@ -1,9 +1,3 @@
-if(cookie_get(COOKIE_SIGNIN)==COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_REGISTER, PAGE_HOME,ERR_MSG_ALREADY_SIGNIN);
-}else{
-    redirection_toClearURL();
-}
-
 var minYear=1900;
 var maxYear=2100;
 

@@ -1,10 +1,3 @@
-if(cookie_get(COOKIE_SIGNIN)==COOKIE_SIGNIN_VAL){
-    window.location.href=PAGE_HOME;
-}else{
-    redirection_toClearURL();
-}
-
-
 var liveQuestionUpdater=null;
 var counter=0;
 var latestQuestions=null;
@@ -90,10 +83,6 @@ function index_updateQuestion(){
 
 $(document).ready(function() {
 
-    if(cookie_get(COOKIE_SIGNIN)==COOKIE_SIGNIN_VAL || redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
-    
     notifyBar_initialize();
     mainLinks_initialize(PAGE_INDEX);
     redirection_executeOrderAfterNewPageLoad();

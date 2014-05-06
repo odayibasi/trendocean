@@ -1,9 +1,3 @@
-if(redirection_toClearURL()){
-//Do Nothing
-}else if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-    redirection_execute(PAGE_NEWFOLLOWERS, PAGE_INDEX, ERR_MSG_PLEASE_SIGNIN);
-}
-
 function newFollowers_displayMainText(reqCount){
     var mainTemplate='You have reqCount follower request<br/><span>You can easily add  them to your list or ignore their request</span>';
     var mainText=mainTemplate.replace('reqCount',reqCount)

@@ -646,6 +646,7 @@ button.searchbutton-docka:hover {
     font-family:Calibri,Tahoma, Geneva, sans-serif;
     font-size:18px;
     color:#09C;
+    display:none;
     background:#3a6778;
     -moz-border-radius-bottomleft: 22px;
     -webkit-border-bottom-left-radius: 22px;
