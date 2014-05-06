@@ -211,10 +211,6 @@ function fillCombosWithIE(){
 
 $(document).ready(function() {
 
-    if(cookie_get(COOKIE_SIGNIN)==COOKIE_SIGNIN_VAL || redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
-
     $('#waitingIcon').hide();
     mainLinks_initialize(PAGE_REGISTER);
 

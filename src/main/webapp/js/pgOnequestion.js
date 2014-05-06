@@ -602,10 +602,6 @@ function onequestion_answerSucceeded(prevTrend,choiceIndex,choiceDistData){
 
 $(document).ready(function() {
 
-    if(redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
-
     authenticationdock_initialize();
     mainLinks_initialize(PAGE_ONEQUESTION);
     onequestion_defineComponentVisibilityAccordingAuthentication();

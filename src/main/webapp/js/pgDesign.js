@@ -19,10 +19,6 @@ function design_BgImageTileUpdate(){
 
 $(document).ready(function() {
 
-    if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-        return;
-    }
-
     theme_processDesign();
     $("#icoWaiting").hide();
     document.title="TrendOcean / "+cookie_get(COOKIE_USERNAME)+"'s design settings";

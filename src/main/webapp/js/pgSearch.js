@@ -113,10 +113,6 @@ function search_searchInPeople(){
 
 $(document).ready(function() {
 
-    if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL || redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
-
     theme_processDesign();
     mainBar_initialize();
     mainBar_initializeSearch(true);

@@ -620,10 +620,6 @@ function profile_getMorePodcasts(){
 
 $(document).ready(function() {
 
-    if(redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
-
     profileUsername=common_getURLSegment(0);
     profileLoginUserName=cookie_get(COOKIE_USERNAME);
     mainLinks_initialize(PAGE_PROFILE);

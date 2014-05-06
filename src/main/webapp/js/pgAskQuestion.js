@@ -35,10 +35,6 @@ function askQuestion_preview(){
 
 $(document).ready(function() {
 
-    if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL  ||redirection_isURLContainsSSLOrWWW()){
-        return;
-    }
-
     $('#qPreview_upcover').hide();
     $('#userNameAndLink').text(cookie_get(COOKIE_USERNAME));
     $('#userNameAndLink').attr("href",cookie_get(COOKIE_USERNAME));
