@@ -62,8 +62,28 @@
         <property name="password" value="123456" />
     </bean>
 
-    <bean class="com.trendocean.filter.TrendoceanForwarder"
-          id="trendoceanForwarder"/>
+    <bean class="com.trendocean.filter.TrendoceanForwarder" id="trendoceanForwarder"/>
+
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="smtp.gmail.com" />
+        <property name="port" value="465" />
+        <property name="username" value="trendocean@gmail.com" />
+        <property name="password" value="to1234567890" />
+
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.smtp.starttls.enable">true</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="emailService" class="com.trendocean.service.impl.EmailService">
+        <property name="mailSender" ref="mailSender" />
+    </bean>
+
+
+
 
 
 </beans>
