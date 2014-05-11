@@ -3,7 +3,7 @@ package com.trendocean.controller.impl;
 import com.trendocean.TrendoceanResponse;
 import com.trendocean.controller.IRegistrationController;
 import com.trendocean.domain.Profile;
-import com.trendocean.service.IEmailService;
+import com.trendocean.util.mail.IEmailService;
 import com.trendocean.service.IRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -46,7 +46,8 @@ public class RegistrationController  implements IRegistrationController{
 
     @Override
     public TrendoceanResponse resetPassword(@RequestParam String email) throws Exception {
-        emailService.sendMail("trendocean@gmail.com","onur@t2.com.tr","Deneme","DenemeMsg");
+        String names[]={"onur@t2.com.tr"};
+        emailService.sendMailWithoutAttachment("Deneme","DenemeMsg",names);
         return new TrendoceanResponse.Builder().setData(email).setSuccess(true).build();
     }
 }
