@@ -36,7 +36,27 @@ public class TrendoceanForwarder implements Filter {
             return;
         }
 
+        if(requestURI.contains("/follows/")){
+            request.getRequestDispatcher("/people.html").forward(request, response);
+            return;
+        }
 
+        if(requestURI.contains("/newfollows/")){
+            request.getRequestDispatcher("/newfollowers.html").forward(request, response);
+            return;
+        }
+
+
+        if(requestURI.contains("/findfriends/")){
+            request.getRequestDispatcher("/trendradar.html").forward(request, response);
+            return;
+        }
+
+
+        if(requestURI.contains("/searchs/")){
+            request.getRequestDispatcher("/search.html").forward(request, response);
+            return;
+        }
 
         chain.doFilter(request, response);
 
