@@ -14,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class RegistrationController  implements IRegistrationController{
 
+
+
     @Autowired
     IRegistrationService registrationService;
 
     @Autowired
     IEmailService emailService;
 
-    @Value("${activationmail.subject}")
+    @Value("${activationmail.content}")
     private String activationMailSubject;
 
     @Value("${activationmail.content}")

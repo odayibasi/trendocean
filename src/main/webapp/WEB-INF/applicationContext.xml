@@ -18,12 +18,13 @@
     http://www.springframework.org/schema/mvc 
     http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 
+
+
     <bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>
                 <value>classpath:local.properties</value>
                 <value>classpath:mail.properties</value>
-                <value>classpath:messages.properties</value>
             </list>
         </property>
     </bean>
@@ -31,7 +32,6 @@
     <!-- JPA Configuration -->
     <context:component-scan base-package="com.trendocean"/>
     <tx:annotation-driven transaction-manager="transactionManager" />
-
     <bean id="emf" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="jpaVendorAdapter" ref="jpaVendorAdapter"/>
         <property name="dataSource" ref="ds" />
