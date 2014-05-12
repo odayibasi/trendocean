@@ -64,35 +64,6 @@ function mainBar_initialize(relativePath){
     $('#followers_MainBar').attr("href", mainBarRP+'follow/'+cookie_get(COOKIE_USERNAME)+ANCHOR_FOLLOWERS);
 
 
-
-
-
-
-    //Messages
-    $('#msgs_MainBar').attr("title","comingsoon");
-    $('#msgs_MainBar').click(function(event) {
-        event.preventDefault();
-    //window.location.href=mainBarRP+'msgbox#inbox';
-    //window.location.href=mainBarRP+'comingsoon.html';
-    });
-
-
-
-    $('#msgs_MainBar_Count').removeClass();
-    $('#msgs_MainBar_Count').addClass("redreal");
-    $('#msgs_MainBar_Count').click(function(event) {
-        event.preventDefault();
-    //window.location.href=mainBarRP+'msgbox#inbox';
-    //window.location.href=mainBarRP+'comingsoon.html';
-    });
-
-    $('#nondropMsgs_MainBar').attr("title","comingsoon");
-    $('#nondropMsgs_MainBar').click(function(event) {
-        event.preventDefault();
-    //window.location.href=mainBarRP+'msgbox#inbox';
-    //window.location.href=mainBarRP+'comingsoon.html';
-    });
-
     $('#msgs_MainBar').hide();
     $('#msgs_MainBar_Count').hide();
     $('#nondropMsgs_MainBar').hide();
@@ -150,13 +121,11 @@ function mainBar_initialize(relativePath){
 
 
 function mainBar_stopTimer(){
-    //clearInterval(mainBarScoreUpdater);
     clearInterval(mainBarNotificationCountsUpdater);
 }
 
 
 function mainBar_startTimer(){
-    //mainBarScoreUpdater=setInterval("mainBar_updateScore()", UPDATE_MAINBAR_SCORE);
     mainBarNotificationCountsUpdater=setInterval("mainBar_updateNotificationCounts()", UPDATE_MAINBAR_NOTIFICATIONCOUNTS);
 }
 

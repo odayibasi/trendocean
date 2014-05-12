@@ -7,13 +7,14 @@ import org.springframework.security.core.session.SessionRegistry;
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class TrendoceanForwarder implements Filter {
 
     @Autowired
     SessionRegistry sessionRegistry;
-
 
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {
@@ -29,7 +30,16 @@ public class TrendoceanForwarder implements Filter {
             request.getRequestDispatcher("/onequestion.xhtml").forward(request, response);
             return;
         }
+
+        if(requestURI.contains("/users/")){
+            request.getRequestDispatcher("/profile.html").forward(request, response);
+            return;
+        }
+
+
+
         chain.doFilter(request, response);
+
     }
 
     @Override

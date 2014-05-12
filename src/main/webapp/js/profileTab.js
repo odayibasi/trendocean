@@ -43,7 +43,7 @@ function profileTab_setContent(username, avatarURL){
     }
 
     $("#userNameAndLink").text(username);
-    $("#userNameAndLink").attr("href",profileTab_RelativePath+username);
+    $("#userNameAndLink").attr("href",profileTab_RelativePath+"users/"+username);
     $("#userAvatar").attr("src",avatarURL);
 
 }

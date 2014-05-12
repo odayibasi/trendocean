@@ -25,6 +25,7 @@
             <list>
                 <value>classpath:local.properties</value>
                 <value>classpath:mail.properties</value>
+                <value>classpath:messages.properties</value>
             </list>
         </property>
     </bean>

@@ -37,9 +37,9 @@ $(document).ready(function() {
 
     $('#qPreview_upcover').hide();
     $('#userNameAndLink').text(cookie_get(COOKIE_USERNAME));
-    $('#userNameAndLink').attr("href",cookie_get(COOKIE_USERNAME));
+    $('#userNameAndLink').attr("href","users/"+cookie_get(COOKIE_USERNAME));
     $('#userFullName').text(cookie_get(COOKIE_FULLNAME));
-    $('#userAvatarLink').attr("href",cookie_get(COOKIE_USERNAME));
+    $('#userAvatarLink').attr("href","users/"+cookie_get(COOKIE_USERNAME));
     $('#userAvatar').attr("src",cookie_get(COOKIE_AVATAR_SMALL_URL));
 
     theme_processDesign();

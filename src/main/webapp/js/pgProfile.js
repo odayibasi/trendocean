@@ -55,32 +55,9 @@ var profileLivePlayerSlogan="";
 var profileAskedTabVisb=TEXT_FALSE;
 var profileAnsweredTabVisb=TEXT_FALSE;
 var profileLovedTabVisb=TEXT_FALSE;
-var profilePodcastTabVisb=TEXT_FALSE;
-
-
 
 var profileCurrentAnchor=null;
 var coffeeUpdateTimer=null;
-
-
-var profileHasPodcast=TEXT_FALSE;
-var podcast0Title='';
-var podcast1Title='';
-var podcast2Title='';
-var podcast3Title='';
-var podcast4Title='';
-var podcast5Title='';
-var podcast6Title='';
-var podcast7Title='';
-var podcast0URL="";
-var podcast1URL="";
-var podcast2URL="";
-var podcast3URL="";
-var podcast4URL="";
-var podcast5URL="";
-var podcast6URL="";
-var podcast7URL="";
-var profileActivePodcast="";
 
 
 function profile_isVisibleToLoginUser(){
@@ -121,10 +98,6 @@ function fireAnchorTabChanged(currentAnchor){
             document.title="TrendOcean / "+profileUsername+"'s coffee";
             profile_getMyCoffeees();
             coffeeUpdateTimer=setInterval("profile_getMyCoffeees()", UPDATE_DELAY_MYCOFFEE);
-        }else if (currentAnchor==ANCHOR_PODCAST){
-            document.title="TrendOcean / "+profileUsername+"'s podcasts";
-            profile_getPodcasts();
-            $('#podc_headline_main').show();
         }else if (currentAnchor==ANCHOR_DROPS){
             if(profileUsername==profileLoginUserName){
                 document.title="TrendOcean / "+profileUsername+"'s drops";
@@ -211,56 +184,6 @@ function profile_setProfileInfo(){
             $('#tab_drops').hide();
             $("#tab_mycoffee").hide();
         }
-
-        if(profileAskedTabVisb==TEXT_FALSE){
-            $('#tab_myquestions').hide();
-        }
-        if(profileAnsweredTabVisb==TEXT_FALSE){
-            $('#tab_answered').hide();
-        }
-        if(profileLovedTabVisb==TEXT_FALSE){
-            $('#tab_loved').hide();
-        }
-        if(profilePodcastTabVisb==TEXT_FALSE){
-            $('#tab_podcast').hide();
-        }
-
-
-        //Podcast Setting
-        if(podcast0Title!=TEXT_NULL){
-            $('#podc_0').text(podcast0Title);
-        }
-
-        if(podcast1Title!=TEXT_NULL){
-            $('#podc_1').text(podcast1Title);
-        }
-
-        if(podcast2Title!=TEXT_NULL){
-            $('#podc_2').text(podcast2Title);
-        }
-
-        if(podcast3Title!=TEXT_NULL){
-            $('#podc_3').text(podcast3Title);
-        }
-
-        if(podcast4Title!=TEXT_NULL){
-            $('#podc_4').text(podcast4Title);
-        }
-
-        if(podcast5Title!=TEXT_NULL){
-            $('#podc_5').text(podcast5Title);
-        }
-
-        if(podcast6Title!=TEXT_NULL){
-            $('#podc_6').text(podcast6Title);
-        }
-
-        if(podcast7Title!=TEXT_NULL){
-            $('#podc_7').text(podcast7Title);
-        }
-
-
-
     }else{
 
         //Setting
@@ -318,35 +241,6 @@ function profile_setProfileInfo(){
         }
     }
 
-    //LivePlayer
-    if(profileHasLivePlayer==TEXT_TRUE){
-
-        $("#livePlayerName").text("listen "+profileUsername);
-        $("#livePlayerSlogan").text(profileLivePlayerSlogan)
-
-
-        $("#stopRO").hide();
-        $("#playRO").click(function(event){
-            event.preventDefault();
-            var newObj='<embed type="application/x-mplayer2" src="{liveplayersource}" width="1" height="1" autostart="1" balance="0" pluginspage="http://www.microsoft.com/Windows/Downloads/Contents/MediaPlayer/">'
-            newObj= newObj.replace('{liveplayersource}', profileLivePlayerSource);
-            $("#embedRO").html(newObj);
-            $("#playRO").hide();
-            $("#stopRO").show();
-        });
-
-        $("#stopRO").click(function(event){
-            event.preventDefault();
-            $("#embedRO").empty();
-            $("#playRO").show();
-            $("#stopRO").hide();
-        });
-
-    }else{
-        $("#radyoodtu_player").hide();
-    }
-
-
 }
 
 
@@ -354,9 +248,10 @@ function profile_setProfileInfo(){
 
 function profile_updateProfile(){
     $.ajax({
-        url:'api/users/'+profileUsername,
+        url:'../api/user/'+profileUsername,
         type: "GET",
-        success: function(data){
+        success: function(resp){
+            var data=resp.data;
             profileFullName=data.fullName;
             profileCity=data.city;
             profileEducation=data.education;
@@ -371,42 +266,14 @@ function profile_updateProfile(){
             profileFollowerCount=data.followerCount;
             profileFollowing=data.following;
             profileFollowed=data.followed;
-            profileSmallAvatarURL=data.smallAvatarURL;
-            profileLargeAvatarURL=data.largeAvatarURL;
+            profileSmallAvatarURL=data.smallAvatar;
+            profileLargeAvatarURL=data.largeAvatar;
             profileVisibility=data.profilePublic;
             profileVisitedOtherCount=data.profileViewCount;
             profileTrend=data.trend
-            profileBgImageURL=data.design.backgroundURL;
-            profileBgImageTiled=data.design.backgroundTiled;
+            profileBgImageURL=data.profileOceanDesigns.background;
+            profileBgImageTiled=data.profileOceanDesigns.backgroundTiled;
             profileVerified=data.verified;
-            profileHasLivePlayer=data.capabilities.hasLivePlayer;
-            profileLivePlayerSource=data.capabilities.livePlayerCapability.source;
-            profileLivePlayerSlogan=data.capabilities.livePlayerCapability.slogan;
-            profileAskedTabVisb=data.capabilities.tabVisibiltyCapability.askedTabVisb;
-            profileAnsweredTabVisb=data.capabilities.tabVisibiltyCapability.answeredTabVisb;
-            profileLovedTabVisb=data.capabilities.tabVisibiltyCapability.lovedTabVisb;
-            profilePodcastTabVisb=data.capabilities.tabVisibiltyCapability.podcastTabVisb;
-            profileHasPodcast=data.capabilities.hasPodcastTab;
-            podcast0URL=data.capabilities.podcastCapability.podcast0URL;
-            podcast0Title=data.capabilities.podcastCapability.podcast0Title;
-            podcast1URL=data.capabilities.podcastCapability.podcast1URL;
-            podcast1Title=data.capabilities.podcastCapability.podcast1Title;
-            podcast2URL=data.capabilities.podcastCapability.podcast2URL;
-            podcast2Title=data.capabilities.podcastCapability.podcast2Title;
-            podcast3URL=data.capabilities.podcastCapability.podcast3URL;
-            podcast3Title=data.capabilities.podcastCapability.podcast3Title;
-            podcast4URL=data.capabilities.podcastCapability.podcast4URL;
-            podcast4Title=data.capabilities.podcastCapability.podcast4Title;
-            podcast5URL=data.capabilities.podcastCapability.podcast5URL;
-            podcast5Title=data.capabilities.podcastCapability.podcast5Title;
-            podcast6URL=data.capabilities.podcastCapability.podcast6URL;
-            podcast6Title=data.capabilities.podcastCapability.podcast6Title;
-            podcast7URL=data.capabilities.podcastCapability.podcast7URL;
-            podcast7Title=data.capabilities.podcastCapability.podcast7Title;
-            profileActivePodcast=podcast0URL;
-            
-
-
             profile_setProfileInfo();
             anchorTab_initialize();
             profileMatch_initialize();
@@ -428,7 +295,7 @@ function profile_updateProfile(){
 function profile_updateScore(){
     if(profileUsername!=profileLoginUserName){
         $.ajax({
-            url: 'api/trends/'+profileUsername,
+            url: '../api/trends/'+profileUsername,
             type: "GET",
             success: function(data){
                 var scoreObj=$.evalJSON(data);
@@ -531,7 +398,7 @@ function profile_getMoreQuestions(apiURL){
 
 function profile_getMyCoffeees(){
     $.ajax({
-        url: 'api/messages/public/'+profileUsername,
+        url: '../api/messages/public/'+profileUsername,
         type: "GET",
         success: function(data){
             tblCoffees_renderCoffees(data);
@@ -575,7 +442,7 @@ function profile_getMoreMyCoffeees(){
 
 function profile_getDrops(){
     $.ajax({
-        url: 'api/notification/',
+        url: '../api/notification/',
         type: "GET",
         success: function(data){
             tblNotifications_render(data);
@@ -598,29 +465,9 @@ function profile_getMoreDrops(){
 }
 
 
-function profile_getPodcasts(){
-    tblPodcasts_renderPodcasts(null);
-    $('#tableLoadingIcon').show();
-    jQuery.getFeed({
-        url: 'api/comments/proxy?podcastURL='+profileActivePodcast,
-        success: function(feed) {
-            tblPodcasts_renderPodcasts(feed);
-            $('#tableLoadingIcon').hide();
-        }
-    });
-
-}
-
-
-function profile_getMorePodcasts(){
-//Do Nothing
-}
-
-
-
 $(document).ready(function() {
 
-    profileUsername=common_getURLSegment(0);
+    profileUsername=common_getURLSegment(1);
     profileLoginUserName=cookie_get(COOKIE_USERNAME);
     mainLinks_initialize(PAGE_PROFILE);
     shareDlg_initialize();
@@ -667,7 +514,6 @@ $(document).ready(function() {
     askquick_initialize();
     tblQuestions_initialize(PAGE_PROFILE);
     tblCoffees_initialize();
-    tblPodcasts_initialize();
     tblNotifications_initialize();
     profile_updateProfile();
 
@@ -689,62 +535,6 @@ $(document).ready(function() {
             }
         }
     });
-
-
-    //Podcast
-    $("#podc_0").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast0URL;
-        profile_getPodcasts();
-    });
-
-    $("#podc_1").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast1URL;
-        profile_getPodcasts();
-    });
-
-    $("#podc_2").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast2URL;
-        profile_getPodcasts();
-    });
-
-    $("#podc_3").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast3URL;
-        profile_getPodcasts();
-    });
-
-    $("#podc_4").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast4URL;
-        profile_getPodcasts();
-
-    });
-
-    $("#podc_5").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast5URL;
-        profile_getPodcasts();
-    });
-
-    $("#podc_6").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast6URL;
-        profile_getPodcasts();
-    });
-
-    $("#podc_7").click(function(event){
-        event.preventDefault();
-        profileActivePodcast=podcast7URL;
-        profile_getPodcasts();
-    });
-
-
-    //Podcast Heading
-    $('#podc_headline_main').hide();
-
 
     //SEO Message
     $('#dlgMsg_title').text("Message");
