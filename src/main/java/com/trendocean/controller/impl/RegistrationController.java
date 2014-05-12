@@ -6,6 +6,7 @@ import com.trendocean.domain.Profile;
 import com.trendocean.util.mail.IEmailService;
 import com.trendocean.service.IRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,6 +19,13 @@ public class RegistrationController  implements IRegistrationController{
 
     @Autowired
     IEmailService emailService;
+
+    @Value("${activationmail.subject}")
+    private String activationMailSubject;
+
+    @Value("${activationmail.content}")
+    private String activationMailContent;
+
 
     @Override
     public TrendoceanResponse listCountry() throws Exception {
@@ -46,8 +54,8 @@ public class RegistrationController  implements IRegistrationController{
 
     @Override
     public TrendoceanResponse resetPassword(@RequestParam String email) throws Exception {
-        String names[]={"onur@t2.com.tr"};
-        emailService.sendMailWithoutAttachment("Deneme","DenemeMsg",names);
+        String names[]={email};
+        emailService.sendMailWithoutAttachment(activationMailSubject,activationMailContent,names);
         return new TrendoceanResponse.Builder().setData(email).setSuccess(true).build();
     }
 }
