@@ -435,48 +435,6 @@ function common_embedImage(content, imageURL, onlyEmbed){
 }
 
 
-function common_checkPOST(){
-    var flag=false;
-    if(cookie_get(COOKIE_SIGNIN)!=COOKIE_SIGNIN_VAL){
-        notifyBar_display(ERR_MSG_PLEASE_SIGNIN, ICON_URL_NOTIFY_WRONG);
-    }else if(cookie_get(COOKIE_ACTIVATED)!="ACTIVATED"){
-        $.ajax({
-            url:'api/user/'+cookie_get(COOKIE_USERNAME),
-            type: "GET",
-            async:false,
-            success: function(resp){
-                var data=resp.data;
-                if(data.accountState=="ACTIVATED"){
-                    cookie_wrap(COOKIE_ACTIVATED,data.accountState);
-                    flag=true;
-                }else{
-                    notifyBar_display(INFO_MSG_REGISTRATION_OK, ICON_URL_NOTIFY_WRONG);
-                }
-            },
-            error:function (){
-                notifyBar_display(INFO_MSG_REGISTRATION_OK, ICON_URL_NOTIFY_WRONG);
-            }
-        });
-    }else{
-        flag=true;
-    }
-    return flag;
-}
-
-
-function common_checkAnswerPOST(){
-    return true;
-}
-
-
-
-function common_checkActivated(){
-    if(cookie_get(COOKIE_ACTIVATED)!="ACTIVATED"){
-        return false;
-    }
-    return true;
-}
-
 
 function common_choiceProcess(choice){
     var content=choice.text;

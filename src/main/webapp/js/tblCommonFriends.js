@@ -70,23 +70,21 @@ function tblFollows_initialize(relativePath, page){
  
     $('.badgeaddfollow').live("click",function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            var fID=$(this).parents('.follow_part').children(':first-child').children(':first-child').text();
-            selected_follow=tblFollows_getFollow(fID);
-            if(selected_follow!=null){
-                $.ajax({
-                    url:'api/users/follow/'+selected_follow.username,
-                    async:false,
-                    type: 'POST',
-                    success: function(){
-                        selected_follow.isFollowedByCurrentUser="true";
-                        tblFollows_renderFollows(tblFollows_data);
-                    },
-                    error:function (xhr){
-                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                    }
-                });
-            }
+        var fID=$(this).parents('.follow_part').children(':first-child').children(':first-child').text();
+        selected_follow=tblFollows_getFollow(fID);
+        if(selected_follow!=null){
+            $.ajax({
+                url:'api/users/follow/'+selected_follow.username,
+                async:false,
+                type: 'POST',
+                success: function(){
+                    selected_follow.isFollowedByCurrentUser="true";
+                    tblFollows_renderFollows(tblFollows_data);
+                },
+                error:function (xhr){
+                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+                }
+            });
         }
         return false;
     });

@@ -15,45 +15,42 @@ $(document).ready(function() {
 
     $("#btnSavePassword").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
+        var username=cookie_get(COOKIE_USERNAME);
+        var passwd=$('#current_password').val();
 
-            var username=cookie_get(COOKIE_USERNAME);
-            var passwd=$('#current_password').val();
+        var newPasswd=$('#firstPassword_password').val();
+        var newPasswd2=$('#secondPassword_password').val();
 
-            var newPasswd=$('#firstPassword_password').val();
-            var newPasswd2=$('#secondPassword_password').val();
-
-            if(newPasswd!=newPasswd2){
-                notifyBar_display("Password not same",ICON_URL_NOTIFY_WRONG);
-                return false;
-            }
-        
-            if(!common_checkPassword(newPasswd)){
-                notifyBar_display("Invalid Password Format",ICON_URL_NOTIFY_WRONG);
-                return false;
-            }
-
-            $("#icoWaiting").show();
-            $.ajax({
-                url: 'api/authentication/password/change/'+username,
-                type: "POST",
-                data: {
-                    newPassword:newPasswd,
-                    currentPassword:passwd
-                },
-                success: function(){
-                    $("#icoWaiting").hide();
-                    $('#current_password').val("");
-                    $('#firstPassword_password').val("");
-                    $('#secondPassword_password').val("");
-                    notifyBar_display("Password Change Succeed",ICON_URL_NOTIFY_TRUE);
-
-                },
-                error:function(xhr){
-                    notifyBar_display(ERR_MSG_WEBSERVICE+ ":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                }
-            });
+        if(newPasswd!=newPasswd2){
+            notifyBar_display("Password not same",ICON_URL_NOTIFY_WRONG);
+            return false;
         }
+
+        if(!common_checkPassword(newPasswd)){
+            notifyBar_display("Invalid Password Format",ICON_URL_NOTIFY_WRONG);
+            return false;
+        }
+
+        $("#icoWaiting").show();
+        $.ajax({
+            url: 'api/authentication/password/change/'+username,
+            type: "POST",
+            data: {
+                newPassword:newPasswd,
+                currentPassword:passwd
+            },
+            success: function(){
+                $("#icoWaiting").hide();
+                $('#current_password').val("");
+                $('#firstPassword_password').val("");
+                $('#secondPassword_password').val("");
+                notifyBar_display("Password Change Succeed",ICON_URL_NOTIFY_TRUE);
+
+            },
+            error:function(xhr){
+                notifyBar_display(ERR_MSG_WEBSERVICE+ ":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+            }
+        });
         return false;
     });
 });

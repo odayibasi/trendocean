@@ -87,7 +87,6 @@ function tblFollows_initialize(relativePath, page){
 
     $('.badgeaddfollow').live("click",function(event){
         event.preventDefault();
-        if(common_checkPOST()){
             var fID=$(this).parents('.follow_part').children(':first-child').children(':first-child').text();
             selected_follow=tblFollows_getFollow(fID);
             if(selected_follow!=null){
@@ -104,7 +103,6 @@ function tblFollows_initialize(relativePath, page){
                     }
                 });
             }
-        }
         return false;
     });
 

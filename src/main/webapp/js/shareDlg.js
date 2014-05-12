@@ -15,28 +15,26 @@ function shareDlg_initialize(relativePath){
 
     $("#dlgShareEmail_sendBtn").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            $('#dlgShareEmail_waitingIcon').show();
-            var emailAdressee=$('#dlgShareEmail_txt').val();
-            if(common_checkEmail(emailAdressee)){
+        $('#dlgShareEmail_waitingIcon').show();
+        var emailAdressee=$('#dlgShareEmail_txt').val();
+        if(common_checkEmail(emailAdressee)){
 
-                $.ajax({
-                    url: shareDlgRelativePath+'api/questions/share/'+emailAdressee+'/'+shareDlgQuestionID,
-                    type: "GET",
-                    success: function(data){
-                        $('#dlgShareEmail_waitingIcon').hide();
-                        $('#dlgShareEmail_txt').val("");
-                        $('#dlgShare').hide();
-                    },
-                    error:function (xhr){
-                        notifyBar_display(ERR_MSG_QUESTION_CANT_SENDED+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                        $('#dlgShareEmail_waitingIcon').hide();
-                    }
-                });
-            }else{
-                $('#dlgShareEmail_waitingIcon').hide();
-                notifyBar_display(ERR_MSG_EMAIL_INVALID_FORMAT, ICON_URL_NOTIFY_WRONG);
-            }
+            $.ajax({
+                url: shareDlgRelativePath+'api/questions/share/'+emailAdressee+'/'+shareDlgQuestionID,
+                type: "GET",
+                success: function(data){
+                    $('#dlgShareEmail_waitingIcon').hide();
+                    $('#dlgShareEmail_txt').val("");
+                    $('#dlgShare').hide();
+                },
+                error:function (xhr){
+                    notifyBar_display(ERR_MSG_QUESTION_CANT_SENDED+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+                    $('#dlgShareEmail_waitingIcon').hide();
+                }
+            });
+        }else{
+            $('#dlgShareEmail_waitingIcon').hide();
+            notifyBar_display(ERR_MSG_EMAIL_INVALID_FORMAT, ICON_URL_NOTIFY_WRONG);
         }
         return false;
 

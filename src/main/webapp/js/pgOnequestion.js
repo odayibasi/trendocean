@@ -795,36 +795,34 @@ $(document).ready(function() {
 
     $('#ichooseact_onequestion').click(function(event){
         event.preventDefault();
-        if(common_checkAnswerPOST()){
-            var prevTrend=cookie_get(COOKIE_LOGINUSER_TREND);
-            $('#waitingIcon').show();
-            var answer = new Object();
-            answer.questionID = onequestion_selectedQuestion.id;
-            answer.choiceIndex =onequestion_selectedChoice.data(DATA_CHOICE_INDEX);
-            var answerJSON = $.toJSON(answer);
-            $.ajax({
-                url: '../api/answers',
-                type: "POST",
-                data: (answerJSON),
-                dataType: "json",
-                contentType: 'application/json; charset=utf-8',
-                success: function(data){
-                    onequestion_answerSucceeded(prevTrend, answer.choiceIndex,data)
+        var prevTrend=cookie_get(COOKIE_LOGINUSER_TREND);
+        $('#waitingIcon').show();
+        var answer = new Object();
+        answer.questionID = onequestion_selectedQuestion.id;
+        answer.choiceIndex =onequestion_selectedChoice.data(DATA_CHOICE_INDEX);
+        var answerJSON = $.toJSON(answer);
+        $.ajax({
+            url: '../api/answers',
+            type: "POST",
+            data: (answerJSON),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function(data){
+                onequestion_answerSucceeded(prevTrend, answer.choiceIndex,data)
 
-                },
-                error:function (xhr){
-                    $('#waitingIcon').hide();
-                    $('#ichoosethis_onequestion').hide();
-                    if(xhr.status==HTTP_STATUS_BAD_REQUEST){
-                        window.location.href=jQuery.url.attr("source")
-                    }else if(xhr.status==HTTP_STATUS_NOT_FOUND){
-                        redirection_execute(PAGE_ONEQUESTION, "../"+PAGE_HOME, xhr.responseText);
-                    }else{
-                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG,"../");
-                    }
+            },
+            error:function (xhr){
+                $('#waitingIcon').hide();
+                $('#ichoosethis_onequestion').hide();
+                if(xhr.status==HTTP_STATUS_BAD_REQUEST){
+                    window.location.href=jQuery.url.attr("source")
+                }else if(xhr.status==HTTP_STATUS_NOT_FOUND){
+                    redirection_execute(PAGE_ONEQUESTION, "../"+PAGE_HOME, xhr.responseText);
+                }else{
+                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG,"../");
                 }
-            });
-        }
+            }
+        });
         return false;
     });
 
@@ -837,39 +835,36 @@ $(document).ready(function() {
 
     $('#btnAddComment').click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-
-            if($('#txtboxComment').val().length>300){
-                notifyBar_display(ERR_MSG_COMMENT_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
-                return false;
-            }
-        
-            var comment = new Object();
-            comment.questionID = onequestion_selectedQuestion.id;
-            comment.commentText=$('#txtboxComment').val();
-            var commentJSON = $.toJSON(comment);
-            $.ajax({
-                url: '../api/comments/',
-                type: "POST",
-                data: (commentJSON),
-                dataType: "json",
-                contentType: 'application/json; charset=utf-8',
-                success: function(data){
-                    $('#txtboxComment').val("");
-                    $('#txtboxComment').focus();
-                    tblComments_addComment(data);
-                },
-                error:function (xhr){
-                    if(xhr.status==HTTP_STATUS_BAD_REQUEST){
-                        notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
-                    }else if(xhr.status==HTTP_STATUS_NOT_FOUND){
-                        redirection_execute(PAGE_ONEQUESTION, "../"+PAGE_HOME, xhr.responseText);
-                    }else{
-                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG,"../");
-                    }
-                }
-            });
+        if($('#txtboxComment').val().length>300){
+            notifyBar_display(ERR_MSG_COMMENT_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
+            return false;
         }
+
+        var comment = new Object();
+        comment.questionID = onequestion_selectedQuestion.id;
+        comment.commentText=$('#txtboxComment').val();
+        var commentJSON = $.toJSON(comment);
+        $.ajax({
+            url: '../api/comments/',
+            type: "POST",
+            data: (commentJSON),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function(data){
+                $('#txtboxComment').val("");
+                $('#txtboxComment').focus();
+                tblComments_addComment(data);
+            },
+            error:function (xhr){
+                if(xhr.status==HTTP_STATUS_BAD_REQUEST){
+                    notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
+                }else if(xhr.status==HTTP_STATUS_NOT_FOUND){
+                    redirection_execute(PAGE_ONEQUESTION, "../"+PAGE_HOME, xhr.responseText);
+                }else{
+                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG,"../");
+                }
+            }
+        });
         return false;
     });
 

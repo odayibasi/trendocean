@@ -43,20 +43,18 @@ $(document).ready(function() {
 
     $("#btnDeleteBgImage").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            event.preventDefault();
-            $.ajax({
-                url: 'api/users/bgimage',
-                type: "DELETE",
-                success: function(){
-                    window.location.href=jQuery.url.attr("source");
-                },
-                error:function (xhr){
-                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                }
-            });
-            return false;
-        }
+        event.preventDefault();
+        $.ajax({
+            url: 'api/users/bgimage',
+            type: "DELETE",
+            success: function(){
+                window.location.href=jQuery.url.attr("source");
+            },
+            error:function (xhr){
+                notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+            }
+        });
+        return false;
     });
 
     var bgImageURL=cookie_get(COOKIE_BG_URL);

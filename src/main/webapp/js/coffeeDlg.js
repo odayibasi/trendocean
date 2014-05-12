@@ -99,9 +99,7 @@ function coffeeDlg_initialize(triggerComp, page){
 
     $("#dlgCoffee_sendBtn").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            coffeeDlg_sendMsg();
-        }
+        coffeeDlg_sendMsg();
     });
     
 

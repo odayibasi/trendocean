@@ -141,14 +141,10 @@ function mainBar_initialize(relativePath){
     $('#drops_MainBar_Count').hide();
     $('#friends_MainBar_Count').hide();
 
-    if(common_checkActivated()){
-        mainBar_refreshInfo();
-        mainBar_updateScore();
-        mainBar_updateNotificationCounts();
-        mainBar_startTimer();
-    }else{
-        mainBar_refreshInfo();
-    }
+    mainBar_refreshInfo();
+    mainBar_updateScore();
+    mainBar_updateNotificationCounts();
+    mainBar_startTimer();
 
 }
 

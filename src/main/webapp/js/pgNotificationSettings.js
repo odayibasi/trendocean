@@ -60,36 +60,34 @@ $(document).ready(function() {
 
     $("#btnSaveNotifications").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            $("#icoWaiting").show();
-    
-            var notifications = new Object();
-            notifications.notifyWhenSomebodyFollowsMe= $('#ntfy_follow').is(':checked');
-            notifications.notifyWhenFriendsAskQuestion= $('#ntfy_asked').is(':checked');
-            notifications.notifyWhenMyQuestionsAreCommented= $('#ntfy_commented').is(':checked');
-            notifications.notifyWhenMyQuestionAreLoved= $('#ntfy_loved').is(':checked');
-            notifications.notifyWhenSomebodySendACoffe= $('#ntfy_coffee').is(':checked');
-            notifications.notifyWhenMyQuestionsAreFlagged= $('#ntfy_flag').is(':checked');
+        $("#icoWaiting").show();
 
-            var notificationsJSON = $.toJSON(notifications);
+        var notifications = new Object();
+        notifications.notifyWhenSomebodyFollowsMe= $('#ntfy_follow').is(':checked');
+        notifications.notifyWhenFriendsAskQuestion= $('#ntfy_asked').is(':checked');
+        notifications.notifyWhenMyQuestionsAreCommented= $('#ntfy_commented').is(':checked');
+        notifications.notifyWhenMyQuestionAreLoved= $('#ntfy_loved').is(':checked');
+        notifications.notifyWhenSomebodySendACoffe= $('#ntfy_coffee').is(':checked');
+        notifications.notifyWhenMyQuestionsAreFlagged= $('#ntfy_flag').is(':checked');
 
-            $.ajax({
-                url: 'api/users/notifications',
-                type: "PUT",
-                data: (notificationsJSON),
-                dataType: "json",
-                contentType: 'application/json; charset=utf-8',
-                success: function(data){
-                    $("#icoWaiting").hide();
-                    cookie_saveLoginUser(data,false); //TODO change false
-                    notifyBar_display(INFO_MSG_NOTIFICATIONS_CHANGED,ICON_URL_NOTIFY_TRUE);
-                },
-                error:function (xhr){
-                    $("#icoWaiting").hide();
-                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                }
-            });
-        }
+        var notificationsJSON = $.toJSON(notifications);
+
+        $.ajax({
+            url: 'api/users/notifications',
+            type: "PUT",
+            data: (notificationsJSON),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function(data){
+                $("#icoWaiting").hide();
+                cookie_saveLoginUser(data,false); //TODO change false
+                notifyBar_display(INFO_MSG_NOTIFICATIONS_CHANGED,ICON_URL_NOTIFY_TRUE);
+            },
+            error:function (xhr){
+                $("#icoWaiting").hide();
+                notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+            }
+        });
         return false;
     });
 

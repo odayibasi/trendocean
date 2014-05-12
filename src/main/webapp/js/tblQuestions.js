@@ -152,34 +152,32 @@ function tblQuestions_initialize(page){
 
     $('#ichooseact_onequestion').live("click",function(event){
         event.preventDefault();
-        if(common_checkAnswerPOST()){
-            var prevTrend=cookie_get(COOKIE_LOGINUSER_TREND);
-            $('#waitingIcon').show();
-            var answer = new Object();
-            answer.questionID = selected_question.id;
-            answer.choiceIndex =selected_choice.data(DATA_CHOICE_INDEX);
-            var answerJSON = $.toJSON(answer);
-            $.ajax({
-                url: 'api/answers',
-                type: "POST",
-                data: (answerJSON),
-                dataType: "json",
-                contentType: 'application/json; charset=utf-8',
-                success: function(data){
-                    tblQuestions_answerSucceeded(prevTrend,answer.choiceIndex,data)
-                },
-                error:function (xhr){
-                    $('#waitingIcon').hide();
-                    $('#ichoosethis_onequestion').hide();
-                    if(xhr.status==HTTP_STATUS_NOT_FOUND){
-                        notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
-                    }
-                    else{
-                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                    }
+        var prevTrend=cookie_get(COOKIE_LOGINUSER_TREND);
+        $('#waitingIcon').show();
+        var answer = new Object();
+        answer.questionID = selected_question.id;
+        answer.choiceIndex =selected_choice.data(DATA_CHOICE_INDEX);
+        var answerJSON = $.toJSON(answer);
+        $.ajax({
+            url: 'api/answers',
+            type: "POST",
+            data: (answerJSON),
+            dataType: "json",
+            contentType: 'application/json; charset=utf-8',
+            success: function(data){
+                tblQuestions_answerSucceeded(prevTrend,answer.choiceIndex,data)
+            },
+            error:function (xhr){
+                $('#waitingIcon').hide();
+                $('#ichoosethis_onequestion').hide();
+                if(xhr.status==HTTP_STATUS_NOT_FOUND){
+                    notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
                 }
-            });
-        }
+                else{
+                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+                }
+            }
+        });
         return false;
     });
 
@@ -363,31 +361,29 @@ function tblQuestions_initialize(page){
 
     $('.flag').live("click",function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            var qID=$(this).parents('.question_part').children(':first-child').children(':first-child').text();
-            selected_qFlag=$(this).parents('.question_part').find('.flag');
-            selected_qFlagSelected=$(this).parents('.question_part').find('.flagselected');
-            selected_question=tblQuestions_getQuestion(qID);
-            if(selected_question!=null){
-                $.ajax({
-                    url: 'api/abuse/'+qID,
-                    async:false,
-                    type: "POST",
-                    success: function(){
-                        selected_question.isQuestionAbused="true";
-                        selected_qFlagSelected.show();
-                        selected_qFlag.hide();
-                    },
-                    error:function (xhr){
-                        if(xhr.status==HTTP_STATUS_NOT_FOUND){
-                            notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
-                        }else{
-                            notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                        }
-
+        var qID=$(this).parents('.question_part').children(':first-child').children(':first-child').text();
+        selected_qFlag=$(this).parents('.question_part').find('.flag');
+        selected_qFlagSelected=$(this).parents('.question_part').find('.flagselected');
+        selected_question=tblQuestions_getQuestion(qID);
+        if(selected_question!=null){
+            $.ajax({
+                url: 'api/abuse/'+qID,
+                async:false,
+                type: "POST",
+                success: function(){
+                    selected_question.isQuestionAbused="true";
+                    selected_qFlagSelected.show();
+                    selected_qFlag.hide();
+                },
+                error:function (xhr){
+                    if(xhr.status==HTTP_STATUS_NOT_FOUND){
+                        notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
+                    }else{
+                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
                     }
-                });
-            }
+
+                }
+            });
         }
         return false;
     });
@@ -426,32 +422,30 @@ function tblQuestions_initialize(page){
 
     $('.flagselected').live("click",function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            var qID=$(this).parents('.question_part').children(':first-child').children(':first-child').text();
-            selected_qFlag=$(this).parents('.question_part').find('.flag');
-            selected_qFlagSelected=$(this).parents('.question_part').find('.flagselected');
+        var qID=$(this).parents('.question_part').children(':first-child').children(':first-child').text();
+        selected_qFlag=$(this).parents('.question_part').find('.flag');
+        selected_qFlagSelected=$(this).parents('.question_part').find('.flagselected');
 
-            selected_question=tblQuestions_getQuestion(qID);
-            if(selected_question!=null){
-                $.ajax({
-                    url: 'api/abuse/remove/'+qID,
-                    async:false,
-                    type: "POST",
-                    success: function(){
-                        selected_question.isQuestionAbused="false";
-                        selected_qFlagSelected.hide();
-                        selected_qFlag.show();
-                    },
-                    error:function (xhr){
-                        if(xhr.status==HTTP_STATUS_NOT_FOUND){
-                            notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
-                        }
-                        else{
-                            notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                        }
+        selected_question=tblQuestions_getQuestion(qID);
+        if(selected_question!=null){
+            $.ajax({
+                url: 'api/abuse/remove/'+qID,
+                async:false,
+                type: "POST",
+                success: function(){
+                    selected_question.isQuestionAbused="false";
+                    selected_qFlagSelected.hide();
+                    selected_qFlag.show();
+                },
+                error:function (xhr){
+                    if(xhr.status==HTTP_STATUS_NOT_FOUND){
+                        notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
                     }
-                });
-            }
+                    else{
+                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+                    }
+                }
+            });
         }
         return false;
     });
@@ -499,38 +493,36 @@ function tblQuestions_initialize(page){
 
     $('.loveselected').live("click",function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            var qID=$(this).parents('.question_part').children(':first-child').children(':first-child').text();
-            selected_qLove=$(this).parents('.question_part').find('.love');
-            selected_qLoveSelected=$(this).parents('.question_part').find('.loveselected');
-            selected_qLovedCount=$(this).parents('.question_part').find('.qTotalLovedCount');
-            selected_question=tblQuestions_getQuestion(qID);
-            if(selected_question!=null){
-                $.ajax({
-                    url: 'api/favorites/remove/'+qID,
-                    async:false,
-                    type: "POST",
-                    success: function(){
-                        selected_question.isQuestionFaved="false";
-                        selected_question.likedCount--;
-                        selected_qLove.show();
-                        selected_qLoveSelected.hide();
-                        selected_qLovedCount.text(selected_question.likedCount+" love");
-                        common_decrementLoveQuestionCount();
+        var qID=$(this).parents('.question_part').children(':first-child').children(':first-child').text();
+        selected_qLove=$(this).parents('.question_part').find('.love');
+        selected_qLoveSelected=$(this).parents('.question_part').find('.loveselected');
+        selected_qLovedCount=$(this).parents('.question_part').find('.qTotalLovedCount');
+        selected_question=tblQuestions_getQuestion(qID);
+        if(selected_question!=null){
+            $.ajax({
+                url: 'api/favorites/remove/'+qID,
+                async:false,
+                type: "POST",
+                success: function(){
+                    selected_question.isQuestionFaved="false";
+                    selected_question.likedCount--;
+                    selected_qLove.show();
+                    selected_qLoveSelected.hide();
+                    selected_qLovedCount.text(selected_question.likedCount+" love");
+                    common_decrementLoveQuestionCount();
 
-                        if(tblQuestions_page==PAGE_PROFILE){
-                            profile_reflectActionsOnQuestions(QACTIONS_UNFAVED,selected_question);
-                        }
-                    },
-                    error:function (xhr){
-                        if(xhr.status==HTTP_STATUS_NOT_FOUND){
-                            notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
-                        }else{
-                            notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                        }
+                    if(tblQuestions_page==PAGE_PROFILE){
+                        profile_reflectActionsOnQuestions(QACTIONS_UNFAVED,selected_question);
                     }
-                });
-            }
+                },
+                error:function (xhr){
+                    if(xhr.status==HTTP_STATUS_NOT_FOUND){
+                        notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
+                    }else{
+                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+                    }
+                }
+            });
         }
         return false;
     });

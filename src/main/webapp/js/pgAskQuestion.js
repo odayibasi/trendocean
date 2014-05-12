@@ -84,64 +84,62 @@ $(document).ready(function() {
 
     $("#btnAddQuestion").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            var question = new Object();
-            question.body = $('#qBody').val();
-            question.choices = new Array();
+        var question = new Object();
+        question.body = $('#qBody').val();
+        question.choices = new Array();
 
-            for(i=0;i<countOfChoice;i++){
-                question.choices[i]=new Object();
-                question.choices[i].text= common_htmlStrip($('#qAnsw'+(i+1)).val());
+        for(i=0;i<countOfChoice;i++){
+            question.choices[i]=new Object();
+            question.choices[i].text= common_htmlStrip($('#qAnsw'+(i+1)).val());
+        }
+        var questionJSON = $.toJSON(question);
+
+        var fillCount=0;
+        for(i=0;i<countOfChoice;i++){
+            if($('#qAnsw'+(i+1)).val()!=""){
+                fillCount++;
             }
-            var questionJSON = $.toJSON(question);
+        }
 
-            var fillCount=0;
-            for(i=0;i<countOfChoice;i++){
-                if($('#qAnsw'+(i+1)).val()!=""){
-                    fillCount++;
-                }
+        var choiceMaxOver=false;
+        for(i=0;i<countOfChoice;i++){
+            var chc=$('#qAnsw'+(i+1)).val();
+            if(chc.length>40 && !common_isContainsSound(chc) && !common_isContainsLink0(chc) && !common_isContainsLink1(chc)){
+                choiceMaxOver=true;
+                break;
             }
-        
-            var choiceMaxOver=false;
-            for(i=0;i<countOfChoice;i++){
-                var chc=$('#qAnsw'+(i+1)).val();
-                if(chc.length>40 && !common_isContainsSound(chc) && !common_isContainsLink0(chc) && !common_isContainsLink1(chc)){
-                    choiceMaxOver=true;
-                    break;
-                }
-            }
+        }
 
 
-            if($('#qBody').val().length<5){
-                notifyBar_display(ERR_MSG_QUESTION_BODY_MIN_LENGTH,ICON_URL_NOTIFY_WRONG);
-            }else if(parseInt($('#quepart_counter').text())<0){
-                notifyBar_display(ERR_MSG_QUESTION_BODY_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
-            }else if( fillCount<2 ){
-                notifyBar_display(ERR_MSG_QUESTION_CHOICE_COUNT_INVALID,ICON_URL_NOTIFY_WRONG);
-            }else if( choiceMaxOver ){
-                notifyBar_display(ERR_MSG_QUESTION_CHOICES_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
-            }else{
-                $.ajax({
-                    url: 'api/question/addQuestion',
-                    type: "POST",
-                    async:false,
-                    data: {
-                      'questionJSON':questionJSON
-                    },
-                    success: function(resp){
-                        var data=resp.data;
-                        common_incrementAskQuestionCount();
-                        window.location.href="questions/"+data.id;
-                    },
-                    error:function (xhr){
-                        if(xhr.status==HTTP_STATUS_BAD_REQUEST){
-                            notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
-                        }else{
-                            notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                        }
+        if($('#qBody').val().length<5){
+            notifyBar_display(ERR_MSG_QUESTION_BODY_MIN_LENGTH,ICON_URL_NOTIFY_WRONG);
+        }else if(parseInt($('#quepart_counter').text())<0){
+            notifyBar_display(ERR_MSG_QUESTION_BODY_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
+        }else if( fillCount<2 ){
+            notifyBar_display(ERR_MSG_QUESTION_CHOICE_COUNT_INVALID,ICON_URL_NOTIFY_WRONG);
+        }else if( choiceMaxOver ){
+            notifyBar_display(ERR_MSG_QUESTION_CHOICES_MAX_LENGTH,ICON_URL_NOTIFY_WRONG);
+        }else{
+            $.ajax({
+                url: 'api/question/addQuestion',
+                type: "POST",
+                async:false,
+                data: {
+                  'questionJSON':questionJSON
+                },
+                success: function(resp){
+                    var data=resp.data;
+                    common_incrementAskQuestionCount();
+                    window.location.href="questions/"+data.id;
+                },
+                error:function (xhr){
+                    if(xhr.status==HTTP_STATUS_BAD_REQUEST){
+                        notifyBar_display(xhr.responseText,ICON_URL_NOTIFY_WRONG);
+                    }else{
+                        notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
                     }
-                });
-            }
+                }
+            });
         }
         return false;
     });

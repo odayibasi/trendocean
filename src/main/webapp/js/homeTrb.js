@@ -35,30 +35,28 @@ function homeTrb_follow(index){
         username=homeTrb_userName1;
     }
 
-    if(common_checkPOST()){
-        $.ajax({
-            url: 'api/user/follow',
-            data:{
-               'otherUsername':username
-            },
-            type: "POST",
-            success: function(){
-                if(index==0){
-                    homeTrb_userName0=null;
-                }else if(index==1){
-                    homeTrb_userName1=null;
-                }
-                homeTrb_Random();
-                $("#trb0_loader").hide();
-                $("#trb1_loader").hide();
-            },
-            error:function (xhr){
-                $("#trb0_loader").hide();
-                $("#trb1_loader").hide();
-                notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+    $.ajax({
+        url: 'api/user/follow',
+        data:{
+           'otherUsername':username
+        },
+        type: "POST",
+        success: function(){
+            if(index==0){
+                homeTrb_userName0=null;
+            }else if(index==1){
+                homeTrb_userName1=null;
             }
-        });
-    }
+            homeTrb_Random();
+            $("#trb0_loader").hide();
+            $("#trb1_loader").hide();
+        },
+        error:function (xhr){
+            $("#trb0_loader").hide();
+            $("#trb1_loader").hide();
+            notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+        }
+    });
     return false;
 }
 

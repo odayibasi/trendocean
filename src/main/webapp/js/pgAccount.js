@@ -224,27 +224,22 @@ $(document).ready(function() {
     }
 
     $("#btnSaveAvatar").click(function(event){
-        if(!common_checkPOST()){
             event.preventDefault();
-        }
     });
 
     $("#btnDeleteAvatar").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            event.preventDefault();
-            $.ajax({
-                url: 'api/users/avatar',
-                type: "DELETE",
-                success: function(){
-                    window.location.href=jQuery.url.attr("source");
-                },
-                error:function (xhr){
-                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                }
-            });
-            return false;
-        }
+        $.ajax({
+            url: 'api/users/avatar',
+            type: "DELETE",
+            success: function(){
+                window.location.href=jQuery.url.attr("source");
+            },
+            error:function (xhr){
+                notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+            }
+        });
+        return false;
     });
 
     $("#saveAccount").click(function(event){

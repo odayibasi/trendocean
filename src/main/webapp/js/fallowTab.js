@@ -112,39 +112,36 @@ function followTab_fallowBtn_initialize(triggerComp){
     followButton=triggerComp;
     triggerComp.click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            var op=null;
-            if(!profile_isVisibleToLoginUser()){
-                op="POST";
-            }else if(profileFollowing==TEXT_FALSE){
-                op="POST";
-            }else{
-                op="DELETE";
-            }
-
-            $.ajax({
-                url: 'api/users/follow/'+followedTab_profileUserName,
-                type: op,
-                success: function(){
-                    if(!profile_isVisibleToLoginUser()){
-                        notifyBar_display("Follow Request Sended", ICON_URL_NOTIFY_TRUE);
-                    }else if(profileFollowing==TEXT_FALSE){
-                        profileFollowing=TEXT_TRUE;
-                        profile_updateProfile();
-                    }else{
-                        profileFollowing=TEXT_FALSE;
-                        profile_updateProfile();
-                    }
-                },
-                error:function (xhr){
-                    notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
-                    return false;
-                }
-            });
-            return false;
+        var op=null;
+        if(!profile_isVisibleToLoginUser()){
+            op="POST";
+        }else if(profileFollowing==TEXT_FALSE){
+            op="POST";
+        }else{
+            op="DELETE";
         }
-    });
 
+        $.ajax({
+            url: 'api/users/follow/'+followedTab_profileUserName,
+            type: op,
+            success: function(){
+                if(!profile_isVisibleToLoginUser()){
+                    notifyBar_display("Follow Request Sended", ICON_URL_NOTIFY_TRUE);
+                }else if(profileFollowing==TEXT_FALSE){
+                    profileFollowing=TEXT_TRUE;
+                    profile_updateProfile();
+                }else{
+                    profileFollowing=TEXT_FALSE;
+                    profile_updateProfile();
+                }
+            },
+            error:function (xhr){
+                notifyBar_display(ERR_MSG_WEBSERVICE+":"+xhr.status,ICON_URL_NOTIFY_WRONG);
+                return false;
+            }
+        });
+        return false;
+    });
     followTab_updateLoginUserFolloweds();
     
 }

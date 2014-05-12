@@ -12,9 +12,7 @@ function profileTab_initialize(relativePath){
 
     $("#btnFriendsLatest").click(function(event){
         event.preventDefault();
-        if(common_checkPOST()){
-            home_getFollowedQuestions();
-        }
+        home_getFollowedQuestions();
     });
 
     $("#btnMostPopular").click(function(event){
