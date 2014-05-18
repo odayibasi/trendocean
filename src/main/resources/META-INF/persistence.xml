@@ -7,6 +7,8 @@
         <class>com.trendocean.domain.Profile</class>
        	<class>com.trendocean.domain.Country</class>
         <class>com.trendocean.domain.City</class>
+        <class>com.trendocean.domain.Message</class>
+
         <class>com.trendocean.domain.Question</class>
     </persistence-unit>
 

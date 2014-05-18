@@ -6,6 +6,8 @@ import com.trendocean.domain.base.AbstractEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
+import java.util.Set;
 
 @JsonAutoDetect
 @Entity
@@ -31,7 +33,17 @@ public class Profile extends AbstractEntity implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     private ProfileOceanStats profileOceanStats;
 
+    @OneToMany(fetch=FetchType.LAZY, targetEntity=Question.class, cascade=CascadeType.ALL)
+    private Set<Question> askedQuestions;
 
+    @OneToMany(fetch=FetchType.LAZY, targetEntity=Question.class, cascade=CascadeType.ALL)
+    private Set<Question> answeredQuestions;
+
+    @OneToMany(fetch=FetchType.LAZY, targetEntity=Question.class, cascade=CascadeType.ALL)
+    private Set<Question> favedQuestions;
+
+    @OneToMany(fetch=FetchType.LAZY, targetEntity=Message.class, cascade=CascadeType.ALL)
+    private Set<Message> publicMessages;
 
     @Enumerated(EnumType.STRING)
     private GenderEnum gender;
@@ -170,4 +182,38 @@ public class Profile extends AbstractEntity implements Serializable {
     public void setProfileOceanStats(ProfileOceanStats profileOceanStats) {
         this.profileOceanStats = profileOceanStats;
     }
+
+    public Set<Question> getAskedQuestions() {
+        return askedQuestions;
+    }
+
+    public void setAskedQuestions(Set<Question> askedQuestions) {
+        this.askedQuestions = askedQuestions;
+    }
+
+    public Set<Question> getAnsweredQuestions() {
+        return answeredQuestions;
+    }
+
+    public void setAnsweredQuestions(Set<Question> answeredQuestions) {
+        this.answeredQuestions = answeredQuestions;
+    }
+
+    public Set<Question> getFavedQuestions() {
+        return favedQuestions;
+    }
+
+    public void setFavedQuestions(Set<Question> favedQuestions) {
+        this.favedQuestions = favedQuestions;
+    }
+
+    public Set<Message> getPublicMessages() {
+        return publicMessages;
+    }
+
+    public void setPublicMessages(Set<Message> publicMessages) {
+        this.publicMessages = publicMessages;
+    }
+
+
 }

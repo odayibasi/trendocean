@@ -36,5 +36,25 @@ public class UserController implements IUserController{
         return new TrendoceanResponse.Builder().setSuccess(true).build();
     }
 
+    @Override
+    public TrendoceanResponse listAsked(@RequestParam String username) throws Exception {
+        return userService.getAskedQuestionList(username);
+    }
+
+    @Override
+    public TrendoceanResponse listAnswered(@RequestParam String username) throws Exception {
+        return userService.getAnsweredQuestionList(username);
+    }
+
+    @Override
+    public TrendoceanResponse listFaved(@RequestParam String username) throws Exception {
+        return userService.getFavedQuestionList(username);
+    }
+
+    @Override
+    public TrendoceanResponse listPublicMsg(@RequestParam String username) throws Exception {
+        return userService.getPublicMsgList(username);
+    }
+
 
 }

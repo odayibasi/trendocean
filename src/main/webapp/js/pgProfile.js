@@ -479,37 +479,15 @@ $(document).ready(function() {
         goal:"140"
     });
 
-    if(cookie_get(COOKIE_SIGNIN)==COOKIE_SIGNIN_VAL){
-        $("#headerdock").hide();
-        $('.right-person-navi').show();
-        mainBar_signPageName(MAINBAR_LINK_PROFILE);
-        $(window).unload(function() {
-            mainBar_unsignPageName(MAINBAR_LINK_PROFILE);
-        });
+    $("#headerdock").hide();
+    $('.right-person-navi').show();
+    mainBar_signPageName(MAINBAR_LINK_PROFILE);
+    $(window).unload(function() {
+         mainBar_unsignPageName(MAINBAR_LINK_PROFILE);
+    });
 
-        mainBar_initialize();
-        mainBar_initializeSearch();
-    }else{
-        $("#docka").hide();
-        $("#toolbar_rightpersoninfo").hide();
-        $('.right-person-navi').hide();
-
-        $('#logoToHome2').click(function(event){
-            event.preventDefault();
-            window.location.href=PAGE_INDEX;
-        });
-
-        $("#following_btnAll").click(function(event){
-            event.preventDefault();
-        });
-        
-        $("#follower_btnAll").click(function(event){
-            event.preventDefault();
-        });
-    }
-
-
-
+    mainBar_initialize();
+    mainBar_initializeSearch();
     notifyBar_initialize();
     askquick_initialize();
     tblQuestions_initialize(PAGE_PROFILE);

@@ -59,7 +59,7 @@ function mainBar_initialize(relativePath){
     $('#settings_MainBar').attr("href", mainBarRP+PAGE_ACCOUNT);
     $('#randomText_MainBar').attr("href", mainBarRP+PAGE_ABOUT);
 
-    $('#profile_MainBar').attr("href", mainBarRP+username);
+    $('#profile_MainBar').attr("href", mainBarRP+'users/'+username);
     $('#following_MainBar').attr("href", mainBarRP+'follow/'+cookie_get(COOKIE_USERNAME)+ANCHOR_FOLLOWEDS);
     $('#followers_MainBar').attr("href", mainBarRP+'follow/'+cookie_get(COOKIE_USERNAME)+ANCHOR_FOLLOWERS);
 
@@ -147,16 +147,6 @@ function mainBar_updateScore(){
 }
 
 function mainBar_updateNotificationCounts(){
-
-    /* TODO After V2
-    $.ajax({
-        url: 'api/messages/private/numberOfNotRead/',
-        type: "GET",
-        success: function(data){
-            var obj=$.evalJSON(data);
-            $('#msgs_MainBar_Count').text(obj.notReadPrivateMessages);
-        }
-    });*/
 
     $('#msgs_MainBar_Count').hide();
 

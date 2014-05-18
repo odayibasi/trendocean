@@ -2,13 +2,16 @@ package com.trendocean.service.db.impl;
 
 import com.trendocean.ViolationResult;
 import com.trendocean.dao.IProfileDAO;
+import com.trendocean.domain.Message;
 import com.trendocean.domain.Profile;
+import com.trendocean.domain.Question;
 import com.trendocean.service.db.IUserDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 @Service("UserDBService")
 public class UserDBService implements IUserDBService {
@@ -61,13 +64,52 @@ public class UserDBService implements IUserDBService {
     @Override
     @Transactional
     public Profile getUserWithUsername(String username) throws Exception {
-        return userDAO.getUserWithUsername(username);
+        Profile profile=userDAO.getUserWithUsername(username);
+        profile.setAskedQuestions(null);
+        profile.setAnsweredQuestions(null);
+        profile.setFavedQuestions(null);
+        profile.setPublicMessages(null);
+        return profile;
     }
 
     @Override
     @Transactional
     public Profile getUserWithEmail(String email) throws Exception {
-        return userDAO.getUserWithEmail(email);
+        Profile profile= userDAO.getUserWithEmail(email);
+        profile.setAskedQuestions(null);
+        profile.setAnsweredQuestions(null);
+        profile.setFavedQuestions(null);
+        profile.setPublicMessages(null);
+        return profile;
+    }
+
+    @Override
+    @Transactional
+    public Set<Question> getAskedQuestionList(String username) throws Exception {
+        Profile user=getUserWithUsername(username);
+        return user.getAskedQuestions();
+
+    }
+
+    @Override
+    @Transactional
+    public Set<Question> getAnsweredQuestionList(String username) throws Exception {
+        Profile user=getUserWithUsername(username);
+        return user.getAnsweredQuestions();
+    }
+
+    @Override
+    @Transactional
+    public Set<Question> getFavedQuestionList(String username) throws Exception {
+        Profile user=getUserWithUsername(username);
+        return user.getFavedQuestions();
+    }
+
+    @Override
+    @Transactional
+    public Set<Message> getPublicMsgList(String username) throws Exception {
+        Profile user=getUserWithUsername(username);
+        return user.getPublicMessages();
     }
 
 

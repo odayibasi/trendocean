@@ -10,30 +10,67 @@ import java.io.Serializable;
 @Entity
 public class Message extends AbstractEntity implements Serializable{
 
-    private String code;
-    private String name;
+    private String sender;
+    private String messageText;
+    private String receiver;
+    private Long creationDate;
+    private boolean isRemovableByRequester;
+    private boolean canReplyByRequester;
+    private String smallAvatar;
 
-    public Message() {
+    public String getSender() {
+        return sender;
     }
 
-    public Message(String code, String name) {
-        this.code = code;
-        this.name = name;
+    public void setSender(String sender) {
+        this.sender = sender;
     }
 
-    public String getCode() {
-        return code;
+    public String getMessageText() {
+        return messageText;
     }
 
-    public void setCode(String code) {
-        this.code = code;
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 
-    public String getName() {
-        return name;
+    public String getReceiver() {
+        return receiver;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setReceiver(String receiver) {
+        this.receiver = receiver;
+    }
+
+    public Long getCreationDate() {
+        return creationDate;
+    }
+
+    public void setCreationDate(Long creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public boolean isRemovableByRequester() {
+        return isRemovableByRequester;
+    }
+
+    public void setRemovableByRequester(boolean isRemovableByRequester) {
+        this.isRemovableByRequester = isRemovableByRequester;
+    }
+
+    public boolean isCanReplyByRequester() {
+        return canReplyByRequester;
+    }
+
+    public void setCanReplyByRequester(boolean canReplyByRequester) {
+        this.canReplyByRequester = canReplyByRequester;
+    }
+
+    public String getSmallAvatar() {
+        return smallAvatar;
+    }
+
+    public void setSmallAvatar(String smallAvatar) {
+        this.smallAvatar = smallAvatar;
     }
 }
