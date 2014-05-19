@@ -8,6 +8,7 @@ import com.trendocean.domain.Question;
 import com.trendocean.security.SecurityHelper;
 import com.trendocean.service.IQuestionService;
 import com.trendocean.service.db.IQuestionDBService;
+import com.trendocean.service.db.IUserDBService;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,9 @@ public class QuestionService implements IQuestionService {
      @Autowired
     IQuestionDBService questionDBService;
 
+    IUserDBService userDBService;
+
+
     @Override
     public TrendoceanResponse addQuestion(String questionJSON) throws Exception {
         ObjectMapper mapper = new ObjectMapper();
@@ -30,6 +34,7 @@ public class QuestionService implements IQuestionService {
         newQuestion.setOwnerFullName(loggedInUser.getFullName());
         newQuestion.setOwnerSmallAvatarURL(loggedInUser.getProfileOceanDesigns().getSmallAvatar());
         questionDBService.save(newQuestion);
+
         return new TrendoceanResponse.Builder().setSuccess(true).setData(newQuestion).build();
     }
 

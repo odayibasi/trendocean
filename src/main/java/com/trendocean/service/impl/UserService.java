@@ -10,6 +10,7 @@ import com.trendocean.service.db.IUserDBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -27,7 +28,7 @@ public class UserService implements IUserService{
 
     @Override
     public TrendoceanResponse getAskedQuestionList(String username) throws Exception {
-        Set<Question> questionS=userDBService.getAskedQuestionList(username);
+        List<Question> questionS=userDBService.getAskedQuestionList(username);
         return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
     }
 

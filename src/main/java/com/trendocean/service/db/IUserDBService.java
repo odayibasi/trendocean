@@ -5,6 +5,7 @@ import com.trendocean.domain.Profile;
 import com.trendocean.domain.Question;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Set;
 
 
@@ -17,7 +18,7 @@ public interface IUserDBService extends IDBService<Profile>{
     Profile getUserWithEmail(String email) throws Exception;
 
     @Transactional
-    Set<Question> getAskedQuestionList(String username) throws Exception;
+    List<Question> getAskedQuestionList(String username) throws Exception;
 
     @Transactional
     Set<Question> getAnsweredQuestionList(String username) throws Exception;

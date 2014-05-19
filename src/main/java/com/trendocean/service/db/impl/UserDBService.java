@@ -65,10 +65,6 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Profile getUserWithUsername(String username) throws Exception {
         Profile profile=userDAO.getUserWithUsername(username);
-        profile.setAskedQuestions(null);
-        profile.setAnsweredQuestions(null);
-        profile.setFavedQuestions(null);
-        profile.setPublicMessages(null);
         return profile;
     }
 
@@ -76,18 +72,14 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Profile getUserWithEmail(String email) throws Exception {
         Profile profile= userDAO.getUserWithEmail(email);
-        profile.setAskedQuestions(null);
-        profile.setAnsweredQuestions(null);
-        profile.setFavedQuestions(null);
-        profile.setPublicMessages(null);
         return profile;
     }
 
     @Override
     @Transactional
-    public Set<Question> getAskedQuestionList(String username) throws Exception {
+    public List<Question> getAskedQuestionList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return user.getAskedQuestions();
+        return null;
 
     }
 
@@ -95,21 +87,21 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Set<Question> getAnsweredQuestionList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return user.getAnsweredQuestions();
+        return null;
     }
 
     @Override
     @Transactional
     public Set<Question> getFavedQuestionList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return user.getFavedQuestions();
+        return null;
     }
 
     @Override
     @Transactional
     public Set<Message> getPublicMsgList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return user.getPublicMessages();
+        return null;
     }
 
 
