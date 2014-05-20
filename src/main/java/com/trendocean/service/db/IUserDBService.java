@@ -18,7 +18,7 @@ public interface IUserDBService extends IDBService<Profile>{
     Profile getUserWithEmail(String email) throws Exception;
 
     @Transactional
-    List<Question> getAskedQuestionList(String username) throws Exception;
+    Set<Question> getAskedQuestionList(String username) throws Exception;
 
     @Transactional
     Set<Question> getAnsweredQuestionList(String username) throws Exception;

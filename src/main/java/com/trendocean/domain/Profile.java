@@ -6,6 +6,7 @@ import com.trendocean.domain.base.AbstractEntity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -33,10 +34,10 @@ public class Profile extends AbstractEntity implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     private ProfileOceanStats profileOceanStats;
 
-    /*
-    @OneToMany(cascade=CascadeType.ALL, orphanRemoval = true)
-    private List<Question> askedQuestions;
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "askedUser")
+    private Set<Question> askedQuestions=new HashSet<Question>(0);
 
+    /*
     @OneToMany(fetch=FetchType.LAZY, targetEntity=Question.class, cascade=CascadeType.ALL)
     private Set<Question> answeredQuestions;
 
@@ -185,4 +186,11 @@ public class Profile extends AbstractEntity implements Serializable {
         this.profileOceanStats = profileOceanStats;
     }
 
+    public Set<Question> getAskedQuestions() {
+        return askedQuestions;
+    }
+
+    public void setAskedQuestions(Set<Question> askedQuestions) {
+        this.askedQuestions = askedQuestions;
+    }
 }

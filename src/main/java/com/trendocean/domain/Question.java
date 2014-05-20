@@ -38,6 +38,10 @@ public class Question extends AbstractEntity implements Serializable {
     private String combinedText;
     private String language;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "asked_user_id")
+    private Profile askedUser;
+
     public String getBody() {
         return body;
     }
@@ -196,5 +200,14 @@ public class Question extends AbstractEntity implements Serializable {
 
     public void setLanguage(String language) {
         this.language = language;
+    }
+
+
+    public Profile getAskedUser() {
+        return askedUser;
+    }
+
+    public void setAskedUser(Profile askedUser) {
+        this.askedUser = askedUser;
     }
 }

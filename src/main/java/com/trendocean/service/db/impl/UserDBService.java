@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -65,6 +66,7 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Profile getUserWithUsername(String username) throws Exception {
         Profile profile=userDAO.getUserWithUsername(username);
+        profile.setAskedQuestions(new HashSet<Question>(0));
         return profile;
     }
 
@@ -72,14 +74,15 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Profile getUserWithEmail(String email) throws Exception {
         Profile profile= userDAO.getUserWithEmail(email);
+        profile.setAskedQuestions(new HashSet<Question>(0));
         return profile;
     }
 
     @Override
     @Transactional
-    public List<Question> getAskedQuestionList(String username) throws Exception {
+    public Set<Question> getAskedQuestionList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return null;
+        return user.getAskedQuestions();
 
     }
 
