@@ -34,13 +34,7 @@ public class QuestionService implements IQuestionService {
         newQuestion.setOwner(loggedInUser.getUsername());
         newQuestion.setOwnerFullName(loggedInUser.getFullName());
         newQuestion.setOwnerSmallAvatarURL(loggedInUser.getProfileOceanDesigns().getSmallAvatar());
-        newQuestion.setAskedUser(loggedInUser);
         questionDBService.save(newQuestion);
-
-        //loggedInUser.getAskedQuestions().add(newQuestion);
-        //userDBService.save(loggedInUser);
-
-
 
         return new TrendoceanResponse.Builder().setSuccess(true).setData(newQuestion).build();
     }

@@ -1,7 +1,7 @@
 package com.trendocean.domain;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.trendocean.domain.base.AbstractEntity;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
 
 import javax.persistence.Entity;
 import java.io.Serializable;

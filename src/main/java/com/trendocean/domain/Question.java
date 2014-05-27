@@ -1,7 +1,7 @@
 package com.trendocean.domain;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.trendocean.domain.base.AbstractEntity;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -37,10 +37,6 @@ public class Question extends AbstractEntity implements Serializable {
     private boolean isPromoted;
     private String combinedText;
     private String language;
-
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "asked_user_id")
-    private Profile askedUser;
 
     public String getBody() {
         return body;
@@ -202,12 +198,4 @@ public class Question extends AbstractEntity implements Serializable {
         this.language = language;
     }
 
-
-    public Profile getAskedUser() {
-        return askedUser;
-    }
-
-    public void setAskedUser(Profile askedUser) {
-        this.askedUser = askedUser;
-    }
 }

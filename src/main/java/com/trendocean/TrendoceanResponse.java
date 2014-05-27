@@ -1,6 +1,6 @@
 package com.trendocean;
 
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import org.codehaus.jackson.annotate.JsonAutoDetect;
 
 import java.io.Serializable;
 

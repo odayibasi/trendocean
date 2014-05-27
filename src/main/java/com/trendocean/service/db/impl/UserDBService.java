@@ -66,7 +66,6 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Profile getUserWithUsername(String username) throws Exception {
         Profile profile=userDAO.getUserWithUsername(username);
-        profile.setAskedQuestions(new HashSet<Question>(0));
         return profile;
     }
 
@@ -74,7 +73,6 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Profile getUserWithEmail(String email) throws Exception {
         Profile profile= userDAO.getUserWithEmail(email);
-        profile.setAskedQuestions(new HashSet<Question>(0));
         return profile;
     }
 
@@ -82,7 +80,7 @@ public class UserDBService implements IUserDBService {
     @Transactional
     public Set<Question> getAskedQuestionList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return user.getAskedQuestions();
+        return null;
 
     }
 

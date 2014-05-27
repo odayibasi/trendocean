@@ -19,8 +19,11 @@ public class ProfileHiberbateDAO extends BaseDAOImpl<Profile> implements IProfil
             Criteria c = getSession().createCriteria(Profile.class);
             c.add(Restrictions.eq("username", username));
             List<Profile> profiles=c.list();
-            if(profiles!=null || profiles.size()>0){
-                return profiles.get(0);
+            if(profiles!=null &&  profiles.size()>0){
+                Profile profile=profiles.get(0);
+                //profile.setAskedQuestions(null);
+                return profile;
+
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -34,8 +37,10 @@ public class ProfileHiberbateDAO extends BaseDAOImpl<Profile> implements IProfil
             Criteria c = getSession().createCriteria(Profile.class);
             c.add(Restrictions.eq("email", email));
             List<Profile> profiles=c.list();
-            if(profiles!=null || profiles.size()>0){
-                return profiles.get(0);
+            if(profiles!=null && profiles.size()>0){
+                Profile profile=profiles.get(0);
+                //profile.setAskedQuestions(null);
+                return profile;
             }
         }catch (Exception e){
             e.printStackTrace();
