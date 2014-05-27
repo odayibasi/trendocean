@@ -519,27 +519,27 @@ $(document).ready(function() {
         if(result){
             $('#waitingIcon').show();
             var user = new Object();
-
+            user.username = userName;
+            user.fullName = fullName;
+            user.password=  password;
+            user.gender=gender;
+            user.email=email;
+            user.education=education;
+            user.birthday=birthDate;
+            user.cityCode=cityCode;
+            user.cityName=cityName;
+            user.countryCode=countryCode;
+            user.countryName=countryName;
             var userJSON = $.toJSON(user);
             $.ajax({
                 url: 'api/registration/addUser',
                 type: "POST",
-                data: {
-                    'username': userName,
-                    'fullName': fullName,
-                    'password': password,
-                    'gender': gender,
-                    'email': email,
-                    'education': education,
-                    'birthday':birthDate,
-                    'cityCode':cityCode,
-                    'cityName':cityName,
-                    'countryCode': countryCode,
-                    'countryName': countryName,
-                },
+                dataType: "json",
+                contentType: 'application/json; charset=utf-8',
+                data: (userJSON),
                 success: function(resp){
                     cookie_saveLoginUser(resp.data);
-                    window.location.href="home.html";
+                    window.location.href="index.html";
                 },
                 error:function (xhr){
                     //window.location.href=PAGE_OVERLOAD;

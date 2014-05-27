@@ -36,11 +36,11 @@ public class Profile extends AbstractEntity implements Serializable {
     @OneToOne(cascade=CascadeType.ALL)
     private ProfileOceanStats profileOceanStats;
 
-    /*
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Question> askedQuestions=new ArrayList<Question>();
 
-
+    /*
     @OneToMany(fetch=FetchType.LAZY, targetEntity=Question.class, cascade=CascadeType.ALL)
     private Set<Question> answeredQuestions;
 
@@ -189,8 +189,6 @@ public class Profile extends AbstractEntity implements Serializable {
         this.profileOceanStats = profileOceanStats;
     }
 
-
-    /*
     @JsonIgnore
     public List<Question> getAskedQuestions() {
         return askedQuestions;
@@ -198,6 +196,6 @@ public class Profile extends AbstractEntity implements Serializable {
 
     public void setAskedQuestions(List<Question> askedQuestions) {
         this.askedQuestions = askedQuestions;
-    } */
+    }
 
 }

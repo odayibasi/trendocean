@@ -21,7 +21,6 @@ public class ProfileHiberbateDAO extends BaseDAOImpl<Profile> implements IProfil
             List<Profile> profiles=c.list();
             if(profiles!=null &&  profiles.size()>0){
                 Profile profile=profiles.get(0);
-                //profile.setAskedQuestions(null);
                 return profile;
 
             }
@@ -39,7 +38,6 @@ public class ProfileHiberbateDAO extends BaseDAOImpl<Profile> implements IProfil
             List<Profile> profiles=c.list();
             if(profiles!=null && profiles.size()>0){
                 Profile profile=profiles.get(0);
-                //profile.setAskedQuestions(null);
                 return profile;
             }
         }catch (Exception e){

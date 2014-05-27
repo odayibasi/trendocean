@@ -41,8 +41,6 @@
 
     <dependencies>
 
-
-
         <!-- LOGGING DEPENDENCIES - LOG4J -->
 
         <dependency>
@@ -178,17 +176,17 @@
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-core-lgpl</artifactId>
-            <version>1.6.4</version>
+            <version>1.9.12</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-mapper-lgpl</artifactId>
-            <version>1.6.4</version>
+            <version>1.9.12</version>
         </dependency>
         <dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>jackson-xc</artifactId>
-            <version>1.6.4</version>
+            <version>1.9.12</version>
         </dependency>
 
         <dependency>
