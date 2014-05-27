@@ -67,7 +67,6 @@ function authenticationdock_initialize() {
                     authentication_error(xhr);
                 }
             });
-            });
             return false;
         }
     });
