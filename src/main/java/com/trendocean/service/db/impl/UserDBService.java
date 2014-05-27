@@ -78,9 +78,12 @@ public class UserDBService implements IUserDBService {
 
     @Override
     @Transactional
-    public Set<Question> getAskedQuestionList(String username) throws Exception {
+    public List<Question> getAskedQuestionList(String username) throws Exception {
         Profile user=getUserWithUsername(username);
-        return null;
+        if(user!=null && user.getAskedQuestions()!=null && user.getAskedQuestions().size()>0){
+            user.getAskedQuestions().get(0);
+        }
+        return user.getAskedQuestions();
 
     }
 
