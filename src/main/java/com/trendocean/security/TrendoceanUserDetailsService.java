@@ -26,7 +26,7 @@ public class TrendoceanUserDetailsService implements UserDetailsService {
 		super();
 	}
 	
-	public TrendOceanAuthentication getAuthenticationForPassword(String username, String password) throws Exception {
+	public TrendoceanAuthentication getAuthenticationForPassword(String username, String password) throws Exception {
 
 		String encrypted = PasswordUtil.getInstance().encrypt(password);
 
@@ -41,7 +41,7 @@ public class TrendoceanUserDetailsService implements UserDetailsService {
 		List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
 		grantedAuthorities.add(new SimpleGrantedAuthority("ROLE_USER"));
 
-		TrendOceanAuthentication userAuthantication = new TrendOceanAuthentication();
+		TrendoceanAuthentication userAuthantication = new TrendoceanAuthentication();
 		userAuthantication.setUser(user);
 		userAuthantication.setGrantedAuthorities(grantedAuthorities);
 

@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class TrendOceanAuthentication implements Serializable, UserDetails {
+public class TrendoceanAuthentication implements Serializable, UserDetails {
 
 	private static final long serialVersionUID = 1L;
 
@@ -18,7 +18,7 @@ public class TrendOceanAuthentication implements Serializable, UserDetails {
 
 	private List<GrantedAuthority> grantedAuthorities = new ArrayList<GrantedAuthority>();
 
-	public TrendOceanAuthentication() {
+	public TrendoceanAuthentication() {
 	}
 
 	public Profile getUser() {

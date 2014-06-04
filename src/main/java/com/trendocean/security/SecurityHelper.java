@@ -7,7 +7,7 @@ public class SecurityHelper {
 
 
 	public synchronized static Profile getLoggedInUser() {
-		TrendOceanAuthentication authentication = (TrendOceanAuthentication) SecurityContextHolder.getContext().getAuthentication()
+		TrendoceanAuthentication authentication = (TrendoceanAuthentication) SecurityContextHolder.getContext().getAuthentication()
 				.getPrincipal();
 		return authentication.getUser();
 	}

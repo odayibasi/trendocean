@@ -1,15 +1,11 @@
 package com.trendocean.filter;
 
-import com.trendocean.security.TrendOceanAuthentication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.session.SessionRegistry;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 public class TrendoceanForwarder implements Filter {
 

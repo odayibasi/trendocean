@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class TrendOceanAuthenticationFilter extends AbstractAuthenticationProcessingFilter implements AuthenticationEntryPoint {
+public class TrendoceanAuthenticationFilter extends AbstractAuthenticationProcessingFilter implements AuthenticationEntryPoint {
 
     private static final String BLOCK_ERR = "Hatalı Şifre Girişi";
 
@@ -38,7 +38,7 @@ public class TrendOceanAuthenticationFilter extends AbstractAuthenticationProces
 
     private static final String DEFAULT_FILTER_PROCESSES_URL = "/login";
 
-    public TrendOceanAuthenticationFilter() {
+    public TrendoceanAuthenticationFilter() {
         super(DEFAULT_FILTER_PROCESSES_URL);
     }
 
@@ -125,7 +125,7 @@ public class TrendOceanAuthenticationFilter extends AbstractAuthenticationProces
             throw new BadCredentialsException("Üyeliğiniz aktif değildir.");
         }
 
-        TrendOceanAuthentication userAuthentication = new TrendOceanAuthentication();
+        TrendoceanAuthentication userAuthentication = new TrendoceanAuthentication();
         try {
             userAuthentication = detailsService.getAuthenticationForPassword(username, password);
 

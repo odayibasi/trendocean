@@ -28,7 +28,7 @@ public class UserService implements IUserService{
 
     @Override
     public TrendoceanResponse getAskedQuestionList(String username) throws Exception {
-        Set<Question> questionS=userDBService.getAskedQuestionList(username);
+        List<Question> questionS=userDBService.getAskedQuestionList(username);
         return new TrendoceanResponse.Builder().setSuccess(true).setData(questionS).build();
     }
 
