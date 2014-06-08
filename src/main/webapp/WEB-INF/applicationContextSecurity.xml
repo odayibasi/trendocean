@@ -67,7 +67,7 @@
         <beans:property name="defaultTargetUrl" value="/index.html"/>
     </beans:bean>
 
-    <beans:bean id="toAuthenticationFilter" class="com.trendocean.security.TrendOceanAuthenticationFilter">
+    <beans:bean id="toAuthenticationFilter" class="com.trendocean.security.TrendoceanAuthenticationFilter">
         <beans:property name="sessionAuthenticationStrategy" ref="sas"/>
         <beans:property name="authenticationManager" ref="toAuthenticationManager"/>
         <beans:property name="authenticationFailureHandler" ref="failureHandler"/>
