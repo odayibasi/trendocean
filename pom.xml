@@ -32,7 +32,7 @@
         <hibernate.annotations.version>4.0.1.Final</hibernate.annotations.version>
         <hibernate.jpamodelgen.version>1.2.0.Final</hibernate.jpamodelgen.version>
         <hibernate.validator.version>4.3.1.Final</hibernate.validator.version>
-        <c3p0.version>0.9.2</c3p0.version>
+        <c3p0.version>0.9.5.4</c3p0.version>
         <cglib.version>2.2</cglib.version>
         <cxf.version>2.7.2</cxf.version>
         <cxf.codegen.plugin.version>2.5.1</cxf.codegen.plugin.version>
