@@ -23,7 +23,7 @@
         <maven.war.plugin.version>2.1.1</maven.war.plugin.version>
         <maven.surefire.plugin.version>2.9</maven.surefire.plugin.version>
         <maven.failsafe.plugin.version>2.9</maven.failsafe.plugin.version>
-        <org.springframework.version>4.0.3.RELEASE</org.springframework.version>
+        <org.springframework.version>5.2.3.RELEASE</org.springframework.version>
         <spring.security.version>3.2.3.RELEASE</spring.security.version>
         <source.compiler.version>1.6</source.compiler.version>
         <target.compiler.version>1.6</target.compiler.version>
